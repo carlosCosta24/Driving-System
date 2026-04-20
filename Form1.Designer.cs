@@ -28,13 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.crtlPersonCard1 = new Driving_System.crtlPersonCard();
+            this.SuspendLayout();
+            // 
+            // crtlPersonCard1
+            // 
+            this.crtlPersonCard1.Location = new System.Drawing.Point(37, 28);
+            this.crtlPersonCard1.Name = "crtlPersonCard1";
+            this.crtlPersonCard1.Size = new System.Drawing.Size(795, 324);
+            this.crtlPersonCard1.TabIndex = 0;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1075, 450);
+            this.Controls.Add(this.crtlPersonCard1);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private crtlPersonCard crtlPersonCard1;
     }
 }
 

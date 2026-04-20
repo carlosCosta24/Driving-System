@@ -13,7 +13,7 @@ namespace Driving_System
     public partial class crtlPersonCard : UserControl
     {
         
-        public crtlPersonCard(int PersonID)
+        public crtlPersonCard()
         {
             InitializeComponent();
         }

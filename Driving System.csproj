@@ -52,6 +52,12 @@
     <Compile Include="crtlPersonCard.Designer.cs">
       <DependentUpon>crtlPersonCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="crtlPersonCardWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="crtlPersonCardWithFilter.Designer.cs">
+      <DependentUpon>crtlPersonCardWithFilter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="crtlPersonCard.resx">
       <DependentUpon>crtlPersonCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="crtlPersonCardWithFilter.resx">
+      <DependentUpon>crtlPersonCardWithFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -130,6 +139,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

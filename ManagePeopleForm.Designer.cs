@@ -1,6 +1,6 @@
 ﻿namespace Driving_System
 {
-    partial class Form1
+    partial class ManagePeopleForm
     {
         /// <summary>
         /// Required designer variable.
@@ -32,10 +32,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -86,6 +88,24 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 5;
             // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(483, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(332, 37);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Manage People";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(218, 205);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(178, 26);
+            this.textBox1.TabIndex = 7;
+            // 
             // button2
             // 
             this.button2.Image = global::Driving_System.Properties.Resources.add;
@@ -105,29 +125,31 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // label2
+            // label3
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(483, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(332, 37);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Manage People";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 513);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 16);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "#Records:";
             // 
-            // textBox1
+            // label4
             // 
-            this.textBox1.Location = new System.Drawing.Point(218, 205);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(178, 26);
-            this.textBox1.TabIndex = 7;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(80, 513);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(14, 16);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "0";
             // 
-            // Form1
+            // ManagePeopleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1334, 552);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
@@ -136,7 +158,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Form1";
+            this.Name = "ManagePeopleForm";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -155,5 +177,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

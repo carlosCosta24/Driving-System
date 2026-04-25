@@ -1,6 +1,6 @@
 ﻿namespace Driving_System
 {
-    partial class Form4
+    partial class ManageUsersForm
     {
         /// <summary>
         /// Required designer variable.
@@ -110,9 +110,9 @@
             // 
             this.button2.Image = global::Driving_System.Properties.Resources.close;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(666, 436);
+            this.button2.Location = new System.Drawing.Point(666, 425);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(91, 36);
+            this.button2.Size = new System.Drawing.Size(91, 47);
             this.button2.TabIndex = 5;
             this.button2.Text = "Close";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -131,13 +131,13 @@
             // button1
             // 
             this.button1.Image = global::Driving_System.Properties.Resources.add;
-            this.button1.Location = new System.Drawing.Point(713, 209);
+            this.button1.Location = new System.Drawing.Point(713, 204);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(44, 30);
+            this.button1.Size = new System.Drawing.Size(44, 35);
             this.button1.TabIndex = 3;
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // Form4
+            // ManageUsersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -151,7 +151,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
-            this.Name = "Form4";
+            this.Name = "ManageUsersForm";
             this.Text = "Manage users";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Driving_System
 {
-    public partial class Form3 : Form
+    public partial class ManageUsersForm : Form
     {
-        public Form3()
+        public ManageUsersForm()
         {
             InitializeComponent();
         }

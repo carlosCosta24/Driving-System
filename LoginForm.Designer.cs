@@ -1,6 +1,6 @@
 ﻿namespace Driving_System
 {
-    partial class Form2
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.

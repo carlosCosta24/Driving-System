@@ -82,7 +82,7 @@
             this.toolStripMenuItem6});
             this.applicationsToolStripMenuItem.Image = global::Driving_System.Properties.Resources.list;
             this.applicationsToolStripMenuItem.Name = "applicationsToolStripMenuItem";
-            this.applicationsToolStripMenuItem.Size = new System.Drawing.Size(126, 24);
+            this.applicationsToolStripMenuItem.Size = new System.Drawing.Size(126, 26);
             this.applicationsToolStripMenuItem.Text = "Applications";
             // 
             // toolStripMenuItem1
@@ -225,22 +225,25 @@
             // 
             this.peopleToolStripMenuItem.Image = global::Driving_System.Properties.Resources.group;
             this.peopleToolStripMenuItem.Name = "peopleToolStripMenuItem";
-            this.peopleToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
+            this.peopleToolStripMenuItem.Size = new System.Drawing.Size(88, 26);
             this.peopleToolStripMenuItem.Text = "People";
+            this.peopleToolStripMenuItem.Click += new System.EventHandler(this.peopleToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Image = global::Driving_System.Properties.Resources.driver;
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(89, 24);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(89, 26);
             this.toolStripMenuItem3.Text = "Drivers";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // usersToolStripMenuItem
             // 
             this.usersToolStripMenuItem.Image = global::Driving_System.Properties.Resources.user1;
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(78, 24);
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(78, 26);
             this.usersToolStripMenuItem.Text = "Users";
+            this.usersToolStripMenuItem.Click += new System.EventHandler(this.usersToolStripMenuItem_Click);
             // 
             // accountSettingsToolStripMenuItem
             // 
@@ -252,6 +255,7 @@
             this.accountSettingsToolStripMenuItem.Name = "accountSettingsToolStripMenuItem";
             this.accountSettingsToolStripMenuItem.Size = new System.Drawing.Size(154, 24);
             this.accountSettingsToolStripMenuItem.Text = "Account Settings";
+            this.accountSettingsToolStripMenuItem.Click += new System.EventHandler(this.accountSettingsToolStripMenuItem_Click);
             // 
             // toolStripMenuItem7
             // 
@@ -259,6 +263,7 @@
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
             this.toolStripMenuItem7.Size = new System.Drawing.Size(224, 26);
             this.toolStripMenuItem7.Text = "Current user info";
+            this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItem7_Click);
             // 
             // toolStripMenuItem8
             // 

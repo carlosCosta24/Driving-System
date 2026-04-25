@@ -6,7 +6,8 @@ using System.Windows.Forms;
 
 namespace Driving_System
 {
-    internal static class Program
+    internal static class 
+        Program
     {
         /// <summary>
         /// The main entry point for the application.
@@ -16,7 +17,7 @@ namespace Driving_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Main());
         }
     }
 }

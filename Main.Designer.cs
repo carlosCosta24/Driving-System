@@ -82,7 +82,7 @@
             this.toolStripMenuItem6});
             this.applicationsToolStripMenuItem.Image = global::Driving_System.Properties.Resources.list;
             this.applicationsToolStripMenuItem.Name = "applicationsToolStripMenuItem";
-            this.applicationsToolStripMenuItem.Size = new System.Drawing.Size(126, 26);
+            this.applicationsToolStripMenuItem.Size = new System.Drawing.Size(126, 24);
             this.applicationsToolStripMenuItem.Text = "Applications";
             // 
             // toolStripMenuItem1
@@ -115,6 +115,7 @@
             this.localLicenseToolStripMenuItem.Name = "localLicenseToolStripMenuItem";
             this.localLicenseToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
             this.localLicenseToolStripMenuItem.Text = "Local license";
+            this.localLicenseToolStripMenuItem.Click += new System.EventHandler(this.localLicenseToolStripMenuItem_Click);
             // 
             // internationalToolStripMenuItem
             // 
@@ -225,7 +226,7 @@
             // 
             this.peopleToolStripMenuItem.Image = global::Driving_System.Properties.Resources.group;
             this.peopleToolStripMenuItem.Name = "peopleToolStripMenuItem";
-            this.peopleToolStripMenuItem.Size = new System.Drawing.Size(88, 26);
+            this.peopleToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
             this.peopleToolStripMenuItem.Text = "People";
             this.peopleToolStripMenuItem.Click += new System.EventHandler(this.peopleToolStripMenuItem_Click);
             // 
@@ -233,7 +234,7 @@
             // 
             this.toolStripMenuItem3.Image = global::Driving_System.Properties.Resources.driver;
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(89, 26);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(89, 24);
             this.toolStripMenuItem3.Text = "Drivers";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
@@ -241,7 +242,7 @@
             // 
             this.usersToolStripMenuItem.Image = global::Driving_System.Properties.Resources.user1;
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(78, 26);
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(78, 24);
             this.usersToolStripMenuItem.Text = "Users";
             this.usersToolStripMenuItem.Click += new System.EventHandler(this.usersToolStripMenuItem_Click);
             // 
@@ -261,7 +262,7 @@
             // 
             this.toolStripMenuItem7.Image = global::Driving_System.Properties.Resources.inventory;
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(209, 26);
             this.toolStripMenuItem7.Text = "Current user info";
             this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItem7_Click);
             // 
@@ -269,22 +270,24 @@
             // 
             this.toolStripMenuItem8.Image = global::Driving_System.Properties.Resources.password;
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(209, 26);
             this.toolStripMenuItem8.Text = "Change password";
             // 
             // toolStripMenuItem9
             // 
             this.toolStripMenuItem9.Image = global::Driving_System.Properties.Resources.sign_out;
             this.toolStripMenuItem9.Name = "toolStripMenuItem9";
-            this.toolStripMenuItem9.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(209, 26);
             this.toolStripMenuItem9.Text = "Sign out";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Driving_System.Properties.Resources.flat_design_driving_school_template_23_2149280399;
             this.ClientSize = new System.Drawing.Size(1777, 735);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
             this.Text = "Form1";

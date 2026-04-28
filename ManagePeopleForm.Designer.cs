@@ -60,6 +60,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Close";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -87,6 +88,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 5;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -114,6 +116,7 @@
             this.button2.Size = new System.Drawing.Size(51, 35);
             this.button2.TabIndex = 3;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox1
             // 
@@ -142,6 +145,7 @@
             this.label4.Size = new System.Drawing.Size(14, 16);
             this.label4.TabIndex = 9;
             this.label4.Text = "0";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // ManagePeopleForm
             // 
@@ -160,6 +164,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "ManagePeopleForm";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.ManagePeopleForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

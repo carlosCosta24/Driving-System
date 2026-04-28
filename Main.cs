@@ -47,5 +47,10 @@ namespace Driving_System
             Form Account = new UserInfoForm();
             Account.ShowDialog();
         }
+
+        private void localLicenseToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

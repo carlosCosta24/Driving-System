@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNewPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewPerson.Designer.cs">
+      <DependentUpon>AddNewPerson.cs</DependentUpon>
+    </Compile>
     <Compile Include="crtlPersonCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -108,6 +114,9 @@
     <Compile Include="UserControl1.Designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddNewPerson.resx">
+      <DependentUpon>AddNewPerson.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="crtlPersonCard.resx">
       <DependentUpon>crtlPersonCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -280,6 +289,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\driver %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\driving-school-abstract-concept-vector-illustration-set-driving-lessons-and-instruction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flat-design-driving-school-template_23-2149280399.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flat-design-driving-school-template_23-21492803991.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

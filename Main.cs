@@ -1,17 +1,24 @@
-﻿using System.Windows.Forms;
+﻿using BusinessLayer;
+using System.Windows.Forms;
 
 namespace Driving_System
 {
     public partial class Main : Form
+
     {
+        
+        clsUserBusiness CurrentUser;
+        
         public Main()
         {
             InitializeComponent();
+           
         }
 
         private void Form1_Load(object sender, System.EventArgs e)
         {
-
+            Form Login = new LoginForm();
+            Login.ShowDialog();
         }
 
         private void toolStripMenuItem1_Click(object sender, System.EventArgs e)

@@ -108,11 +108,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControl1.cs">
+    <Compile Include="crtlAddEditPerson.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <Compile Include="crtlAddEditPerson.Designer.cs">
+      <DependentUpon>crtlAddEditPerson.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AddNewPerson.resx">
       <DependentUpon>AddNewPerson.cs</DependentUpon>
@@ -151,8 +151,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <EmbeddedResource Include="crtlAddEditPerson.resx">
+      <DependentUpon>crtlAddEditPerson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserInfoForm.resx">
       <DependentUpon>UserInfoForm.cs</DependentUpon>

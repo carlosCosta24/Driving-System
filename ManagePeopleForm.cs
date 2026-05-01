@@ -30,8 +30,9 @@ namespace Driving_System
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form AddNewPerson = new AddNewPerson();
+            Form AddNewPerson = new AddNewPerson(-1);
             AddNewPerson.ShowDialog();
+            _LoadPersonsData();
 
         }
 
@@ -50,6 +51,11 @@ namespace Driving_System
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

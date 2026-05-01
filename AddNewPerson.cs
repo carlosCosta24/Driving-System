@@ -15,7 +15,7 @@ namespace Driving_System
     public partial class AddNewPerson : Form
     {
         public enum enMode { Add = 0 , Update = 1}
-        enMode _Mode = enMode.Add;
+        enMode _Mode;
         clsPersonBusiness _Person;
         int _PersonID;
         private void FillPersonObject(clsPersonBusiness NewPerson)
@@ -32,9 +32,9 @@ namespace Driving_System
             {
                 NewPerson.Email = tbEmail.Text;
             }
-            if (!string.IsNullOrEmpty(pictureBox1.ImageLocation))
+            if (!string.IsNullOrEmpty(pbUserPicture.ImageLocation))
             {
-                NewPerson.ImagePath = pictureBox1.ImageLocation;
+                NewPerson.ImagePath = pbUserPicture.ImageLocation;
             }
             if (rbMale.Checked)
             {
@@ -46,6 +46,49 @@ namespace Driving_System
             }
 
 
+        }
+        private void _LoadData() {
+
+            if (_Mode == enMode.Add) {
+                _Person = new clsPersonBusiness();
+                lbTitle.Text = "Add New Person"; 
+                return;
+            }
+            _Person = clsPersonBusiness.GetPerson(_PersonID);
+            if (_Person == null) {
+                MessageBox.Show("This person dosent exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                return;
+            }
+            tbFirstName.Text = _Person.FirstName;
+            tbMiddleName.Text = _Person.MiddleName;
+            tbLastName.Text = _Person.LastName;
+            tbNationalNo.Text = _Person.NationalNumber;
+            dtpBirthDate.Value = _Person.BirthDate;
+            tbEmail.Text = _Person.Email;
+            tbPhone.Text = _Person.Phone;
+            cbCountry.SelectedIndex = _Person.CountryID;
+            tbAddress.Text = _Person.Address;
+            if(_Person.ImagePath != "")
+            {
+                pbUserPicture.Load(_Person.ImagePath);
+
+            }
+            if (_Person.Gender == 'M')
+            {
+                rbMale.Checked = true;
+            }
+            else {
+                rbFemale.Checked = true;
+            }
+        }
+        private void _LoadCountries() {
+            dtpBirthDate.MaxDate = DateTime.Today.AddYears(-18);
+            DataTable Countries = clsCountryBusiness.GetAllCountries();
+            cbCountry.DataSource = Countries;
+            cbCountry.DisplayMember = "CountryName";
+            cbCountry.ValueMember = "CountryID";
+            cbCountry.SelectedIndex = 0;
         }
         public AddNewPerson(int PersonID)
         {
@@ -69,12 +112,9 @@ namespace Driving_System
 
         private void AddNewPerson_Load(object sender, EventArgs e)
         {
-            dtpBirthDate.MaxDate = DateTime.Today.AddYears(-18);
-            DataTable Countries = clsCountryBusiness.GetAllCountries();
-            cbCountry.DataSource = Countries;
-            cbCountry.DisplayMember = "CountryName";
-            cbCountry.ValueMember = "CountryID";
-            cbCountry.SelectedIndex = 0;
+            _LoadData();
+            _LoadCountries();
+
         }
 
         private void userControl11_Load_1(object sender, EventArgs e)
@@ -92,19 +132,34 @@ namespace Driving_System
         {
             if (this.ValidateChildren())
             {
-                if (_Mode == enMode.Add)
+                _Person.FirstName     = tbFirstName.Text ;
+                _Person.MiddleName    = tbMiddleName.Text ;
+                _Person.LastName      = tbLastName.Text ;
+                _Person.NationalNumber= tbNationalNo.Text ;
+                _Person.BirthDate     = dtpBirthDate.Value ;
+                _Person.Email         = tbEmail.Text ;
+                _Person.Phone         = tbPhone.Text ;
+                _Person.CountryID     = (int)cbCountry.SelectedValue;
+                _Person.Address       = tbAddress.Text;
+                if (pbUserPicture.ImageLocation != null)
                 {
-                    _Person = new clsPersonBusiness();
+                    _Person.ImagePath = pbUserPicture.ImageLocation;
 
                 }
                 else {
-                    _Person = clsPersonBusiness.GetPerson(_PersonID);
-                    if (_Person == null) {
-                        MessageBox.Show("This person dosent exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
+                    _Person.ImagePath = "";
                 }
-                FillPersonObject(_Person);
+
+                if (rbMale.Checked)
+                {
+                    _Person.Gender = 'M';
+                }
+                else
+                {
+                    _Person.Gender = 'F';
+                }
+
+
                 if (_Person.Save())
                 {
                     if (MessageBox.Show("New person added successfully !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -115,15 +170,13 @@ namespace Driving_System
                         lbID.Text = _Person.PersonID.ToString();
                         
                     }
-                    
-                    
-
                 }
                 else
                 {
                     MessageBox.Show("Error while adding new person !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
+
             }
             else {
                 MessageBox.Show("All field should be field", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -207,12 +260,12 @@ namespace Driving_System
                 ImageLocation = File.FileName;
 
             }
-            pictureBox1.Load(ImageLocation);
+            pbUserPicture.Load(ImageLocation);
         }
 
         private void llRemoveImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            pictureBox1.Image = Resources.user;
+            pbUserPicture.Image = Resources.user;
         }
 
         private void tbNationalNo_TextChanged(object sender, EventArgs e)

@@ -41,7 +41,7 @@
             this.dtpBirthDate = new System.Windows.Forms.DateTimePicker();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.tbNationalNo = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbUserPicture = new System.Windows.Forms.PictureBox();
             this.tbMiddleName = new System.Windows.Forms.TextBox();
             this.tbLastName = new System.Windows.Forms.TextBox();
             this.tbFirstName = new System.Windows.Forms.TextBox();
@@ -65,7 +65,7 @@
             this.epNationalNo = new System.Windows.Forms.ErrorProvider(this.components);
             this.epPhone = new System.Windows.Forms.ErrorProvider(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUserPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epFirstName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epMiddleName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epLastName)).BeginInit();
@@ -202,16 +202,16 @@
             this.tbNationalNo.TextChanged += new System.EventHandler(this.tbNationalNo_TextChanged);
             this.tbNationalNo.Validating += new System.ComponentModel.CancelEventHandler(this.tbNationalNo_Validating);
             // 
-            // pictureBox1
+            // pbUserPicture
             // 
-            this.pictureBox1.Image = global::Driving_System.Properties.Resources.user;
-            this.pictureBox1.Location = new System.Drawing.Point(903, 183);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(180, 220);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 68;
-            this.pictureBox1.TabStop = false;
+            this.pbUserPicture.Image = global::Driving_System.Properties.Resources.user;
+            this.pbUserPicture.Location = new System.Drawing.Point(903, 183);
+            this.pbUserPicture.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbUserPicture.Name = "pbUserPicture";
+            this.pbUserPicture.Size = new System.Drawing.Size(180, 220);
+            this.pbUserPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbUserPicture.TabIndex = 68;
+            this.pbUserPicture.TabStop = false;
             // 
             // tbMiddleName
             // 
@@ -425,7 +425,7 @@
             this.Controls.Add(this.dtpBirthDate);
             this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.tbNationalNo);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbUserPicture);
             this.Controls.Add(this.tbMiddleName);
             this.Controls.Add(this.tbLastName);
             this.Controls.Add(this.tbFirstName);
@@ -448,7 +448,7 @@
             this.Name = "AddNewPerson";
             this.Text = "AddNewPerson";
             this.Load += new System.EventHandler(this.AddNewPerson_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUserPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epFirstName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epMiddleName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epLastName)).EndInit();
@@ -472,7 +472,7 @@
         private System.Windows.Forms.DateTimePicker dtpBirthDate;
         private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.TextBox tbNationalNo;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbUserPicture;
         private System.Windows.Forms.TextBox tbMiddleName;
         private System.Windows.Forms.TextBox tbLastName;
         private System.Windows.Forms.TextBox tbFirstName;

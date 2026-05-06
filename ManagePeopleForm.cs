@@ -14,13 +14,60 @@ namespace Driving_System
 {
     public partial class ManagePeopleForm : Form
     {
-        private void _LoadPersonsData() { 
-        
-            dataGridView1.DataSource = clsPersonBusiness.GetAllPersons();
+        DataTable PersonsData = clsPersonBusiness.GetAllPersons();
+        private void _LoadPersonsData() {
+
+            dgvPepoleData.DataSource = PersonsData;
+        }
+        private void FilterData() {
+
+            tbFilterText.Visible = true;
+            if (cbFilterCategory.Text == "Person ID") 
+            {
+                // prevent the user from typing char
+                //set the Filter to the input
+                PersonsData.DefaultView.RowFilter = $"Convert(NationalNumberID, 'System.String') PersonID like '%{tbFilterText.Text}%'";
+            }
+            if (cbFilterCategory.Text == "National No") {
+                PersonsData.DefaultView.RowFilter = $"NationalNumberID like '%{tbFilterText.Text}%'";
+            }
+            if (cbFilterCategory.Text == "First Name") {
+                PersonsData.DefaultView.RowFilter = $"FirstName like '%{tbFilterText.Text}%'";
+            }
+            if (cbFilterCategory.Text == "Middle Name") {
+                PersonsData.DefaultView.RowFilter = $"MiddleName like '%{tbFilterText.Text}%'";
+            }
+            if (cbFilterCategory.Text == "Last Name") {
+                PersonsData.DefaultView.RowFilter = $"LastName like '%{tbFilterText.Text}%'";
+
+            }
+            if (cbFilterCategory.Text == "Nationality") {
+                PersonsData.DefaultView.RowFilter = $"Nationality like '%{tbFilterText.Text}%'";
+
+            }
+            if (cbFilterCategory.Text == "Gender") { 
+                tbFilterText.Visible = false;
+                cbGender.Visible = true;
+                PersonsData.DefaultView.RowFilter = $"Gender like '%{tbFilterText.Text}%'";
+            }
+            if (cbFilterCategory.Text == "Phone") {
+                PersonsData.DefaultView.RowFilter = $"Phone like '%{tbFilterText.Text}%'";
+
+            }
+            if (cbFilterCategory.Text == "Email") {
+                PersonsData.DefaultView.RowFilter = $"Email like '%{tbFilterText.Text}%'";
+
+            }
+            
+            
+            
+
+
         }
         public ManagePeopleForm()
         {
             InitializeComponent();
+            _LoadPersonsData();
             
         }
 
@@ -39,13 +86,16 @@ namespace Driving_System
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
+            
         }
 
         private void ManagePeopleForm_Load(object sender, EventArgs e)
         {
             _LoadPersonsData();
-            comboBox1.SelectedIndex = 0;
+            cbFilterCategory.SelectedIndex = 0;
+            tbFilterText.Visible = false;
+            cbGender.Visible = false;
             label4.Text = clsPersonBusiness.GetAllPersons().Rows.Count.ToString();
             
 
@@ -69,6 +119,21 @@ namespace Driving_System
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void tbFilterText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            FilterData();
+        }
+
+        private void cbGender_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbFilterText_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

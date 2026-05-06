@@ -18,7 +18,7 @@ namespace Driving_System
         private void Form1_Load(object sender, System.EventArgs e)
         {
             Form Login = new LoginForm();
-            Login.ShowDialog();
+            // Login.ShowDialog();
         }
 
         private void toolStripMenuItem1_Click(object sender, System.EventArgs e)

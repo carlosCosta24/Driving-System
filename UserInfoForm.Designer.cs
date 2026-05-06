@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.crtlPersonCard1 = new Driving_System.crtlPersonCard();
+           // this.crtlPersonCard1 = new Driving_System.crtlPersonCard();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();

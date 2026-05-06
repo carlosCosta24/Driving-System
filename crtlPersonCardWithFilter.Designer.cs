@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.crtlPersonCard1 = new Driving_System.crtlPersonCard();
+            //this.crtlPersonCard1 = new Driving_System.crtlPersonCard();
             this.label1 = new System.Windows.Forms.Label();
             this.lbFilter = new System.Windows.Forms.Label();
             this.cbFilter = new System.Windows.Forms.ComboBox();

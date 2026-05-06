@@ -16,50 +16,42 @@ namespace Driving_System
     {
         public enum enMode { Add = 0 , Update = 1}
         enMode _Mode;
-        clsPersonBusiness _Person;
         int _PersonID;
-        private void FillPersonObject(clsPersonBusiness NewPerson)
+        clsPersonBusiness _Person;
+
+        public AddNewPerson(int PersonID)
         {
-
-            NewPerson.FirstName = tbFirstName.Text;
-            NewPerson.MiddleName = tbMiddleName.Text;
-            NewPerson.LastName = tbLastName.Text;
-            NewPerson.NationalNumber = tbNationalNo.Text;
-            NewPerson.Address = tbAddress.Text;
-            NewPerson.Phone = tbPhone.Text;
-            NewPerson.CountryID = cbCountry.SelectedIndex + 1;
-            if (!string.IsNullOrWhiteSpace(tbEmail.Text))
+            InitializeComponent();
+            _PersonID = PersonID;
+            if (_PersonID == -1)
             {
-                NewPerson.Email = tbEmail.Text;
+                _Mode = enMode.Add;
+              
             }
-            if (!string.IsNullOrEmpty(pbUserPicture.ImageLocation))
-            {
-                NewPerson.ImagePath = pbUserPicture.ImageLocation;
+            else {
+                _Mode = enMode.Update;
+                
             }
-            if (rbMale.Checked)
-            {
-                NewPerson.Gender = 'M';
-            }
-            else
-            {
-                NewPerson.Gender = 'F';
-            }
-
-
         }
-        private void _LoadData() {
+        private void _LoadData()
+        {
+            _LoadCountries();
+            _MinData();
 
-            if (_Mode == enMode.Add) {
+            if (_Mode == enMode.Add)
+            {
+                lbTitle.Text = "Add New Person";
                 _Person = new clsPersonBusiness();
-                lbTitle.Text = "Add New Person"; 
                 return;
             }
             _Person = clsPersonBusiness.GetPerson(_PersonID);
-            if (_Person == null) {
+            if (_Person == null)
+            {
                 MessageBox.Show("This person dosent exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
                 return;
             }
+            lbID.Text = _Person.PersonID.ToString();
             tbFirstName.Text = _Person.FirstName;
             tbMiddleName.Text = _Person.MiddleName;
             tbLastName.Text = _Person.LastName;
@@ -69,42 +61,39 @@ namespace Driving_System
             tbPhone.Text = _Person.Phone;
             cbCountry.SelectedIndex = _Person.CountryID;
             tbAddress.Text = _Person.Address;
-            if(_Person.ImagePath != "")
+            if (_Person.ImagePath != "")
             {
                 pbUserPicture.Load(_Person.ImagePath);
 
+
             }
+            llRemoveImage.Visible = (_Person.ImagePath != "");
             if (_Person.Gender == 'M')
             {
                 rbMale.Checked = true;
             }
-            else {
+            else
+            {
                 rbFemale.Checked = true;
             }
         }
-        private void _LoadCountries() {
-            dtpBirthDate.MaxDate = DateTime.Today.AddYears(-18);
+        private void _LoadCountries()
+        {
+
             DataTable Countries = clsCountryBusiness.GetAllCountries();
-            cbCountry.DataSource = Countries;
-            cbCountry.DisplayMember = "CountryName";
-            cbCountry.ValueMember = "CountryID";
+            foreach (DataRow Row in Countries.Rows)
+            {
+
+                cbCountry.Items.Add(Row["CountryName"]);
+
+            }
+
             cbCountry.SelectedIndex = 0;
         }
-        public AddNewPerson(int PersonID)
+        private void _MinData()
         {
-            InitializeComponent();
-            _PersonID = PersonID;
-            if (_PersonID == -1)
-            {
-                _Mode = enMode.Add;
-                lbTitle.Text = "Add New Person";
-            }
-            else {
-                _Mode = enMode.Update;
-                lbTitle.Text = "Edit Persond Information";
-            }
+            dtpBirthDate.MaxDate = DateTime.Today.AddYears(-18);
         }
-
         private void userControl11_Load(object sender, EventArgs e)
         {
 
@@ -113,8 +102,6 @@ namespace Driving_System
         private void AddNewPerson_Load(object sender, EventArgs e)
         {
             _LoadData();
-            _LoadCountries();
-
         }
 
         private void userControl11_Load_1(object sender, EventArgs e)
@@ -132,6 +119,7 @@ namespace Driving_System
         {
             if (this.ValidateChildren())
             {
+                int CountryID = clsCountryBusiness.GetCountry(cbCountry.Text).CuntryID;
                 _Person.FirstName     = tbFirstName.Text ;
                 _Person.MiddleName    = tbMiddleName.Text ;
                 _Person.LastName      = tbLastName.Text ;
@@ -139,7 +127,7 @@ namespace Driving_System
                 _Person.BirthDate     = dtpBirthDate.Value ;
                 _Person.Email         = tbEmail.Text ;
                 _Person.Phone         = tbPhone.Text ;
-                _Person.CountryID     = (int)cbCountry.SelectedValue;
+                _Person.CountryID     = CountryID;
                 _Person.Address       = tbAddress.Text;
                 if (pbUserPicture.ImageLocation != null)
                 {
@@ -162,14 +150,15 @@ namespace Driving_System
 
                 if (_Person.Save())
                 {
-                    if (MessageBox.Show("New person added successfully !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        == DialogResult.OK) 
+                    if (_Person.Mode == clsPersonBusiness.enMode.AddNew)
                     {
-                        _Mode = enMode.Update;
-                        lbTitle.Text = "Edit Person Information ";
-                        lbID.Text = _Person.PersonID.ToString();
-                        
+                        MessageBox.Show("New person added successfully !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
+                    else 
+                    { 
+                        MessageBox.Show("Person information updated successfully !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
                 }
                 else
                 {
@@ -182,6 +171,10 @@ namespace Driving_System
                 MessageBox.Show("All field should be field", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 
             }
+            _Mode = enMode.Update;
+            _PersonID = _Person.PersonID;
+            lbTitle.Text = "Edit Person Information ";
+            lbID.Text = _Person.PersonID.ToString();
 
         }
 
@@ -291,6 +284,11 @@ namespace Driving_System
                 epNationalNo.SetError(tbNationalNo, "");
 
             }
+        }
+
+        private void lbTitle_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

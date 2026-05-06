@@ -16,5 +16,10 @@ namespace Driving_System
         {
             InitializeComponent();
         }
+
+        private void crtlPersonCard1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

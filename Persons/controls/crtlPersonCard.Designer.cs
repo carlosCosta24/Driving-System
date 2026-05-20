@@ -48,12 +48,14 @@
             this.lbDateOfBirth = new System.Windows.Forms.Label();
             this.lbvDate = new System.Windows.Forms.Label();
             this.lbPersonID = new System.Windows.Forms.Label();
+            this.llEditPersonInfo = new System.Windows.Forms.LinkLabel();
             this.gbPersonCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gbPersonCard
             // 
+            this.gbPersonCard.Controls.Add(this.llEditPersonInfo);
             this.gbPersonCard.Controls.Add(this.pictureBox1);
             this.gbPersonCard.Controls.Add(this.lbCountry);
             this.gbPersonCard.Controls.Add(this.lbvCountry);
@@ -272,6 +274,16 @@
             this.lbPersonID.Text = "Person ID";
             this.lbPersonID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // llEditPersonInfo
+            // 
+            this.llEditPersonInfo.AutoSize = true;
+            this.llEditPersonInfo.Location = new System.Drawing.Point(585, 235);
+            this.llEditPersonInfo.Name = "llEditPersonInfo";
+            this.llEditPersonInfo.Size = new System.Drawing.Size(100, 16);
+            this.llEditPersonInfo.TabIndex = 19;
+            this.llEditPersonInfo.TabStop = true;
+            this.llEditPersonInfo.Text = "Edit Person Info";
+            // 
             // crtlPersonCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -309,5 +321,6 @@
         private System.Windows.Forms.Label lbPhone;
         private System.Windows.Forms.Label lbvPhone;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.LinkLabel llEditPersonInfo;
     }
 }

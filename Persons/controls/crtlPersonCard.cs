@@ -13,24 +13,25 @@ namespace Driving_System
 {
     public partial class crtlPersonCard : UserControl
     {
-        clsPersonBusiness Person;
+        private clsPersonBusiness _Person;
+        private int _PersonId;
         private void _LoadPersonInfo() { 
         
-            lbvPersonID.Text = Person.PersonID.ToString();
-            lbvName.Text = Person.FullName;
-            lbvNationalNo.Text = Person.NationalNumber;
-            lbvGender.Text = Person.Gender.ToString();
-            lbvAddress.Text = Person.Address;
-            lbvDate.Text = Person.BirthDate.ToString();
-            lbvPhone.Text = Person.Phone;
-            lbvCountry.Text = clsCountryBusiness.GetCountry(Person.CountryID).ToString();
+            lbvPersonID.Text = _Person.PersonID.ToString();
+            lbvName.Text = _Person.FullName;
+            lbvNationalNo.Text = _Person.NationalNumber;
+            lbvGender.Text = _Person.Gender.ToString();
+            lbvAddress.Text = _Person.Address;
+            lbvDate.Text = _Person.BirthDate.ToString();
+            lbvPhone.Text = _Person.Phone;
+            lbvCountry.Text = clsCountryBusiness.GetCountry(_Person.CountryID).ToString();
 
         
         }
         public crtlPersonCard(int ID)
         {
             InitializeComponent();
-            Person = clsPersonBusiness.GetPerson(ID);
+            
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

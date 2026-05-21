@@ -304,6 +304,16 @@ namespace Driving_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Female_512 {
+            get {
+                object obj = ResourceManager.GetObject("Female 512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap flat_design_driving_school_template_23_2149280399 {
             get {
                 object obj = ResourceManager.GetObject("flat-design-driving-school-template_23-2149280399", resourceCulture);
@@ -317,6 +327,16 @@ namespace Driving_System.Properties {
         internal static System.Drawing.Bitmap flat_design_driving_school_template_23_21492803991 {
             get {
                 object obj = ResourceManager.GetObject("flat-design-driving-school-template_23-21492803991", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap flat_design_driving_school_template_23_21492803992 {
+            get {
+                object obj = ResourceManager.GetObject("flat-design-driving-school-template_23-21492803992", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -377,6 +397,16 @@ namespace Driving_System.Properties {
         internal static System.Drawing.Bitmap login {
             get {
                 object obj = ResourceManager.GetObject("login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Male_512 {
+            get {
+                object obj = ResourceManager.GetObject("Male 512", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

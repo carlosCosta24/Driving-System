@@ -78,7 +78,7 @@ namespace Driving_System
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form AddNewPerson = new AddNewPerson(-1);
+            Form AddNewPerson = new frmAddUpdatePerson(-1);
             AddNewPerson.ShowDialog();
             _LoadPersonsData();
 

@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Persons\AddNewPerson.cs">
+    <Compile Include="Persons\frmAddUpdatePerson.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Persons\AddNewPerson.Designer.cs">
-      <DependentUpon>AddNewPerson.cs</DependentUpon>
+    <Compile Include="Persons\frmAddUpdatePerson.Designer.cs">
+      <DependentUpon>frmAddUpdatePerson.cs</DependentUpon>
     </Compile>
     <Compile Include="Persons\controls\crtlPersonCard.cs">
       <SubType>UserControl</SubType>
@@ -114,8 +114,8 @@
     <Compile Include="Persons\controls\crtlAddEditPerson.Designer.cs">
       <DependentUpon>crtlAddEditPerson.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Persons\AddNewPerson.resx">
-      <DependentUpon>AddNewPerson.cs</DependentUpon>
+    <EmbeddedResource Include="Persons\frmAddUpdatePerson.resx">
+      <DependentUpon>frmAddUpdatePerson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Persons\controls\crtlPersonCard.resx">
       <DependentUpon>crtlPersonCard.cs</DependentUpon>
@@ -298,6 +298,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\flat-design-driving-school-template_23-21492803991.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Male 512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flat-design-driving-school-template_23-21492803992.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Female 512.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,37 +1,64 @@
 ﻿using BusinessLayer;
 using Driving_System.Properties;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Driving_System
 {
-    public partial class AddNewPerson : Form
+    public partial class frmAddUpdatePerson : Form
     {
-        public enum enMode { Add = 0 , Update = 1}
-        enMode _Mode;
-        int _PersonID;
+        //delegation
+        public delegate void DataBackEventHandler(object sender, int PersonID);
+        public event DataBackEventHandler DataBack;
+
+        public enum enMode { Add = 0, Update = 1 }
+        private enMode _Mode;
+        private int _PersonID = -1;
         clsPersonBusiness _Person;
 
-        public AddNewPerson(int PersonID)
+        public frmAddUpdatePerson()
         {
             InitializeComponent();
+            _Mode = enMode.Add;
+        }
+        public frmAddUpdatePerson(int PersonID)
+        {
+            InitializeComponent();
+            _Mode = enMode.Update;
             _PersonID = PersonID;
-            if (_PersonID == -1)
+        }
+        private void _RestValues()
+        {
+
+            _LoadCountries();
+            if (_Mode == enMode.Add)
             {
-                _Mode = enMode.Add;
-              
+                lbTitle.Text = "Add New Person";
+                _Person = new clsPersonBusiness();
             }
             else {
-                _Mode = enMode.Update;
-                
+                lbTitle.Text = "Update Person";
             }
+            if (rbMale.Checked)
+            {
+                pbUserPicture.Image = Resources.Male_512;
+            }
+            else
+            {
+                pbUserPicture.Image = Resources.Female_512;
+            }
+            llRemoveImage.Visible = (pbUserPicture.ImageLocation != null);
+
+            tbFirstName.Text = "";
+            tbMiddleName.Text = "";
+            tbLastName.Text = "";
+            tbNationalNo.Text = "";
+            tbEmail.Text = "";
+            tbPhone.Text = "";
+            tbAddress.Text = "";
+            rbMale.Checked = true;
         }
         private void _LoadData()
         {
@@ -120,21 +147,22 @@ namespace Driving_System
             if (this.ValidateChildren())
             {
                 int CountryID = clsCountryBusiness.GetCountry(cbCountry.Text).CuntryID;
-                _Person.FirstName     = tbFirstName.Text ;
-                _Person.MiddleName    = tbMiddleName.Text ;
-                _Person.LastName      = tbLastName.Text ;
-                _Person.NationalNumber= tbNationalNo.Text ;
-                _Person.BirthDate     = dtpBirthDate.Value ;
-                _Person.Email         = tbEmail.Text ;
-                _Person.Phone         = tbPhone.Text ;
-                _Person.CountryID     = CountryID;
-                _Person.Address       = tbAddress.Text;
+                _Person.FirstName = tbFirstName.Text;
+                _Person.MiddleName = tbMiddleName.Text;
+                _Person.LastName = tbLastName.Text;
+                _Person.NationalNumber = tbNationalNo.Text;
+                _Person.BirthDate = dtpBirthDate.Value;
+                _Person.Email = tbEmail.Text;
+                _Person.Phone = tbPhone.Text;
+                _Person.CountryID = CountryID;
+                _Person.Address = tbAddress.Text;
                 if (pbUserPicture.ImageLocation != null)
                 {
                     _Person.ImagePath = pbUserPicture.ImageLocation;
 
                 }
-                else {
+                else
+                {
                     _Person.ImagePath = "";
                 }
 
@@ -154,8 +182,8 @@ namespace Driving_System
                     {
                         MessageBox.Show("New person added successfully !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    else 
-                    { 
+                    else
+                    {
                         MessageBox.Show("Person information updated successfully !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
@@ -167,9 +195,10 @@ namespace Driving_System
                 }
 
             }
-            else {
+            else
+            {
                 MessageBox.Show("All field should be field", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
+
             }
             _Mode = enMode.Update;
             _PersonID = _Person.PersonID;
@@ -265,7 +294,7 @@ namespace Driving_System
         {
             timer1.Stop();
             timer1.Start();
-            
+
         }
 
         private void cbCountry_SelectedIndexChanged(object sender, EventArgs e)
@@ -280,7 +309,8 @@ namespace Driving_System
             {
                 epNationalNo.SetError(tbNationalNo, "National number already exist");
             }
-            else { 
+            else
+            {
                 epNationalNo.SetError(tbNationalNo, "");
 
             }

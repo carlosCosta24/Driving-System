@@ -1,6 +1,6 @@
 ﻿namespace Driving_System
 {
-    partial class AddNewPerson
+    partial class frmAddUpdatePerson
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.llRemoveImage = new System.Windows.Forms.LinkLabel();
             this.tbAddress = new System.Windows.Forms.TextBox();
             this.llSetImage = new System.Windows.Forms.LinkLabel();
@@ -41,65 +39,39 @@
             this.dtpBirthDate = new System.Windows.Forms.DateTimePicker();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.tbNationalNo = new System.Windows.Forms.TextBox();
-            this.pbUserPicture = new System.Windows.Forms.PictureBox();
             this.tbMiddleName = new System.Windows.Forms.TextBox();
             this.tbLastName = new System.Windows.Forms.TextBox();
             this.tbFirstName = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.lbTitle = new System.Windows.Forms.Label();
             this.lbID = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.epFirstName = new System.Windows.Forms.ErrorProvider(this.components);
             this.epMiddleName = new System.Windows.Forms.ErrorProvider(this.components);
             this.epLastName = new System.Windows.Forms.ErrorProvider(this.components);
             this.epNationalNo = new System.Windows.Forms.ErrorProvider(this.components);
             this.epPhone = new System.Windows.Forms.ErrorProvider(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pbUserPicture)).BeginInit();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.pbUserPicture = new System.Windows.Forms.PictureBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.epFirstName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epMiddleName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epLastName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epNationalNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epPhone)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUserPicture)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Image = global::Driving_System.Properties.Resources.diskette;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(393, 545);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 44);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Save ";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Image = global::Driving_System.Properties.Resources.cancel;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(534, 545);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 44);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Cancel";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // llRemoveImage
             // 
@@ -202,17 +174,6 @@
             this.tbNationalNo.TextChanged += new System.EventHandler(this.tbNationalNo_TextChanged);
             this.tbNationalNo.Validating += new System.ComponentModel.CancelEventHandler(this.tbNationalNo_Validating);
             // 
-            // pbUserPicture
-            // 
-            this.pbUserPicture.Image = global::Driving_System.Properties.Resources.user;
-            this.pbUserPicture.Location = new System.Drawing.Point(903, 183);
-            this.pbUserPicture.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pbUserPicture.Name = "pbUserPicture";
-            this.pbUserPicture.Size = new System.Drawing.Size(180, 220);
-            this.pbUserPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbUserPicture.TabIndex = 68;
-            this.pbUserPicture.TabStop = false;
-            // 
             // tbMiddleName
             // 
             this.tbMiddleName.Location = new System.Drawing.Point(479, 201);
@@ -243,26 +204,6 @@
             this.tbFirstName.TabIndex = 45;
             this.tbFirstName.Validating += new System.ComponentModel.CancelEventHandler(this.tbFirstName_Validating);
             // 
-            // label12
-            // 
-            this.label12.Image = global::Driving_System.Properties.Resources.download__1_;
-            this.label12.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label12.Location = new System.Drawing.Point(63, 360);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(140, 30);
-            this.label12.TabIndex = 66;
-            this.label12.Text = "Gender:";
-            // 
-            // label11
-            // 
-            this.label11.Image = global::Driving_System.Properties.Resources.download__6_;
-            this.label11.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label11.Location = new System.Drawing.Point(61, 420);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(140, 30);
-            this.label11.TabIndex = 64;
-            this.label11.Text = "Address:";
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -289,6 +230,96 @@
             this.label8.Size = new System.Drawing.Size(32, 16);
             this.label8.TabIndex = 58;
             this.label8.Text = "Last";
+            // 
+            // lbTitle
+            // 
+            this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.Location = new System.Drawing.Point(362, 9);
+            this.lbTitle.Name = "lbTitle";
+            this.lbTitle.Size = new System.Drawing.Size(321, 35);
+            this.lbTitle.TabIndex = 43;
+            this.lbTitle.Text = "Add New Person";
+            this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbTitle.Click += new System.EventHandler(this.lbTitle_Click);
+            // 
+            // lbID
+            // 
+            this.lbID.Location = new System.Drawing.Point(233, 96);
+            this.lbID.Name = "lbID";
+            this.lbID.Size = new System.Drawing.Size(59, 31);
+            this.lbID.TabIndex = 42;
+            this.lbID.Text = "N/A";
+            this.lbID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // epFirstName
+            // 
+            this.epFirstName.ContainerControl = this;
+            // 
+            // epMiddleName
+            // 
+            this.epMiddleName.ContainerControl = this;
+            // 
+            // epLastName
+            // 
+            this.epLastName.ContainerControl = this;
+            // 
+            // epNationalNo
+            // 
+            this.epNationalNo.ContainerControl = this;
+            // 
+            // epPhone
+            // 
+            this.epPhone.ContainerControl = this;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Image = global::Driving_System.Properties.Resources.diskette;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.Location = new System.Drawing.Point(393, 545);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(96, 44);
+            this.btnSave.TabIndex = 15;
+            this.btnSave.Text = "Save ";
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pbUserPicture
+            // 
+            this.pbUserPicture.Image = global::Driving_System.Properties.Resources.Male_512;
+            this.pbUserPicture.Location = new System.Drawing.Point(903, 183);
+            this.pbUserPicture.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbUserPicture.Name = "pbUserPicture";
+            this.pbUserPicture.Size = new System.Drawing.Size(180, 220);
+            this.pbUserPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbUserPicture.TabIndex = 68;
+            this.pbUserPicture.TabStop = false;
+            // 
+            // label12
+            // 
+            this.label12.Image = global::Driving_System.Properties.Resources.download__1_;
+            this.label12.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label12.Location = new System.Drawing.Point(63, 360);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(140, 30);
+            this.label12.TabIndex = 66;
+            this.label12.Text = "Gender:";
+            // 
+            // label11
+            // 
+            this.label11.Image = global::Driving_System.Properties.Resources.download__6_;
+            this.label11.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label11.Location = new System.Drawing.Point(61, 420);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(140, 30);
+            this.label11.TabIndex = 64;
+            this.label11.Text = "Address:";
             // 
             // label7
             // 
@@ -355,26 +386,6 @@
             this.label1.Text = "Name:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lbTitle
-            // 
-            this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.Location = new System.Drawing.Point(362, 9);
-            this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(321, 35);
-            this.lbTitle.TabIndex = 43;
-            this.lbTitle.Text = "Add New Person";
-            this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbTitle.Click += new System.EventHandler(this.lbTitle_Click);
-            // 
-            // lbID
-            // 
-            this.lbID.Location = new System.Drawing.Point(233, 96);
-            this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(59, 31);
-            this.lbID.TabIndex = 42;
-            this.lbID.Text = "N/A";
-            this.lbID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label13
             // 
             this.label13.Image = global::Driving_System.Properties.Resources.download__9_;
@@ -386,35 +397,26 @@
             this.label13.Text = "Person ID:";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // epFirstName
+            // btnCancel
             // 
-            this.epFirstName.ContainerControl = this;
+            this.btnCancel.Image = global::Driving_System.Properties.Resources.cancel;
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancel.Location = new System.Drawing.Point(534, 545);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(100, 44);
+            this.btnCancel.TabIndex = 16;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.button2_Click);
             // 
-            // epMiddleName
+            // frmAddUpdatePerson
             // 
-            this.epMiddleName.ContainerControl = this;
-            // 
-            // epLastName
-            // 
-            this.epLastName.ContainerControl = this;
-            // 
-            // epNationalNo
-            // 
-            this.epNationalNo.ContainerControl = this;
-            // 
-            // epPhone
-            // 
-            this.epPhone.ContainerControl = this;
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 500;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // AddNewPerson
-            // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1104, 614);
             this.Controls.Add(this.llRemoveImage);
             this.Controls.Add(this.tbAddress);
@@ -444,25 +446,26 @@
             this.Controls.Add(this.lbTitle);
             this.Controls.Add(this.lbID);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
-            this.Name = "AddNewPerson";
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnCancel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "frmAddUpdatePerson";
             this.Text = "AddNewPerson";
             this.Load += new System.EventHandler(this.AddNewPerson_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbUserPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epFirstName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epMiddleName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epLastName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epNationalNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epPhone)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUserPicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.LinkLabel llRemoveImage;
         private System.Windows.Forms.TextBox tbAddress;
         private System.Windows.Forms.LinkLabel llSetImage;

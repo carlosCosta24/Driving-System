@@ -1,8 +1,10 @@
 ﻿using BusinessLayer;
+using Driving_System.Global;
 using Driving_System.Properties;
 using System;
 using System.ComponentModel;
 using System.Data;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Driving_System
@@ -128,9 +130,45 @@ namespace Driving_System
 
         private void AddNewPerson_Load(object sender, EventArgs e)
         {
-            _LoadData();
+            _RestValues();
+            if (_Mode == enMode.Update) 
+            { 
+                _LoadData();
+            }
         }
 
+        private bool _HandelImage() {
+
+            if (_Person.ImagePath != pbUserPicture.ImageLocation) {
+                if (_Person.ImagePath != "")
+                {
+                    try
+                    {
+                        File.Delete(_Person.ImagePath);
+                    }
+                    catch (IOException) { 
+                        //log in erros
+                    }
+
+                }
+
+            }
+            if(pbUserPicture.ImageLocation != null)
+            {
+                string ImageFileSource = pbUserPicture.ImageLocation.ToString();
+                if (clsUtil.CopyImageToProjectFolder(ref ImageFileSource))
+                {
+                    pbUserPicture.ImageLocation = ImageFileSource;
+                    return true;
+                }
+                else 
+                {
+                    MessageBox.Show("Error Copying Image File", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+            return true;
+        }
         private void userControl11_Load_1(object sender, EventArgs e)
         {
 
@@ -144,6 +182,10 @@ namespace Driving_System
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (!this.ValidateChildren()) {
+                MessageBox.Show("Some fileds are not valide!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (this.ValidateChildren())
             {
                 int CountryID = clsCountryBusiness.GetCountry(cbCountry.Text).CuntryID;

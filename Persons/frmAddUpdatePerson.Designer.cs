@@ -157,7 +157,6 @@
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(163, 30);
             this.tbEmail.TabIndex = 53;
-            this.tbEmail.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateEmptyTextBox);
             // 
             // tbNationalNo
             // 

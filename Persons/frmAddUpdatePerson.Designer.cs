@@ -47,11 +47,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.lbTitle = new System.Windows.Forms.Label();
             this.lbID = new System.Windows.Forms.Label();
-            this.epFirstName = new System.Windows.Forms.ErrorProvider(this.components);
-            this.epMiddleName = new System.Windows.Forms.ErrorProvider(this.components);
-            this.epLastName = new System.Windows.Forms.ErrorProvider(this.components);
-            this.epNationalNo = new System.Windows.Forms.ErrorProvider(this.components);
-            this.epPhone = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epGeneral = new System.Windows.Forms.ErrorProvider(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnSave = new System.Windows.Forms.Button();
             this.pbUserPicture = new System.Windows.Forms.PictureBox();
@@ -65,11 +61,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.epFirstName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epMiddleName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epLastName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epNationalNo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epPhone)).BeginInit();
+            this.ofdChooseImage = new System.Windows.Forms.OpenFileDialog();
+            ((System.ComponentModel.ISupportInitialize)(this.epGeneral)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserPicture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,6 +126,7 @@
             this.rbFemale.TabIndex = 59;
             this.rbFemale.Text = "Female";
             this.rbFemale.UseVisualStyleBackColor = true;
+            this.rbFemale.Click += new System.EventHandler(this.rbFemale_Click);
             // 
             // rbMale
             // 
@@ -145,6 +139,8 @@
             this.rbMale.TabStop = true;
             this.rbMale.Text = "Male";
             this.rbMale.UseVisualStyleBackColor = true;
+            this.rbMale.CheckedChanged += new System.EventHandler(this.rbMale_CheckedChanged);
+            this.rbMale.Click += new System.EventHandler(this.rbMale_Click);
             // 
             // dtpBirthDate
             // 
@@ -162,6 +158,8 @@
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(163, 30);
             this.tbEmail.TabIndex = 53;
+            this.tbEmail.Validating += new System.ComponentModel.CancelEventHandler(this.tbEmail_Validating);
+            this.tbEmail.Validated += new System.EventHandler(this.tbEmail_Validated);
             // 
             // tbNationalNo
             // 
@@ -251,25 +249,9 @@
             this.lbID.Text = "N/A";
             this.lbID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // epFirstName
+            // epGeneral
             // 
-            this.epFirstName.ContainerControl = this;
-            // 
-            // epMiddleName
-            // 
-            this.epMiddleName.ContainerControl = this;
-            // 
-            // epLastName
-            // 
-            this.epLastName.ContainerControl = this;
-            // 
-            // epNationalNo
-            // 
-            this.epNationalNo.ContainerControl = this;
-            // 
-            // epPhone
-            // 
-            this.epPhone.ContainerControl = this;
+            this.epGeneral.ContainerControl = this;
             // 
             // timer1
             // 
@@ -411,11 +393,16 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.button2_Click);
             // 
+            // ofdChooseImage
+            // 
+            this.ofdChooseImage.FileName = "openFileDialog1";
+            // 
             // frmAddUpdatePerson
             // 
             this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1104, 614);
             this.Controls.Add(this.llRemoveImage);
@@ -452,11 +439,7 @@
             this.Name = "frmAddUpdatePerson";
             this.Text = "AddNewPerson";
             this.Load += new System.EventHandler(this.AddNewPerson_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.epFirstName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epMiddleName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epLastName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epNationalNo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epPhone)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epGeneral)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserPicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -494,11 +477,8 @@
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.Label lbID;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ErrorProvider epFirstName;
-        private System.Windows.Forms.ErrorProvider epMiddleName;
-        private System.Windows.Forms.ErrorProvider epLastName;
-        private System.Windows.Forms.ErrorProvider epNationalNo;
-        private System.Windows.Forms.ErrorProvider epPhone;
+        private System.Windows.Forms.ErrorProvider epGeneral;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.OpenFileDialog ofdChooseImage;
     }
 }

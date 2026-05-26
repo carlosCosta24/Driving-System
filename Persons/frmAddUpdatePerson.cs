@@ -40,7 +40,8 @@ namespace Driving_System
                 lbTitle.Text = "Add New Person";
                 _Person = new clsPersonBusiness();
             }
-            else {
+            else
+            {
                 lbTitle.Text = "Update Person";
             }
             if (rbMale.Checked)
@@ -131,29 +132,32 @@ namespace Driving_System
         private void AddNewPerson_Load(object sender, EventArgs e)
         {
             _RestValues();
-            if (_Mode == enMode.Update) 
-            { 
+            if (_Mode == enMode.Update)
+            {
                 _LoadData();
             }
         }
 
-        private bool _HandelImage() {
+        private bool _HandelImage()
+        {
 
-            if (_Person.ImagePath != pbUserPicture.ImageLocation) {
+            if (_Person.ImagePath != pbUserPicture.ImageLocation)
+            {
                 if (_Person.ImagePath != "")
                 {
                     try
                     {
                         File.Delete(_Person.ImagePath);
                     }
-                    catch (IOException) { 
+                    catch (IOException)
+                    {
                         //log in erros
                     }
 
                 }
 
             }
-            if(pbUserPicture.ImageLocation != null)
+            if (pbUserPicture.ImageLocation != null)
             {
                 string ImageFileSource = pbUserPicture.ImageLocation.ToString();
                 if (clsUtil.CopyImageToProjectFolder(ref ImageFileSource))
@@ -161,7 +165,7 @@ namespace Driving_System
                     pbUserPicture.ImageLocation = ImageFileSource;
                     return true;
                 }
-                else 
+                else
                 {
                     MessageBox.Show("Error Copying Image File", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
@@ -169,11 +173,7 @@ namespace Driving_System
             }
             return true;
         }
-        private void userControl11_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -182,154 +182,118 @@ namespace Driving_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!this.ValidateChildren()) {
+            if (!this.ValidateChildren())
+            {
                 MessageBox.Show("Some fileds are not valide!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (this.ValidateChildren())
+            if (!_HandelImage())
             {
-                int CountryID = clsCountryBusiness.GetCountry(cbCountry.Text).CuntryID;
-                _Person.FirstName = tbFirstName.Text;
-                _Person.MiddleName = tbMiddleName.Text;
-                _Person.LastName = tbLastName.Text;
-                _Person.NationalNumber = tbNationalNo.Text;
-                _Person.BirthDate = dtpBirthDate.Value;
-                _Person.Email = tbEmail.Text;
-                _Person.Phone = tbPhone.Text;
-                _Person.CountryID = CountryID;
-                _Person.Address = tbAddress.Text;
-                if (pbUserPicture.ImageLocation != null)
-                {
-                    _Person.ImagePath = pbUserPicture.ImageLocation;
+                return;
+            }
 
-                }
-                else
-                {
-                    _Person.ImagePath = "";
-                }
-
-                if (rbMale.Checked)
-                {
-                    _Person.Gender = 'M';
-                }
-                else
-                {
-                    _Person.Gender = 'F';
-                }
-
-
-                if (_Person.Save())
-                {
-                    if (_Person.Mode == clsPersonBusiness.enMode.AddNew)
-                    {
-                        MessageBox.Show("New person added successfully !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Person information updated successfully !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-
-                }
-                else
-                {
-                    MessageBox.Show("Error while adding new person !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                }
+            int CountryID = clsCountryBusiness.GetCountry(cbCountry.Text).CuntryID;
+            _Person.FirstName = tbFirstName.Text.Trim();
+            _Person.MiddleName = tbMiddleName.Text.Trim();
+            _Person.LastName = tbLastName.Text.Trim();
+            _Person.NationalNumber = tbNationalNo.Text.Trim();
+            _Person.BirthDate = dtpBirthDate.Value;
+            _Person.Email = tbEmail.Text.Trim();
+            _Person.Phone = tbPhone.Text.Trim();
+            _Person.CountryID = CountryID;
+            _Person.Address = tbAddress.Text.Trim();
+            if (pbUserPicture.ImageLocation != null)
+            {
+                _Person.ImagePath = pbUserPicture.ImageLocation;
 
             }
             else
             {
-                MessageBox.Show("All field should be field", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                _Person.ImagePath = "";
             }
-            _Mode = enMode.Update;
-            _PersonID = _Person.PersonID;
-            lbTitle.Text = "Edit Person Information ";
-            lbID.Text = _Person.PersonID.ToString();
 
-        }
-
-        private void tbFirstName_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(tbFirstName.Text))
+            if (rbMale.Checked)
             {
-                e.Cancel = true;
-                epFirstName.SetError(tbFirstName, "First name can't be empty");
+                _Person.Gender = 'M';
             }
             else
             {
-                e.Cancel = false;
-                epFirstName.SetError(tbFirstName, "");
+                _Person.Gender = 'F';
             }
 
-        }
 
-        private void tbMiddleName_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(tbMiddleName.Text))
+            if (_Person.Save())
             {
-                e.Cancel = true;
-                epMiddleName.SetError(tbMiddleName, "Middle name can't be empty");
+
+                lbID.Text = _Person.PersonID.ToString();
+                _Mode = enMode.Update;
+                lbTitle.Text = "Update Person";
+                MessageBox.Show("Person Data Saved Successfully", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DataBack?.Invoke(this, _Person.PersonID);
             }
             else
             {
-                e.Cancel = false;
-                epMiddleName.SetError(tbMiddleName, "");
-            }
-        }
+                MessageBox.Show("Error while adding new person !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-        private void tbLastName_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(tbLastName.Text))
-            {
-                e.Cancel = true;
-                epLastName.SetError(tbLastName, "Last name can't be empty");
             }
-            else
-            {
-                e.Cancel = false;
-                epLastName.SetError(tbLastName, "");
-            }
+
         }
 
         private void tbNationalNo_Validating(object sender, CancelEventArgs e)
         {
-
-        }
-
-        private void tbPhone_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrEmpty(tbPhone.Text))
+            if (string.IsNullOrEmpty(tbNationalNo.Text.Trim()))
             {
                 e.Cancel = true;
-                epPhone.SetError(tbPhone, "Phone number can't be empty");
+                epGeneral.SetError(tbNationalNo, "National Number is Requird!");
+                return;
             }
-            else
+            else 
             {
-                e.Cancel = false;
-                epPhone.SetError(tbPhone, "");
+                epGeneral.SetError(tbNationalNo, null);
+            }
+            if (tbNationalNo.Text.Trim() != _Person.NationalNumber && clsPersonBusiness.IsExist(tbNationalNo.Text.Trim()))
+            {
 
+                e.Cancel = true;
+                epGeneral.SetError(tbNationalNo, "This National Number Already Exist!");
 
+            }
+            else 
+            {
+                epGeneral.SetError(tbNationalNo, null);
             }
         }
 
         private void llSetImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            OpenFileDialog File = new OpenFileDialog();
-            File.Title = "Select a photo";
-            File.Filter = "Image Files (*.jpg;*.jpeg;*.png;*.bmp)|*.jpg;*.jpeg;*.png;*.bmp ";
-            string ImageLocation = "";
-            if (File.ShowDialog() == DialogResult.OK)
-            {
-                ImageLocation = File.FileName;
 
+            ofdChooseImage.Filter = "Image Files (*.jpg;*.jpeg;*.png;*.bmp)|*.jpg;*.jpeg;*.png;*.bmp ";
+            ofdChooseImage.FilterIndex = 1;
+            ofdChooseImage.RestoreDirectory = true;
+
+
+            if (ofdChooseImage.ShowDialog() == DialogResult.OK)
+            {
+                string SelectedFilePath = ofdChooseImage.FileName;
+                pbUserPicture.Load(SelectedFilePath);
+                llRemoveImage.Visible = true;
             }
-            pbUserPicture.Load(ImageLocation);
+
         }
 
         private void llRemoveImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            pbUserPicture.Image = Resources.user;
+            pbUserPicture.ImageLocation = null;
+            if (rbMale.Checked)
+            {
+                pbUserPicture.Image = Resources.Male_512;
+            }
+            else
+            {
+                pbUserPicture.Image = Resources.Female_512;
+            }
+
+            llRemoveImage.Visible = false;
         }
 
         private void tbNationalNo_TextChanged(object sender, EventArgs e)
@@ -339,28 +303,49 @@ namespace Driving_System
 
         }
 
-        private void cbCountry_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Stop();
             if (clsPersonBusiness.IsExist(tbNationalNo.Text))
             {
-                epNationalNo.SetError(tbNationalNo, "National number already exist");
+                epGeneral.SetError(tbNationalNo, "National number already exist");
             }
             else
             {
-                epNationalNo.SetError(tbNationalNo, "");
+                epGeneral.SetError(tbNationalNo, "");
 
             }
         }
 
-        private void lbTitle_Click(object sender, EventArgs e)
+        private void rbMale_Click(object sender, EventArgs e)
         {
+            if (pbUserPicture.ImageLocation == null)
+            {
+                pbUserPicture.Image = Resources.Male_512;
+            }
+        }
 
+        private void rbFemale_Click(object sender, EventArgs e)
+        {
+            if (pbUserPicture.ImageLocation == null)
+            {
+                pbUserPicture.Image = Resources.Female_512;
+            }
+        }
+
+        private void tbEmail_Validating(object sender, CancelEventArgs e)
+        {
+            if (tbEmail.Text.Trim() == "")
+                return;
+            if (!clsValidation.ValidateEmail(tbEmail.Text))
+            {
+                e.Cancel = true;
+                epGeneral.SetError(tbEmail, "Invalid Email Address Format!");
+            }
+            else
+            {
+                epGeneral.SetError(tbEmail, null);
+            }
         }
     }
 }

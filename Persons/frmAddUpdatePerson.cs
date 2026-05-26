@@ -173,7 +173,11 @@ namespace Driving_System
             }
             return true;
         }
-        
+        private void userControl11_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -337,7 +341,7 @@ namespace Driving_System
         {
             if (tbEmail.Text.Trim() == "")
                 return;
-            if (!clsValidation.ValidateEmail(tbEmail.Text))
+            if (!clsValidating.ValidateEmail(tbEmail.Text))
             {
                 e.Cancel = true;
                 epGeneral.SetError(tbEmail, "Invalid Email Address Format!");

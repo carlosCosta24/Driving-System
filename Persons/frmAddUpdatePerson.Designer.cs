@@ -105,7 +105,7 @@
             this.cbCountry.Name = "cbCountry";
             this.cbCountry.Size = new System.Drawing.Size(217, 24);
             this.cbCountry.TabIndex = 61;
-            this.cbCountry.SelectedIndexChanged += new System.EventHandler(this.cbCountry_SelectedIndexChanged);
+            
             // 
             // tbPhone
             // 
@@ -115,7 +115,7 @@
             this.tbPhone.Name = "tbPhone";
             this.tbPhone.Size = new System.Drawing.Size(217, 30);
             this.tbPhone.TabIndex = 55;
-            this.tbPhone.Validating += new System.ComponentModel.CancelEventHandler(this.tbPhone_Validating);
+            
             // 
             // rbFemale
             // 
@@ -139,7 +139,7 @@
             this.rbMale.TabStop = true;
             this.rbMale.Text = "Male";
             this.rbMale.UseVisualStyleBackColor = true;
-            this.rbMale.CheckedChanged += new System.EventHandler(this.rbMale_CheckedChanged);
+            
             this.rbMale.Click += new System.EventHandler(this.rbMale_Click);
             // 
             // dtpBirthDate
@@ -159,7 +159,7 @@
             this.tbEmail.Size = new System.Drawing.Size(163, 30);
             this.tbEmail.TabIndex = 53;
             this.tbEmail.Validating += new System.ComponentModel.CancelEventHandler(this.tbEmail_Validating);
-            this.tbEmail.Validated += new System.EventHandler(this.tbEmail_Validated);
+            
             // 
             // tbNationalNo
             // 
@@ -180,7 +180,7 @@
             this.tbMiddleName.Name = "tbMiddleName";
             this.tbMiddleName.Size = new System.Drawing.Size(163, 30);
             this.tbMiddleName.TabIndex = 47;
-            this.tbMiddleName.Validating += new System.ComponentModel.CancelEventHandler(this.tbMiddleName_Validating);
+           
             // 
             // tbLastName
             // 
@@ -190,7 +190,7 @@
             this.tbLastName.Name = "tbLastName";
             this.tbLastName.Size = new System.Drawing.Size(163, 30);
             this.tbLastName.TabIndex = 49;
-            this.tbLastName.Validating += new System.ComponentModel.CancelEventHandler(this.tbLastName_Validating);
+           
             // 
             // tbFirstName
             // 
@@ -200,7 +200,7 @@
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.Size = new System.Drawing.Size(163, 30);
             this.tbFirstName.TabIndex = 45;
-            this.tbFirstName.Validating += new System.ComponentModel.CancelEventHandler(this.tbFirstName_Validating);
+           
             // 
             // label10
             // 
@@ -238,7 +238,7 @@
             this.lbTitle.TabIndex = 43;
             this.lbTitle.Text = "Add New Person";
             this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbTitle.Click += new System.EventHandler(this.lbTitle_Click);
+          
             // 
             // lbID
             // 

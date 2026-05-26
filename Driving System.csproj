@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global\clsUtil.cs" />
+    <Compile Include="Global\clsValidating.cs" />
     <Compile Include="Persons\frmAddUpdatePerson.cs">
       <SubType>Form</SubType>
     </Compile>

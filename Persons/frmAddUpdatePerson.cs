@@ -35,6 +35,7 @@ namespace Driving_System
         {
 
             _LoadCountries();
+            cbCountry.SelectedIndex = cbCountry.FindString("Canada");
             if (_Mode == enMode.Add)
             {
                 lbTitle.Text = "Add New Person";
@@ -53,6 +54,7 @@ namespace Driving_System
                 pbUserPicture.Image = Resources.Female_512;
             }
             llRemoveImage.Visible = (pbUserPicture.ImageLocation != null);
+            _SetDateLimmits();
 
             tbFirstName.Text = "";
             tbMiddleName.Text = "";
@@ -65,22 +67,15 @@ namespace Driving_System
         }
         private void _LoadData()
         {
-            _LoadCountries();
-            _MinData();
-
-            if (_Mode == enMode.Add)
-            {
-                lbTitle.Text = "Add New Person";
-                _Person = new clsPersonBusiness();
-                return;
-            }
             _Person = clsPersonBusiness.GetPerson(_PersonID);
+
             if (_Person == null)
             {
-                MessageBox.Show("This person dosent exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No Person with ID: " + _PersonID, "Not found!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.Close();
                 return;
             }
+
             lbID.Text = _Person.PersonID.ToString();
             tbFirstName.Text = _Person.FirstName;
             tbMiddleName.Text = _Person.MiddleName;
@@ -89,15 +84,13 @@ namespace Driving_System
             dtpBirthDate.Value = _Person.BirthDate;
             tbEmail.Text = _Person.Email;
             tbPhone.Text = _Person.Phone;
-            cbCountry.SelectedIndex = _Person.CountryID;
+            cbCountry.SelectedIndex = cbCountry.FindString(_Person.CountryInfo.CountryName);
             tbAddress.Text = _Person.Address;
             if (_Person.ImagePath != "")
             {
-                pbUserPicture.Load(_Person.ImagePath);
-
+                pbUserPicture.ImageLocation = _Person.ImagePath;
 
             }
-            llRemoveImage.Visible = (_Person.ImagePath != "");
             if (_Person.Gender == 'M')
             {
                 rbMale.Checked = true;
@@ -106,6 +99,7 @@ namespace Driving_System
             {
                 rbFemale.Checked = true;
             }
+            llRemoveImage.Visible = (_Person.ImagePath != "");
         }
         private void _LoadCountries()
         {
@@ -118,17 +112,13 @@ namespace Driving_System
 
             }
 
-            cbCountry.SelectedIndex = 0;
+
         }
-        private void _MinData()
+        private void _SetDateLimmits()
         {
             dtpBirthDate.MaxDate = DateTime.Today.AddYears(-18);
+            dtpBirthDate.MinDate = DateTime.Today.AddYears(-100);
         }
-        private void userControl11_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void AddNewPerson_Load(object sender, EventArgs e)
         {
             _RestValues();
@@ -137,7 +127,6 @@ namespace Driving_System
                 _LoadData();
             }
         }
-
         private bool _HandelImage()
         {
 
@@ -173,10 +162,6 @@ namespace Driving_System
             }
             return true;
         }
-        private void userControl11_Load_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -196,7 +181,7 @@ namespace Driving_System
                 return;
             }
 
-            int CountryID = clsCountryBusiness.GetCountry(cbCountry.Text).CuntryID;
+            int CountryID = clsCountryBusiness.GetCountry(cbCountry.Text).CountryID;
             _Person.FirstName = tbFirstName.Text.Trim();
             _Person.MiddleName = tbMiddleName.Text.Trim();
             _Person.LastName = tbLastName.Text.Trim();
@@ -204,8 +189,9 @@ namespace Driving_System
             _Person.BirthDate = dtpBirthDate.Value;
             _Person.Email = tbEmail.Text.Trim();
             _Person.Phone = tbPhone.Text.Trim();
-            _Person.CountryID = CountryID;
             _Person.Address = tbAddress.Text.Trim();
+            _Person.CountryID = CountryID;
+
             if (pbUserPicture.ImageLocation != null)
             {
                 _Person.ImagePath = pbUserPicture.ImageLocation;
@@ -251,7 +237,7 @@ namespace Driving_System
                 epGeneral.SetError(tbNationalNo, "National Number is Requird!");
                 return;
             }
-            else 
+            else
             {
                 epGeneral.SetError(tbNationalNo, null);
             }
@@ -262,7 +248,7 @@ namespace Driving_System
                 epGeneral.SetError(tbNationalNo, "This National Number Already Exist!");
 
             }
-            else 
+            else
             {
                 epGeneral.SetError(tbNationalNo, null);
             }
@@ -350,6 +336,22 @@ namespace Driving_System
             {
                 epGeneral.SetError(tbEmail, null);
             }
+        }
+
+        private void ValidateEmptyTextBox(object sender, CancelEventArgs e)
+        {
+            TextBox Temp = ((TextBox)sender);
+            if (string.IsNullOrEmpty(Temp.Text.Trim()))
+            {
+
+                e.Cancel = true;
+                epGeneral.SetError(Temp, "This Fiels Is Requird!");
+            }
+            else {
+                epGeneral.SetError(Temp, null);
+            }
+
+
         }
     }
 }

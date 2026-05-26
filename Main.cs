@@ -7,8 +7,6 @@ namespace Driving_System
 
     {
         
-        clsUserBusiness CurrentUser;
-        
         public Main()
         {
             InitializeComponent();

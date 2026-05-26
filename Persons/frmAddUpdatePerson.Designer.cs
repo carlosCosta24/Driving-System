@@ -85,6 +85,7 @@
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.Size = new System.Drawing.Size(633, 64);
             this.tbAddress.TabIndex = 63;
+            this.tbAddress.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateEmptyTextBox);
             // 
             // llSetImage
             // 
@@ -105,7 +106,6 @@
             this.cbCountry.Name = "cbCountry";
             this.cbCountry.Size = new System.Drawing.Size(217, 24);
             this.cbCountry.TabIndex = 61;
-            
             // 
             // tbPhone
             // 
@@ -115,7 +115,7 @@
             this.tbPhone.Name = "tbPhone";
             this.tbPhone.Size = new System.Drawing.Size(217, 30);
             this.tbPhone.TabIndex = 55;
-            
+            this.tbPhone.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateEmptyTextBox);
             // 
             // rbFemale
             // 
@@ -139,7 +139,6 @@
             this.rbMale.TabStop = true;
             this.rbMale.Text = "Male";
             this.rbMale.UseVisualStyleBackColor = true;
-            
             this.rbMale.Click += new System.EventHandler(this.rbMale_Click);
             // 
             // dtpBirthDate
@@ -158,8 +157,7 @@
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(163, 30);
             this.tbEmail.TabIndex = 53;
-            this.tbEmail.Validating += new System.ComponentModel.CancelEventHandler(this.tbEmail_Validating);
-            
+            this.tbEmail.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateEmptyTextBox);
             // 
             // tbNationalNo
             // 
@@ -170,7 +168,7 @@
             this.tbNationalNo.Size = new System.Drawing.Size(163, 30);
             this.tbNationalNo.TabIndex = 50;
             this.tbNationalNo.TextChanged += new System.EventHandler(this.tbNationalNo_TextChanged);
-            this.tbNationalNo.Validating += new System.ComponentModel.CancelEventHandler(this.tbNationalNo_Validating);
+            this.tbNationalNo.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateEmptyTextBox);
             // 
             // tbMiddleName
             // 
@@ -180,7 +178,7 @@
             this.tbMiddleName.Name = "tbMiddleName";
             this.tbMiddleName.Size = new System.Drawing.Size(163, 30);
             this.tbMiddleName.TabIndex = 47;
-           
+            this.tbMiddleName.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateEmptyTextBox);
             // 
             // tbLastName
             // 
@@ -190,7 +188,7 @@
             this.tbLastName.Name = "tbLastName";
             this.tbLastName.Size = new System.Drawing.Size(163, 30);
             this.tbLastName.TabIndex = 49;
-           
+            this.tbLastName.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateEmptyTextBox);
             // 
             // tbFirstName
             // 
@@ -200,7 +198,7 @@
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.Size = new System.Drawing.Size(163, 30);
             this.tbFirstName.TabIndex = 45;
-           
+            this.tbFirstName.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateEmptyTextBox);
             // 
             // label10
             // 
@@ -232,13 +230,13 @@
             // lbTitle
             // 
             this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.ForeColor = System.Drawing.Color.Red;
             this.lbTitle.Location = new System.Drawing.Point(362, 9);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(321, 35);
             this.lbTitle.TabIndex = 43;
             this.lbTitle.Text = "Add New Person";
             this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-          
             // 
             // lbID
             // 
@@ -381,6 +379,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Image = global::Driving_System.Properties.Resources.cancel;
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancel.Location = new System.Drawing.Point(534, 545);
@@ -404,6 +403,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(1104, 614);
             this.Controls.Add(this.llRemoveImage);
             this.Controls.Add(this.tbAddress);

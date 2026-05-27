@@ -30,7 +30,6 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.crtlPersonCardWithFilter1 = new Driving_System.crtlPersonCardWithFilter();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
@@ -62,7 +61,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.crtlPersonCardWithFilter1);
+           
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
@@ -74,11 +73,7 @@
             // 
             // crtlPersonCardWithFilter1
             // 
-            this.crtlPersonCardWithFilter1.Location = new System.Drawing.Point(6, 6);
-            this.crtlPersonCardWithFilter1.Name = "crtlPersonCardWithFilter1";
-            this.crtlPersonCardWithFilter1.Size = new System.Drawing.Size(906, 452);
-            this.crtlPersonCardWithFilter1.TabIndex = 0;
-            this.crtlPersonCardWithFilter1.Load += new System.EventHandler(this.crtlPersonCardWithFilter1_Load);
+
             // 
             // button1
             // 
@@ -255,7 +250,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private crtlPersonCardWithFilter crtlPersonCardWithFilter1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

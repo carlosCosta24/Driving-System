@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
             this.gbPersonCard = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbCountry = new System.Windows.Forms.Label();
+            this.llEditPersonInfo = new System.Windows.Forms.LinkLabel();
             this.lbvCountry = new System.Windows.Forms.Label();
-            this.lbPhone = new System.Windows.Forms.Label();
             this.lbvPhone = new System.Windows.Forms.Label();
-            this.lbName = new System.Windows.Forms.Label();
             this.lbvName = new System.Windows.Forms.Label();
             this.lbvGender = new System.Windows.Forms.Label();
             this.lbvEmail = new System.Windows.Forms.Label();
+            this.lbvPersonID = new System.Windows.Forms.Label();
+            this.lbvNationalNo = new System.Windows.Forms.Label();
+            this.lbvAddress = new System.Windows.Forms.Label();
+            this.lbvDate = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbCountry = new System.Windows.Forms.Label();
+            this.lbPhone = new System.Windows.Forms.Label();
+            this.lbName = new System.Windows.Forms.Label();
             this.lbAddress = new System.Windows.Forms.Label();
             this.lbNationalNo = new System.Windows.Forms.Label();
             this.lbGender = new System.Windows.Forms.Label();
             this.lbEmail = new System.Windows.Forms.Label();
-            this.lbvPersonID = new System.Windows.Forms.Label();
-            this.lbvNationalNo = new System.Windows.Forms.Label();
-            this.lbvAddress = new System.Windows.Forms.Label();
             this.lbDateOfBirth = new System.Windows.Forms.Label();
-            this.lbvDate = new System.Windows.Forms.Label();
             this.lbPersonID = new System.Windows.Forms.Label();
-            this.llEditPersonInfo = new System.Windows.Forms.LinkLabel();
             this.gbPersonCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -81,28 +81,17 @@
             this.gbPersonCard.TabIndex = 0;
             this.gbPersonCard.TabStop = false;
             this.gbPersonCard.Text = "Person Card";
-            this.gbPersonCard.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // pictureBox1
+            // llEditPersonInfo
             // 
-            this.pictureBox1.Image = global::Driving_System.Properties.Resources.user__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(539, 55);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(183, 151);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
-            // 
-            // lbCountry
-            // 
-            this.lbCountry.Image = global::Driving_System.Properties.Resources.download__8_;
-            this.lbCountry.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbCountry.Location = new System.Drawing.Point(291, 190);
-            this.lbCountry.Name = "lbCountry";
-            this.lbCountry.Size = new System.Drawing.Size(137, 42);
-            this.lbCountry.TabIndex = 8;
-            this.lbCountry.Text = "Country";
-            this.lbCountry.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.llEditPersonInfo.AutoSize = true;
+            this.llEditPersonInfo.Location = new System.Drawing.Point(585, 235);
+            this.llEditPersonInfo.Name = "llEditPersonInfo";
+            this.llEditPersonInfo.Size = new System.Drawing.Size(100, 16);
+            this.llEditPersonInfo.TabIndex = 19;
+            this.llEditPersonInfo.TabStop = true;
+            this.llEditPersonInfo.Text = "Edit Person Info";
+            this.llEditPersonInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llEditPersonInfo_LinkClicked);
             // 
             // lbvCountry
             // 
@@ -113,17 +102,6 @@
             this.lbvCountry.TabIndex = 16;
             this.lbvCountry.Text = "-";
             // 
-            // lbPhone
-            // 
-            this.lbPhone.Image = global::Driving_System.Properties.Resources.download__4_;
-            this.lbPhone.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbPhone.Location = new System.Drawing.Point(291, 141);
-            this.lbPhone.Name = "lbPhone";
-            this.lbPhone.Size = new System.Drawing.Size(137, 49);
-            this.lbPhone.TabIndex = 7;
-            this.lbPhone.Text = "Phone";
-            this.lbPhone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // lbvPhone
             // 
             this.lbvPhone.AutoSize = true;
@@ -132,17 +110,6 @@
             this.lbvPhone.Size = new System.Drawing.Size(11, 16);
             this.lbvPhone.TabIndex = 14;
             this.lbvPhone.Text = "-";
-            // 
-            // lbName
-            // 
-            this.lbName.Image = global::Driving_System.Properties.Resources.download__3_;
-            this.lbName.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbName.Location = new System.Drawing.Point(36, 96);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(140, 30);
-            this.lbName.TabIndex = 1;
-            this.lbName.Text = "Name";
-            this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbvName
             // 
@@ -171,51 +138,6 @@
             this.lbvEmail.TabIndex = 10;
             this.lbvEmail.Text = "-";
             // 
-            // lbAddress
-            // 
-            this.lbAddress.Image = global::Driving_System.Properties.Resources.download__6_;
-            this.lbAddress.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbAddress.Location = new System.Drawing.Point(291, 49);
-            this.lbAddress.Name = "lbAddress";
-            this.lbAddress.Size = new System.Drawing.Size(137, 36);
-            this.lbAddress.TabIndex = 5;
-            this.lbAddress.Text = "Address";
-            this.lbAddress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbNationalNo
-            // 
-            this.lbNationalNo.Image = global::Driving_System.Properties.Resources.download__9_;
-            this.lbNationalNo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbNationalNo.Location = new System.Drawing.Point(36, 141);
-            this.lbNationalNo.Name = "lbNationalNo";
-            this.lbNationalNo.Size = new System.Drawing.Size(140, 30);
-            this.lbNationalNo.TabIndex = 2;
-            this.lbNationalNo.Text = "National No.";
-            this.lbNationalNo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbNationalNo.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // lbGender
-            // 
-            this.lbGender.Image = global::Driving_System.Properties.Resources.download__1_;
-            this.lbGender.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbGender.Location = new System.Drawing.Point(36, 183);
-            this.lbGender.Name = "lbGender";
-            this.lbGender.Size = new System.Drawing.Size(140, 30);
-            this.lbGender.TabIndex = 3;
-            this.lbGender.Text = "Gender";
-            this.lbGender.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbEmail
-            // 
-            this.lbEmail.Image = global::Driving_System.Properties.Resources.download__7_;
-            this.lbEmail.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbEmail.Location = new System.Drawing.Point(36, 235);
-            this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(140, 30);
-            this.lbEmail.TabIndex = 4;
-            this.lbEmail.Text = "Email";
-            this.lbEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // lbvPersonID
             // 
             this.lbvPersonID.AutoSize = true;
@@ -243,6 +165,102 @@
             this.lbvAddress.TabIndex = 3;
             this.lbvAddress.Text = "-";
             // 
+            // lbvDate
+            // 
+            this.lbvDate.AutoSize = true;
+            this.lbvDate.Location = new System.Drawing.Point(459, 103);
+            this.lbvDate.Name = "lbvDate";
+            this.lbvDate.Size = new System.Drawing.Size(11, 16);
+            this.lbvDate.TabIndex = 1;
+            this.lbvDate.Text = "-";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Driving_System.Properties.Resources.Male_5121;
+            this.pictureBox1.Location = new System.Drawing.Point(539, 55);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(183, 151);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lbCountry
+            // 
+            this.lbCountry.Image = global::Driving_System.Properties.Resources.download__8_;
+            this.lbCountry.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbCountry.Location = new System.Drawing.Point(291, 190);
+            this.lbCountry.Name = "lbCountry";
+            this.lbCountry.Size = new System.Drawing.Size(137, 42);
+            this.lbCountry.TabIndex = 8;
+            this.lbCountry.Text = "Country";
+            this.lbCountry.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbPhone
+            // 
+            this.lbPhone.Image = global::Driving_System.Properties.Resources.download__4_;
+            this.lbPhone.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPhone.Location = new System.Drawing.Point(291, 141);
+            this.lbPhone.Name = "lbPhone";
+            this.lbPhone.Size = new System.Drawing.Size(137, 49);
+            this.lbPhone.TabIndex = 7;
+            this.lbPhone.Text = "Phone";
+            this.lbPhone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbName
+            // 
+            this.lbName.Image = global::Driving_System.Properties.Resources.download__3_;
+            this.lbName.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbName.Location = new System.Drawing.Point(36, 96);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(140, 30);
+            this.lbName.TabIndex = 1;
+            this.lbName.Text = "Name";
+            this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbAddress
+            // 
+            this.lbAddress.Image = global::Driving_System.Properties.Resources.download__6_;
+            this.lbAddress.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbAddress.Location = new System.Drawing.Point(291, 49);
+            this.lbAddress.Name = "lbAddress";
+            this.lbAddress.Size = new System.Drawing.Size(137, 36);
+            this.lbAddress.TabIndex = 5;
+            this.lbAddress.Text = "Address";
+            this.lbAddress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbNationalNo
+            // 
+            this.lbNationalNo.Image = global::Driving_System.Properties.Resources.download__9_;
+            this.lbNationalNo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbNationalNo.Location = new System.Drawing.Point(36, 141);
+            this.lbNationalNo.Name = "lbNationalNo";
+            this.lbNationalNo.Size = new System.Drawing.Size(140, 30);
+            this.lbNationalNo.TabIndex = 2;
+            this.lbNationalNo.Text = "National No.";
+            this.lbNationalNo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbGender
+            // 
+            this.lbGender.Image = global::Driving_System.Properties.Resources.download__1_;
+            this.lbGender.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbGender.Location = new System.Drawing.Point(36, 183);
+            this.lbGender.Name = "lbGender";
+            this.lbGender.Size = new System.Drawing.Size(140, 30);
+            this.lbGender.TabIndex = 3;
+            this.lbGender.Text = "Gender";
+            this.lbGender.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbEmail
+            // 
+            this.lbEmail.Image = global::Driving_System.Properties.Resources.download__7_;
+            this.lbEmail.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbEmail.Location = new System.Drawing.Point(36, 235);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(140, 30);
+            this.lbEmail.TabIndex = 4;
+            this.lbEmail.Text = "Email";
+            this.lbEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // lbDateOfBirth
             // 
             this.lbDateOfBirth.Image = global::Driving_System.Properties.Resources.download__5_;
@@ -253,15 +271,6 @@
             this.lbDateOfBirth.TabIndex = 6;
             this.lbDateOfBirth.Text = "Date Of Birth";
             this.lbDateOfBirth.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbvDate
-            // 
-            this.lbvDate.AutoSize = true;
-            this.lbvDate.Location = new System.Drawing.Point(459, 103);
-            this.lbvDate.Name = "lbvDate";
-            this.lbvDate.Size = new System.Drawing.Size(11, 16);
-            this.lbvDate.TabIndex = 1;
-            this.lbvDate.Text = "-";
             // 
             // lbPersonID
             // 
@@ -274,16 +283,6 @@
             this.lbPersonID.Text = "Person ID";
             this.lbPersonID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // llEditPersonInfo
-            // 
-            this.llEditPersonInfo.AutoSize = true;
-            this.llEditPersonInfo.Location = new System.Drawing.Point(585, 235);
-            this.llEditPersonInfo.Name = "llEditPersonInfo";
-            this.llEditPersonInfo.Size = new System.Drawing.Size(100, 16);
-            this.llEditPersonInfo.TabIndex = 19;
-            this.llEditPersonInfo.TabStop = true;
-            this.llEditPersonInfo.Text = "Edit Person Info";
-            // 
             // crtlPersonCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -291,7 +290,6 @@
             this.Controls.Add(this.gbPersonCard);
             this.Name = "crtlPersonCard";
             this.Size = new System.Drawing.Size(807, 332);
-            this.Load += new System.EventHandler(this.crtlPersonCard_Load);
             this.gbPersonCard.ResumeLayout(false);
             this.gbPersonCard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

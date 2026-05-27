@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Driving_System
+namespace Driving_System.Persons.controls
 {
     public partial class crtlPersonCardWithFilter : UserControl
     {
         public crtlPersonCardWithFilter()
         {
             InitializeComponent();
+        }
+
+        private void crtlPersonCard1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

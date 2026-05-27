@@ -31,7 +31,7 @@ namespace Driving_System
             InitializeComponent();
             
         }
-        private void _LoadPersonInfo(int PersonID) {
+        public void LoadPersonInfo(int PersonID) {
             _Person = clsPersonBusiness.GetPerson(PersonID);
             if (_Person == null) 
             {
@@ -44,7 +44,7 @@ namespace Driving_System
 
         
         }
-        private void _LoadPersonInfo(string NationalID)
+        public void LoadPersonInfo(string NationalID)
         {
             _Person = clsPersonBusiness.GetPerson(NationalID);
             if (_Person == null)
@@ -118,6 +118,11 @@ namespace Driving_System
             frm.ShowDialog();
 
             _LoadPersonInfo(_PersonID);
+        }
+
+        private void gbPersonCard_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

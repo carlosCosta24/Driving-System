@@ -28,30 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.crtlPersonCard1 = new Driving_System.crtlPersonCard();
+            this.components = new System.ComponentModel.Container();
             this.gbFilter = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tbFilterValue = new System.Windows.Forms.TextBox();
+            this.cbFindBy = new System.Windows.Forms.ComboBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
+            this.crtlPersonCard1 = new Driving_System.crtlPersonCard();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbFilter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // crtlPersonCard1
-            // 
-            this.crtlPersonCard1.Location = new System.Drawing.Point(3, 126);
-            this.crtlPersonCard1.Name = "crtlPersonCard1";
-            this.crtlPersonCard1.Size = new System.Drawing.Size(794, 315);
-            this.crtlPersonCard1.TabIndex = 0;
-            this.crtlPersonCard1.Load += new System.EventHandler(this.crtlPersonCard1_Load);
             // 
             // gbFilter
             // 
             this.gbFilter.Controls.Add(this.btnAdd);
             this.gbFilter.Controls.Add(this.btnFind);
-            this.gbFilter.Controls.Add(this.comboBox1);
-            this.gbFilter.Controls.Add(this.textBox1);
+            this.gbFilter.Controls.Add(this.cbFindBy);
+            this.gbFilter.Controls.Add(this.tbFilterValue);
             this.gbFilter.Controls.Add(this.label1);
             this.gbFilter.Location = new System.Drawing.Point(24, 49);
             this.gbFilter.Name = "gbFilter";
@@ -59,6 +54,7 @@
             this.gbFilter.TabIndex = 1;
             this.gbFilter.TabStop = false;
             this.gbFilter.Text = "Filter";
+            this.gbFilter.Enter += new System.EventHandler(this.gbFilter_Enter);
             // 
             // label1
             // 
@@ -69,21 +65,24 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Find By";
             // 
-            // textBox1
+            // tbFilterValue
             // 
-            this.textBox1.Location = new System.Drawing.Point(258, 28);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(173, 24);
-            this.textBox1.TabIndex = 1;
+            this.tbFilterValue.Location = new System.Drawing.Point(258, 28);
+            this.tbFilterValue.Multiline = true;
+            this.tbFilterValue.Name = "tbFilterValue";
+            this.tbFilterValue.Size = new System.Drawing.Size(173, 24);
+            this.tbFilterValue.TabIndex = 1;
+            this.tbFilterValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFilterValue_KeyPress);
+            this.tbFilterValue.Validating += new System.ComponentModel.CancelEventHandler(this.tbFilterValue_Validating);
             // 
-            // comboBox1
+            // cbFindBy
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(95, 28);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(143, 24);
-            this.comboBox1.TabIndex = 2;
+            this.cbFindBy.FormattingEnabled = true;
+            this.cbFindBy.Location = new System.Drawing.Point(95, 28);
+            this.cbFindBy.Name = "cbFindBy";
+            this.cbFindBy.Size = new System.Drawing.Size(143, 24);
+            this.cbFindBy.TabIndex = 2;
+            this.cbFindBy.SelectedIndexChanged += new System.EventHandler(this.cbFindBy_SelectedIndexChanged);
             // 
             // btnAdd
             // 
@@ -93,6 +92,7 @@
             this.btnAdd.Size = new System.Drawing.Size(50, 50);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnFind
             // 
@@ -102,6 +102,19 @@
             this.btnFind.Size = new System.Drawing.Size(50, 50);
             this.btnFind.TabIndex = 3;
             this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
+            // 
+            // crtlPersonCard1
+            // 
+            this.crtlPersonCard1.Location = new System.Drawing.Point(3, 126);
+            this.crtlPersonCard1.Name = "crtlPersonCard1";
+            this.crtlPersonCard1.Size = new System.Drawing.Size(794, 315);
+            this.crtlPersonCard1.TabIndex = 0;
+            this.crtlPersonCard1.Load += new System.EventHandler(this.crtlPersonCard1_Load);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // crtlPersonCardWithFilter
             // 
@@ -111,8 +124,10 @@
             this.Controls.Add(this.crtlPersonCard1);
             this.Name = "crtlPersonCardWithFilter";
             this.Size = new System.Drawing.Size(806, 464);
+            this.Load += new System.EventHandler(this.crtlPersonCardWithFilter_Load);
             this.gbFilter.ResumeLayout(false);
             this.gbFilter.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -121,10 +136,11 @@
 
         private crtlPersonCard crtlPersonCard1;
         private System.Windows.Forms.GroupBox gbFilter;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cbFindBy;
+        private System.Windows.Forms.TextBox tbFilterValue;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnFind;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

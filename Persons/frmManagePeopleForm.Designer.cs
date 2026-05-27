@@ -1,6 +1,6 @@
 ﻿namespace Driving_System
 {
-    partial class ManagePeopleForm
+    partial class frmManagePeopleForm
     {
         /// <summary>
         /// Required designer variable.
@@ -42,11 +42,10 @@
             this.cbFilterCategory = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tbFilterText = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnAddPerson = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbGender = new System.Windows.Forms.ComboBox();
+            this.lbCount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPepoleData)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -62,7 +61,7 @@
             this.dgvPepoleData.RowTemplate.Height = 24;
             this.dgvPepoleData.Size = new System.Drawing.Size(1310, 232);
             this.dgvPepoleData.TabIndex = 0;
-            this.dgvPepoleData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            
             // 
             // contextMenuStrip1
             // 
@@ -76,7 +75,7 @@
             this.phoneCallToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(188, 148);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+      
             // 
             // showDetailsToolStripMenuItem
             // 
@@ -90,30 +89,35 @@
             this.addNewPersonToolStripMenuItem.Name = "addNewPersonToolStripMenuItem";
             this.addNewPersonToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
             this.addNewPersonToolStripMenuItem.Text = "Add New Person";
+            this.addNewPersonToolStripMenuItem.Click += new System.EventHandler(this.addNewPersonToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
             this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
             this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // sendEmailToolStripMenuItem
             // 
             this.sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
             this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
             this.sendEmailToolStripMenuItem.Text = "Send Email";
+            this.sendEmailToolStripMenuItem.Click += new System.EventHandler(this.sendEmailToolStripMenuItem_Click);
             // 
             // phoneCallToolStripMenuItem
             // 
             this.phoneCallToolStripMenuItem.Name = "phoneCallToolStripMenuItem";
             this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
             this.phoneCallToolStripMenuItem.Text = "Phone Call";
+            this.phoneCallToolStripMenuItem.Click += new System.EventHandler(this.phoneCallToolStripMenuItem_Click);
             // 
             // button1
             // 
@@ -173,15 +177,15 @@
             this.tbFilterText.TextChanged += new System.EventHandler(this.tbFilterText_TextChanged);
             this.tbFilterText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFilterText_KeyPress);
             // 
-            // button2
+            // btnAddPerson
             // 
-            this.button2.Image = global::Driving_System.Properties.Resources.add;
-            this.button2.Location = new System.Drawing.Point(1271, 208);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(51, 35);
-            this.button2.TabIndex = 3;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnAddPerson.Image = global::Driving_System.Properties.Resources.add;
+            this.btnAddPerson.Location = new System.Drawing.Point(1271, 208);
+            this.btnAddPerson.Name = "btnAddPerson";
+            this.btnAddPerson.Size = new System.Drawing.Size(51, 35);
+            this.btnAddPerson.TabIndex = 3;
+            this.btnAddPerson.UseVisualStyleBackColor = true;
+            this.btnAddPerson.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox1
             // 
@@ -202,42 +206,28 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "#Records:";
             // 
-            // label4
+            // lbCount
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(80, 513);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(14, 16);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "0";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // cbGender
-            // 
-            this.cbGender.FormattingEnabled = true;
-            this.cbGender.Items.AddRange(new object[] {
-            "M",
-            "F"});
-            this.cbGender.Location = new System.Drawing.Point(218, 208);
-            this.cbGender.Name = "cbGender";
-            this.cbGender.Size = new System.Drawing.Size(107, 24);
-            this.cbGender.TabIndex = 10;
-            this.cbGender.Visible = false;
-            this.cbGender.SelectedIndexChanged += new System.EventHandler(this.cbGender_SelectedIndexChanged);
+            this.lbCount.AutoSize = true;
+            this.lbCount.Location = new System.Drawing.Point(80, 513);
+            this.lbCount.Name = "lbCount";
+            this.lbCount.Size = new System.Drawing.Size(14, 16);
+            this.lbCount.TabIndex = 9;
+            this.lbCount.Text = "0";
+            
             // 
             // ManagePeopleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1334, 552);
-            this.Controls.Add(this.cbGender);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lbCount);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbFilterText);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbFilterCategory);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnAddPerson);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvPepoleData);
@@ -257,13 +247,13 @@
         private System.Windows.Forms.DataGridView dgvPepoleData;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAddPerson;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbFilterCategory;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbFilterText;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbCount;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem showDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNewPersonToolStripMenuItem;
@@ -271,6 +261,5 @@
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sendEmailToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem phoneCallToolStripMenuItem;
-        private System.Windows.Forms.ComboBox cbGender;
     }
 }

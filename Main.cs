@@ -26,7 +26,7 @@ namespace Driving_System
 
         private void peopleToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
-            Form ManagePeople = new ManagePeopleForm();
+            Form ManagePeople = new frmManagePeopleForm();
             ManagePeople.ShowDialog();
         }
 

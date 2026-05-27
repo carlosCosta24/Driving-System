@@ -117,7 +117,7 @@ namespace Driving_System
             frmAddUpdatePerson frm = new frmAddUpdatePerson(_PersonID);
             frm.ShowDialog();
 
-            _LoadPersonInfo(_PersonID);
+            LoadPersonInfo(_PersonID);
         }
 
         private void gbPersonCard_Enter(object sender, EventArgs e)

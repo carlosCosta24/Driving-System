@@ -70,7 +70,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 548);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.crtlPersonCardWithFilter1);
+            
             this.Controls.Add(this.lbTitle);
             this.Name = "frmFind";
             this.Text = "frmFind";

@@ -72,17 +72,23 @@
     <Compile Include="Persons\frmFind.Designer.cs">
       <DependentUpon>frmFind.cs</DependentUpon>
     </Compile>
+    <Compile Include="Persons\frmShowPersonInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Persons\frmShowPersonInfo.Designer.cs">
+      <DependentUpon>frmShowPersonInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserInfoForm.Designer.cs">
       <DependentUpon>UserInfoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagePeopleForm.cs">
+    <Compile Include="Persons\frmManagePeopleForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagePeopleForm.Designer.cs">
-      <DependentUpon>ManagePeopleForm.cs</DependentUpon>
+    <Compile Include="Persons\frmManagePeopleForm.Designer.cs">
+      <DependentUpon>frmManagePeopleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -125,8 +131,8 @@
     <EmbeddedResource Include="Persons\controls\crtlPersonCard.resx">
       <DependentUpon>crtlPersonCard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagePeopleForm.resx">
-      <DependentUpon>ManagePeopleForm.cs</DependentUpon>
+    <EmbeddedResource Include="Persons\frmManagePeopleForm.resx">
+      <DependentUpon>frmManagePeopleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Persons\frmFind.resx">
       <DependentUpon>frmFind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persons\frmShowPersonInfo.resx">
+      <DependentUpon>frmShowPersonInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

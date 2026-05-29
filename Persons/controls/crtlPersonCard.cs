@@ -60,18 +60,17 @@ namespace Driving_System
         }
         private void _LoadPersonImage() {
             if (_Person.Gender == 'M') {
-                pictureBox1.Image = Resources.Male_512;
-
+                pbPersonImage.Image = Resources.Male_512;
             }
             else 
             {
-                pictureBox1.Image = Resources.Female_512;
+                pbPersonImage.Image = Resources.Female_512;
             }
             string ImagePath = _Person.ImagePath;
 
             if (ImagePath != "") {
                 if (File.Exists(ImagePath)) { 
-                    pictureBox1.ImageLocation = ImagePath;
+                    pbPersonImage.ImageLocation = ImagePath;
                 }
                 else 
                 {
@@ -90,6 +89,7 @@ namespace Driving_System
             lbvAddress.Text = _Person.Address;
             lbvDate.Text = _Person.BirthDate.ToShortDateString();
             lbvPhone.Text = _Person.Phone;
+            lbvEmail.Text = _Person.Email;
             lbvCountry.Text = clsCountryBusiness.GetCountry(_Person.CountryID).CountryName;
             _LoadPersonImage();
         }
@@ -99,7 +99,7 @@ namespace Driving_System
             lbvPersonID.Text = "-";
             lbvNationalNo.Text = "-";
             lbvName.Text = "-";
-            pictureBox1.Image = Resources.Male_512;
+            pbPersonImage.Image = Resources.Male_512;
             lbvGender.Text = "-";
             lbvEmail.Text = "-";
             lbvPhone.Text = "-";
@@ -120,9 +120,6 @@ namespace Driving_System
             LoadPersonInfo(_PersonID);
         }
 
-        private void gbPersonCard_Enter(object sender, EventArgs e)
-        {
 
-        }
     }
 }

@@ -164,8 +164,8 @@ namespace Driving_System
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int PersonID = (int)dgvPepoleData.CurrentRow.Cells[0].Value;
-            Form frm = new frmShowPersonInfo(PersonID);
-            frm.ShowDialog();
+            //Form frm = new frmShowPersonInfo(PersonID);
+            //frm.ShowDialog();
         }
 
         private void tbFilterText_KeyPress(object sender, KeyPressEventArgs e)

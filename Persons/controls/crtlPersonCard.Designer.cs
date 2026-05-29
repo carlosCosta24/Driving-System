@@ -30,7 +30,7 @@
         {
             this.gbPersonCard = new System.Windows.Forms.GroupBox();
             this.llEditPersonInfo = new System.Windows.Forms.LinkLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbPersonImage = new System.Windows.Forms.PictureBox();
             this.lbCountry = new System.Windows.Forms.Label();
             this.lbvCountry = new System.Windows.Forms.Label();
             this.lbPhone = new System.Windows.Forms.Label();
@@ -50,13 +50,13 @@
             this.lbvDate = new System.Windows.Forms.Label();
             this.lbPersonID = new System.Windows.Forms.Label();
             this.gbPersonCard.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).BeginInit();
             this.SuspendLayout();
             // 
             // gbPersonCard
             // 
             this.gbPersonCard.Controls.Add(this.llEditPersonInfo);
-            this.gbPersonCard.Controls.Add(this.pictureBox1);
+            this.gbPersonCard.Controls.Add(this.pbPersonImage);
             this.gbPersonCard.Controls.Add(this.lbCountry);
             this.gbPersonCard.Controls.Add(this.lbvCountry);
             this.gbPersonCard.Controls.Add(this.lbPhone);
@@ -81,7 +81,7 @@
             this.gbPersonCard.TabIndex = 0;
             this.gbPersonCard.TabStop = false;
             this.gbPersonCard.Text = "Person Card";
-            this.gbPersonCard.Enter += new System.EventHandler(this.gbPersonCard_Enter);
+            
             // 
             // llEditPersonInfo
             // 
@@ -94,15 +94,15 @@
             this.llEditPersonInfo.Text = "Edit Person Info";
             this.llEditPersonInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llEditPersonInfo_LinkClicked);
             // 
-            // pictureBox1
+            // pbPersonImage
             // 
-            this.pictureBox1.Image = global::Driving_System.Properties.Resources.Male_5121;
-            this.pictureBox1.Location = new System.Drawing.Point(539, 55);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(183, 151);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
+            this.pbPersonImage.Image = global::Driving_System.Properties.Resources.Male_5121;
+            this.pbPersonImage.Location = new System.Drawing.Point(539, 55);
+            this.pbPersonImage.Name = "pbPersonImage";
+            this.pbPersonImage.Size = new System.Drawing.Size(183, 151);
+            this.pbPersonImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPersonImage.TabIndex = 18;
+            this.pbPersonImage.TabStop = false;
             // 
             // lbCountry
             // 
@@ -293,7 +293,7 @@
             this.Size = new System.Drawing.Size(807, 332);
             this.gbPersonCard.ResumeLayout(false);
             this.gbPersonCard.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -319,7 +319,7 @@
         private System.Windows.Forms.Label lbvCountry;
         private System.Windows.Forms.Label lbPhone;
         private System.Windows.Forms.Label lbvPhone;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbPersonImage;
         private System.Windows.Forms.LinkLabel llEditPersonInfo;
     }
 }

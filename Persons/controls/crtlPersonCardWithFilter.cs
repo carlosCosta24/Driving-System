@@ -88,16 +88,6 @@ namespace Driving_System.Persons.controls
 
         }
 
-        private void crtlPersonCard1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gbFilter_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void cbFindBy_SelectedIndexChanged(object sender, EventArgs e)
         {
             tbFilterValue.Text = "";

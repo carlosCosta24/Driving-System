@@ -54,7 +54,7 @@
             this.gbFilter.TabIndex = 1;
             this.gbFilter.TabStop = false;
             this.gbFilter.Text = "Filter";
-            this.gbFilter.Enter += new System.EventHandler(this.gbFilter_Enter);
+            
             // 
             // label1
             // 
@@ -110,7 +110,7 @@
             this.crtlPersonCard1.Name = "crtlPersonCard1";
             this.crtlPersonCard1.Size = new System.Drawing.Size(794, 315);
             this.crtlPersonCard1.TabIndex = 0;
-            this.crtlPersonCard1.Load += new System.EventHandler(this.crtlPersonCard1_Load);
+           
             // 
             // errorProvider1
             // 

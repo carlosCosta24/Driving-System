@@ -77,16 +77,15 @@
             this.gbPersonCard.Controls.Add(this.lbPersonID);
             this.gbPersonCard.Location = new System.Drawing.Point(23, 27);
             this.gbPersonCard.Name = "gbPersonCard";
-            this.gbPersonCard.Size = new System.Drawing.Size(749, 275);
+            this.gbPersonCard.Size = new System.Drawing.Size(911, 275);
             this.gbPersonCard.TabIndex = 0;
             this.gbPersonCard.TabStop = false;
             this.gbPersonCard.Text = "Person Card";
-            
             // 
             // llEditPersonInfo
             // 
             this.llEditPersonInfo.AutoSize = true;
-            this.llEditPersonInfo.Location = new System.Drawing.Point(585, 235);
+            this.llEditPersonInfo.Location = new System.Drawing.Point(664, 223);
             this.llEditPersonInfo.Name = "llEditPersonInfo";
             this.llEditPersonInfo.Size = new System.Drawing.Size(100, 16);
             this.llEditPersonInfo.TabIndex = 19;
@@ -97,7 +96,7 @@
             // pbPersonImage
             // 
             this.pbPersonImage.Image = global::Driving_System.Properties.Resources.Male_5121;
-            this.pbPersonImage.Location = new System.Drawing.Point(539, 55);
+            this.pbPersonImage.Location = new System.Drawing.Point(626, 55);
             this.pbPersonImage.Name = "pbPersonImage";
             this.pbPersonImage.Size = new System.Drawing.Size(183, 151);
             this.pbPersonImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -108,7 +107,7 @@
             // 
             this.lbCountry.Image = global::Driving_System.Properties.Resources.download__8_;
             this.lbCountry.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbCountry.Location = new System.Drawing.Point(291, 190);
+            this.lbCountry.Location = new System.Drawing.Point(371, 197);
             this.lbCountry.Name = "lbCountry";
             this.lbCountry.Size = new System.Drawing.Size(137, 42);
             this.lbCountry.TabIndex = 8;
@@ -118,7 +117,7 @@
             // lbvCountry
             // 
             this.lbvCountry.AutoSize = true;
-            this.lbvCountry.Location = new System.Drawing.Point(459, 197);
+            this.lbvCountry.Location = new System.Drawing.Point(539, 204);
             this.lbvCountry.Name = "lbvCountry";
             this.lbvCountry.Size = new System.Drawing.Size(11, 16);
             this.lbvCountry.TabIndex = 16;
@@ -128,7 +127,7 @@
             // 
             this.lbPhone.Image = global::Driving_System.Properties.Resources.download__4_;
             this.lbPhone.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbPhone.Location = new System.Drawing.Point(291, 141);
+            this.lbPhone.Location = new System.Drawing.Point(371, 148);
             this.lbPhone.Name = "lbPhone";
             this.lbPhone.Size = new System.Drawing.Size(137, 49);
             this.lbPhone.TabIndex = 7;
@@ -138,7 +137,7 @@
             // lbvPhone
             // 
             this.lbvPhone.AutoSize = true;
-            this.lbvPhone.Location = new System.Drawing.Point(459, 148);
+            this.lbvPhone.Location = new System.Drawing.Point(539, 155);
             this.lbvPhone.Name = "lbvPhone";
             this.lbvPhone.Size = new System.Drawing.Size(11, 16);
             this.lbvPhone.TabIndex = 14;
@@ -157,10 +156,9 @@
             // 
             // lbvName
             // 
-            this.lbvName.AutoSize = true;
             this.lbvName.Location = new System.Drawing.Point(209, 103);
             this.lbvName.Name = "lbvName";
-            this.lbvName.Size = new System.Drawing.Size(11, 16);
+            this.lbvName.Size = new System.Drawing.Size(156, 30);
             this.lbvName.TabIndex = 12;
             this.lbvName.Text = "-";
             // 
@@ -186,7 +184,7 @@
             // 
             this.lbAddress.Image = global::Driving_System.Properties.Resources.download__6_;
             this.lbAddress.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbAddress.Location = new System.Drawing.Point(291, 49);
+            this.lbAddress.Location = new System.Drawing.Point(371, 56);
             this.lbAddress.Name = "lbAddress";
             this.lbAddress.Size = new System.Drawing.Size(137, 36);
             this.lbAddress.TabIndex = 5;
@@ -247,7 +245,7 @@
             // lbvAddress
             // 
             this.lbvAddress.AutoSize = true;
-            this.lbvAddress.Location = new System.Drawing.Point(459, 62);
+            this.lbvAddress.Location = new System.Drawing.Point(539, 69);
             this.lbvAddress.Name = "lbvAddress";
             this.lbvAddress.Size = new System.Drawing.Size(11, 16);
             this.lbvAddress.TabIndex = 3;
@@ -257,7 +255,7 @@
             // 
             this.lbDateOfBirth.Image = global::Driving_System.Properties.Resources.download__5_;
             this.lbDateOfBirth.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbDateOfBirth.Location = new System.Drawing.Point(291, 96);
+            this.lbDateOfBirth.Location = new System.Drawing.Point(371, 103);
             this.lbDateOfBirth.Name = "lbDateOfBirth";
             this.lbDateOfBirth.Size = new System.Drawing.Size(137, 30);
             this.lbDateOfBirth.TabIndex = 6;
@@ -267,7 +265,7 @@
             // lbvDate
             // 
             this.lbvDate.AutoSize = true;
-            this.lbvDate.Location = new System.Drawing.Point(459, 103);
+            this.lbvDate.Location = new System.Drawing.Point(539, 110);
             this.lbvDate.Name = "lbvDate";
             this.lbvDate.Size = new System.Drawing.Size(11, 16);
             this.lbvDate.TabIndex = 1;
@@ -290,7 +288,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gbPersonCard);
             this.Name = "crtlPersonCard";
-            this.Size = new System.Drawing.Size(807, 332);
+            this.Size = new System.Drawing.Size(959, 332);
             this.gbPersonCard.ResumeLayout(false);
             this.gbPersonCard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).EndInit();

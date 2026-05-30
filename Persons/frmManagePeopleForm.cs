@@ -120,6 +120,7 @@ namespace Driving_System
             }
             if (FilterColumn == "PersonID")
             {
+
                 _PersonsData.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumn, tbFilterText.Text.Trim());
 
             }
@@ -164,13 +165,8 @@ namespace Driving_System
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int PersonID = (int)dgvPepoleData.CurrentRow.Cells[0].Value;
-            //Form frm = new frmShowPersonInfo(PersonID);
-            //frm.ShowDialog();
-        }
-
-        private void tbFilterText_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            FilterData();
+            Form frm = new frmShowPersonInfo(PersonID);
+            frm.ShowDialog();
         }
 
         private void tbFilterText_TextChanged(object sender, EventArgs e)
@@ -219,6 +215,16 @@ namespace Driving_System
             Form frm = new frmAddUpdatePerson();
             frm.ShowDialog();
             _RefreshList();
+        }
+
+        private void tbFilterText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (cbFilterCategory.Text == "Person ID") 
+            { 
+                e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+               
+            }
+            
         }
     }
 }

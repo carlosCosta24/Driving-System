@@ -20,16 +20,6 @@ namespace Driving_System.Persons
             InitializeComponent();
         }
 
-        private void lbTitle_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmFind_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             DataBack?.Invoke(this, crtlPersonCardWithFilter1.PersonID);

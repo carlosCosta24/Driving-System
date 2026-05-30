@@ -61,7 +61,6 @@
             this.dgvPepoleData.RowTemplate.Height = 24;
             this.dgvPepoleData.Size = new System.Drawing.Size(1310, 232);
             this.dgvPepoleData.TabIndex = 0;
-            
             // 
             // contextMenuStrip1
             // 
@@ -75,7 +74,6 @@
             this.phoneCallToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(188, 148);
-      
             // 
             // showDetailsToolStripMenuItem
             // 
@@ -214,9 +212,8 @@
             this.lbCount.Size = new System.Drawing.Size(14, 16);
             this.lbCount.TabIndex = 9;
             this.lbCount.Text = "0";
-            
             // 
-            // ManagePeopleForm
+            // frmManagePeopleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -231,7 +228,8 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvPepoleData);
-            this.Name = "ManagePeopleForm";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "frmManagePeopleForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.ManagePeopleForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPepoleData)).EndInit();

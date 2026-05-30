@@ -106,10 +106,6 @@ namespace Driving_System
             lbvDate.Text = "-";
             lbvCountry.Text = "-";
             lbvAddress.Text = "-";
-
-
-
-
         }
 
         private void llEditPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

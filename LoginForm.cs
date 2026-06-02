@@ -24,7 +24,7 @@ namespace Driving_System
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+     /*   private void button1_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(tbUserName.Text) && !string.IsNullOrEmpty(tbPassword.Text) && User.IsValid(tbUserName.Text, tbPassword.Text).UserID != -1)
             {
@@ -35,6 +35,6 @@ namespace Driving_System
             else {
                 MessageBox.Show("Username/Password is inncorect??", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+        }*/
     }
 }

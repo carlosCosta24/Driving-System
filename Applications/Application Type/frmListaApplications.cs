@@ -20,7 +20,7 @@ namespace Driving_System.Applications.Application_Type
 
         private void frmListaApplications_Load(object sender, EventArgs e)
         {
-            _dtApplications = clsApplicationTypes.GetAll();
+          //  _dtApplications = clsApplicationTypes.GetAll();
             dgvApplications.DataSource = _dtApplications;
             lbvRecords.Text = _dtApplications.Rows.Count.ToString();
 
@@ -41,9 +41,9 @@ namespace Driving_System.Applications.Application_Type
 
         private void editApplicationTypeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmEditApplications frm = new frmEditApplications();
-            frm.ShowDialog();
-            frmListaApplications_Load(null, null);
+           // frmEditApplications frm = new frmEditApplications();
+           // frm.ShowDialog();
+           // frmListaApplications_Load(null, null);
         }
     }
 }

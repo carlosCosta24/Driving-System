@@ -13,7 +13,7 @@ namespace Driving_System.Applications.Application_Type
     public partial class frmEditApplications : Form
     {
         private int _ApplicationsID = -1;
-        private clsApplications _Aplications;
+        //private clsApplications _Aplications;
         public frmEditApplications(int ApplicationsID)
         {
             InitializeComponent();
@@ -23,12 +23,9 @@ namespace Driving_System.Applications.Application_Type
         private void frmEditApplications_Load(object sender, EventArgs e)
         {
             lbvID.Text = _ApplicationsID.ToString();
-            _Aplications = clsApplications.Find(_ApplicationsID);
-            if (_Aplications != null) 
-            {
-                
-            
-            }
+            //_Aplications = clsApplications.Find(_ApplicationsID);
+            //if (_Aplications != null) 
+
         }
     }
 }

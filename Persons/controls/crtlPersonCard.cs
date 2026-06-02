@@ -93,7 +93,7 @@ namespace Driving_System
             lbvCountry.Text = clsCountryBusiness.GetCountry(_Person.CountryID).CountryName;
             _LoadPersonImage();
         }
-        private void RestPersonInfo() {
+        public void RestPersonInfo() {
 
             _PersonID = -1;
             lbvPersonID.Text = "-";
@@ -116,6 +116,9 @@ namespace Driving_System
             LoadPersonInfo(_PersonID);
         }
 
+        private void gbPersonCard_Enter(object sender, EventArgs e)
+        {
 
+        }
     }
 }

@@ -81,6 +81,7 @@
             this.gbPersonCard.TabIndex = 0;
             this.gbPersonCard.TabStop = false;
             this.gbPersonCard.Text = "Person Card";
+            this.gbPersonCard.Enter += new System.EventHandler(this.gbPersonCard_Enter);
             // 
             // llEditPersonInfo
             // 

@@ -44,6 +44,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.crtlPersonCardWithFilter1 = new Driving_System.Persons.controls.crtlPersonCardWithFilter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -61,7 +62,7 @@
             // 
             // tabPage1
             // 
-           
+            this.tabPage1.Controls.Add(this.crtlPersonCardWithFilter1);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
@@ -71,15 +72,11 @@
             this.tabPage1.Text = "Personal Info";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // crtlPersonCardWithFilter1
-            // 
-
-            // 
             // button1
             // 
             this.button1.Image = global::Driving_System.Properties.Resources.arrow_right;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(734, 464);
+            this.button1.Location = new System.Drawing.Point(783, 464);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(99, 38);
             this.button1.TabIndex = 1;
@@ -223,7 +220,16 @@
             this.label1.Text = "Add new User";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Form5
+            // crtlPersonCardWithFilter1
+            // 
+            this.crtlPersonCardWithFilter1.FilterEnabled = true;
+            this.crtlPersonCardWithFilter1.Location = new System.Drawing.Point(6, 6);
+            this.crtlPersonCardWithFilter1.Name = "crtlPersonCardWithFilter1";
+            this.crtlPersonCardWithFilter1.ShowAddPerson = true;
+            this.crtlPersonCardWithFilter1.Size = new System.Drawing.Size(906, 452);
+            this.crtlPersonCardWithFilter1.TabIndex = 2;
+            // 
+            // AddNewUsersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -232,7 +238,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.tabControl1);
-            this.Name = "Form5";
+            this.Name = "AddNewUsersForm";
             this.Text = "Form5";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -260,5 +266,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
+        private Persons.controls.crtlPersonCardWithFilter crtlPersonCardWithFilter1;
     }
 }

@@ -170,7 +170,7 @@ namespace Driving_System.Users
                 _UsersList.DefaultView.RowFilter = string.Format("[{0}] like '{1}%'", FilterCategory, tbFilterValue.Text.Trim());
 
             }
-            bvCount.Text = _UsersList.Rows.Count.ToString();
+            lbvCount.Text = _UsersList.Rows.Count.ToString();
 
         }
     }

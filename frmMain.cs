@@ -3,19 +3,20 @@ using System.Windows.Forms;
 
 namespace Driving_System
 {
-    public partial class Main : Form
+    public partial class frmMain : Form
 
     {
-        
-        public Main()
+        frmLoginForm _Login;
+        public frmMain(frmLoginForm frm)
         {
             InitializeComponent();
+            _Login = frm;
            
         }
 
         private void Form1_Load(object sender, System.EventArgs e)
         {
-            Form Login = new LoginForm();
+            Form Login = new frmLoginForm();
             // Login.ShowDialog();
         }
 

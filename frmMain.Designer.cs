@@ -1,6 +1,6 @@
 ﻿namespace Driving_System
 {
-    partial class Main
+    partial class frmMain
     {
         /// <summary>
         /// Required designer variable.

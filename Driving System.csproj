@@ -103,11 +103,11 @@
     <Compile Include="Persons\frmManagePeopleForm.Designer.cs">
       <DependentUpon>frmManagePeopleForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Login\frmLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <Compile Include="Login\frmLoginForm.Designer.cs">
+      <DependentUpon>frmLoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DriversForm.cs">
       <SubType>Form</SubType>
@@ -127,11 +127,11 @@
     <Compile Include="AddNewUsersForm.Designer.cs">
       <DependentUpon>AddNewUsersForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main.cs">
+    <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -183,8 +183,8 @@
     <EmbeddedResource Include="Persons\frmManagePeopleForm.resx">
       <DependentUpon>frmManagePeopleForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <EmbeddedResource Include="Login\frmLoginForm.resx">
+      <DependentUpon>frmLoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DriversForm.resx">
       <DependentUpon>DriversForm.cs</DependentUpon>
@@ -195,8 +195,8 @@
     <EmbeddedResource Include="AddNewUsersForm.resx">
       <DependentUpon>AddNewUsersForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Persons\frmFind.resx">
       <DependentUpon>frmFind.cs</DependentUpon>
@@ -419,5 +419,6 @@
   <ItemGroup>
     <None Include="Resources\Add Person 401.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

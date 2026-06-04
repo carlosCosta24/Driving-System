@@ -29,5 +29,10 @@ namespace Driving_System.Users
         {
             crtlUserCard1.LoadUserInfo(_UserID);
         }
+
+        private void crtlUserCard1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

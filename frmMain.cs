@@ -1,4 +1,6 @@
 ﻿using BusinessLayer;
+using Driving_System.Global;
+using Driving_System.Users;
 using System.Windows.Forms;
 
 namespace Driving_System
@@ -50,7 +52,7 @@ namespace Driving_System
 
         private void toolStripMenuItem7_Click(object sender, System.EventArgs e)
         {
-            Form Account = new UserInfoForm();
+            frmUserInfo Account = new frmUserInfo(clsGlobal._User.UserID);
             Account.ShowDialog();
         }
 

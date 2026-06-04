@@ -1,12 +1,6 @@
 ﻿using BusinessLayer;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Driving_System.Users
@@ -35,21 +29,24 @@ namespace Driving_System.Users
             cbFilter.SelectedIndex = 0;
             lbvCount.Text = dgvUsersList.Rows.Count.ToString();
 
-            dgvUsersList.Columns[0].HeaderText = "User ID";
-            dgvUsersList.Columns[0].Width = 20;
+            if (dgvUsersList.Rows.Count > 0)
+            {
+                dgvUsersList.Columns[0].HeaderText = "User ID";
+                dgvUsersList.Columns[0].Width = 20;
 
-            dgvUsersList.Columns[1].HeaderText = "Person ID";
-            dgvUsersList.Columns[1].Width = 20;
+                dgvUsersList.Columns[1].HeaderText = "Person ID";
+                dgvUsersList.Columns[1].Width = 20;
 
-            dgvUsersList.Columns[2].HeaderText = "Full Name";
-            dgvUsersList.Columns[2].Width = 150;
+                dgvUsersList.Columns[2].HeaderText = "Full Name";
+                dgvUsersList.Columns[2].Width = 150;
 
-            dgvUsersList.Columns[3].HeaderText = "User Name";
-            dgvUsersList.Columns[3].Width = 100;
+                dgvUsersList.Columns[3].HeaderText = "User Name";
+                dgvUsersList.Columns[3].Width = 100;
 
-            dgvUsersList.Columns[4].HeaderText = "Is Active";
-            dgvUsersList.Columns[4].Width = 20;
+                dgvUsersList.Columns[4].HeaderText = "Is Active";
+                dgvUsersList.Columns[4].Width = 20;
 
+            }
 
         }
 
@@ -87,9 +84,9 @@ namespace Driving_System.Users
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int UserID = (int)dgvUsersList.CurrentRow.Cells[0].Value;
-            if (MessageBox.Show("Are you sure you want to delete :" + 
+            if (MessageBox.Show("Are you sure you want to delete :" +
                 clsUserBusiness.FindByUserID(UserID).UserName,
-                "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) 
+                "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 if (clsUserBusiness.DeleteUser(UserID))
                 {
@@ -97,7 +94,7 @@ namespace Driving_System.Users
                     frmListUsers_Load(null, null);
 
                 }
-                else 
+                else
                 {
                     MessageBox.Show("User Not deleted !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -124,7 +121,22 @@ namespace Driving_System.Users
 
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            if (cbFilter.Text == "IsActive")
+            {
+                tbFilterValue.Visible = false;
+                cbIsActive.Visible = true;
+                cbIsActive.Focus();
+                cbIsActive.SelectedIndex = 0;
+            }
+            else 
+            {
+                tbFilterValue.Visible = (cbFilter.Text != "None");
+                cbIsActive.Visible = false;
+
+                tbFilterValue.Text = "";
+                tbFilterValue.Focus();
+                
+            }
         }
 
         private void tbFilterValue_TextChanged(object sender, EventArgs e)
@@ -154,7 +166,7 @@ namespace Driving_System.Users
 
 
             }
-            if (FilterCategory == "None" || tbFilterValue.Text.Trim() == "") 
+            if (FilterCategory == "None" || tbFilterValue.Text.Trim() == "")
             {
                 _UsersList.DefaultView.RowFilter = "";
                 lbvCount.Text = _UsersList.Rows.Count.ToString();
@@ -165,13 +177,41 @@ namespace Driving_System.Users
             {
                 _UsersList.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterCategory, tbFilterValue.Text.Trim());
             }
-            else 
+            else
             {
                 _UsersList.DefaultView.RowFilter = string.Format("[{0}] like '{1}%'", FilterCategory, tbFilterValue.Text.Trim());
 
             }
             lbvCount.Text = _UsersList.Rows.Count.ToString();
 
+        }
+
+        private void cbIsActive_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string FilterCategory = cbIsActive.Text;
+            string FilterColumn = "IsActive";
+
+            switch (FilterCategory) 
+            {
+                case "All":
+                    break;
+                case "Yes":
+                    FilterCategory = "1";
+                    break;
+                case "No":
+                    FilterCategory = "0";
+                    break;
+
+            }
+            if (FilterColumn == "All")
+            {
+                _UsersList.DefaultView.RowFilter = "";
+
+            }
+            else 
+            {
+                _UsersList.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumn, FilterCategory) ;
+            }
         }
     }
 }

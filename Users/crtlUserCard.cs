@@ -25,6 +25,7 @@ namespace Driving_System.Users
 
         public void LoadUserInfo(int UserID) 
         {
+            _UserID = UserID;
             _User = clsUserBusiness.FindByUserID(UserID);
             if (_User == null) 
             {

@@ -86,6 +86,7 @@
             this.cbIsActive.Size = new System.Drawing.Size(131, 24);
             this.cbIsActive.TabIndex = 4;
             this.cbIsActive.Visible = false;
+            this.cbIsActive.SelectedIndexChanged += new System.EventHandler(this.cbIsActive_SelectedIndexChanged);
             // 
             // cbFilter
             // 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,10 +37,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbTitle = new System.Windows.Forms.TextBox();
+            this.tbFees = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -81,7 +85,6 @@
             this.lbvID.Size = new System.Drawing.Size(19, 25);
             this.lbvID.TabIndex = 6;
             this.lbvID.Text = "-";
-
             // 
             // button2
             // 
@@ -94,7 +97,7 @@
             this.button2.TabIndex = 8;
             this.button2.Text = "Save";
             this.button2.UseVisualStyleBackColor = true;
-
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -107,6 +110,7 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "Close";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox3
             // 
@@ -128,21 +132,38 @@
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
             // 
-            // textBox1
+            // tbTitle
             // 
-            this.textBox1.Location = new System.Drawing.Point(132, 130);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(215, 23);
-            this.textBox1.TabIndex = 9;
+            this.tbTitle.Location = new System.Drawing.Point(132, 130);
+            this.tbTitle.Multiline = true;
+            this.tbTitle.Name = "tbTitle";
+            this.tbTitle.Size = new System.Drawing.Size(215, 23);
+            this.tbTitle.TabIndex = 9;
+            this.tbTitle.Validating += new System.ComponentModel.CancelEventHandler(this.tbTitle_Validating);
             // 
-            // textBox2
+            // tbFees
             // 
-            this.textBox2.Location = new System.Drawing.Point(132, 186);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(215, 23);
-            this.textBox2.TabIndex = 10;
+            this.tbFees.Location = new System.Drawing.Point(132, 186);
+            this.tbFees.Multiline = true;
+            this.tbFees.Name = "tbFees";
+            this.tbFees.Size = new System.Drawing.Size(215, 23);
+            this.tbFees.TabIndex = 10;
+            this.tbFees.Validating += new System.ComponentModel.CancelEventHandler(this.tbFees_Validating);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(69, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(325, 32);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Update Application Type";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmEditApplications
             // 
@@ -150,8 +171,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(467, 298);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.tbFees);
+            this.Controls.Add(this.tbTitle);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lbvID);
@@ -162,10 +184,11 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmEditApplications";
-            this.Text = "frmEditApplications";
+            this.Text = "Update Application Type";
             this.Load += new System.EventHandler(this.frmEditApplications_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,7 +204,9 @@
         private System.Windows.Forms.Label lbvID;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbTitle;
+        private System.Windows.Forms.TextBox tbFees;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

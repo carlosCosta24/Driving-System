@@ -41,9 +41,10 @@ namespace Driving_System.Applications.Application_Type
 
         private void editApplicationTypeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           // frmEditApplications frm = new frmEditApplications();
-           // frm.ShowDialog();
-           // frmListaApplications_Load(null, null);
+            frmEditApplications frm = new frmEditApplications((int)dgvApplications.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
+            //Reload the form by calling loading function 
+            frmListaApplications_Load(null, null);
         }
     }
 }

@@ -58,6 +58,18 @@
     <Compile Include="Applications\Application Type\frmListaApplications.Designer.cs">
       <DependentUpon>frmListaApplications.cs</DependentUpon>
     </Compile>
+    <Compile Include="Applications\Local Driving License\ctrlDrivingLicenseAppInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Applications\Local Driving License\ctrlDrivingLicenseAppInfo.Designer.cs">
+      <DependentUpon>ctrlDrivingLicenseAppInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\Local Driving License\frmAddUpdateLocalDrivingLicenseApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\Local Driving License\frmAddUpdateLocalDrivingLicenseApp.Designer.cs">
+      <DependentUpon>frmAddUpdateLocalDrivingLicenseApp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Global\clsGlobal.cs" />
     <Compile Include="Global\clsUtil.cs" />
     <Compile Include="Global\clsValidating.cs" />
@@ -182,6 +194,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\Application Type\frmListaApplications.resx">
       <DependentUpon>frmListaApplications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\Local Driving License\ctrlDrivingLicenseAppInfo.resx">
+      <DependentUpon>ctrlDrivingLicenseAppInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\Local Driving License\frmAddUpdateLocalDrivingLicenseApp.resx">
+      <DependentUpon>frmAddUpdateLocalDrivingLicenseApp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Persons\controls\crtlPersonCardWithFilter.resx">
       <DependentUpon>crtlPersonCardWithFilter.cs</DependentUpon>
@@ -442,6 +460,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Schedule Test 5121.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Number 321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calendar 321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\License View 321.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

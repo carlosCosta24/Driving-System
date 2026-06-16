@@ -58,6 +58,12 @@
     <Compile Include="Applications\Application Type\frmListaApplications.Designer.cs">
       <DependentUpon>frmListaApplications.cs</DependentUpon>
     </Compile>
+    <Compile Include="Applications\Controls\crtlAppBasicInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Applications\Controls\crtlAppBasicInfo.Designer.cs">
+      <DependentUpon>crtlAppBasicInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Applications\Local Driving License\ctrlDrivingLicenseAppInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -195,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\Application Type\frmListaApplications.resx">
       <DependentUpon>frmListaApplications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\Controls\crtlAppBasicInfo.resx">
+      <DependentUpon>crtlAppBasicInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\Local Driving License\ctrlDrivingLicenseAppInfo.resx">
       <DependentUpon>ctrlDrivingLicenseAppInfo.cs</DependentUpon>
@@ -470,6 +479,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\License View 321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ApplicationType1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calendar 322.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

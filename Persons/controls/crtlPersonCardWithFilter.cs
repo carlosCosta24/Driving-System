@@ -154,5 +154,10 @@ namespace Driving_System.Persons.controls
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
             }
         }
+
+        private void crtlPersonCard1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

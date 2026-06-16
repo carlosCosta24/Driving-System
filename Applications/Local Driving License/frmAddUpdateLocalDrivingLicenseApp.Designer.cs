@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.components = new System.ComponentModel.Container();
+            this.tcApplicationInfo = new System.Windows.Forms.TabControl();
             this.tbPersonInfo = new System.Windows.Forms.TabPage();
             this.tbAppInfo = new System.Windows.Forms.TabPage();
             this.crtlPersonCardWithFilter1 = new Driving_System.Persons.controls.crtlPersonCardWithFilter();
@@ -51,7 +52,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbFormName = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tcApplicationInfo.SuspendLayout();
             this.tbPersonInfo.SuspendLayout();
             this.tbAppInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -59,17 +61,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tcApplicationInfo
             // 
-            this.tabControl1.Controls.Add(this.tbPersonInfo);
-            this.tabControl1.Controls.Add(this.tbAppInfo);
-            this.tabControl1.Location = new System.Drawing.Point(12, 45);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(979, 537);
-            this.tabControl1.TabIndex = 0;
+            this.tcApplicationInfo.Controls.Add(this.tbPersonInfo);
+            this.tcApplicationInfo.Controls.Add(this.tbAppInfo);
+            this.tcApplicationInfo.Location = new System.Drawing.Point(12, 45);
+            this.tcApplicationInfo.Name = "tcApplicationInfo";
+            this.tcApplicationInfo.SelectedIndex = 0;
+            this.tcApplicationInfo.Size = new System.Drawing.Size(979, 537);
+            this.tcApplicationInfo.TabIndex = 0;
             // 
             // tbPersonInfo
             // 
@@ -129,6 +132,7 @@
             this.btnNext.Text = "Next";
             this.btnNext.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnClose
             // 
@@ -154,6 +158,7 @@
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label1
             // 
@@ -316,6 +321,10 @@
             this.lbFormName.TabIndex = 4;
             this.lbFormName.Text = "Local Driving License Application";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmAddUpdateLocalDrivingLicenseApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -325,12 +334,13 @@
             this.Controls.Add(this.lbFormName);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tcApplicationInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmAddUpdateLocalDrivingLicenseApp";
             this.Text = "frmAddUpdateLocalDrivingLicenseApp";
+            this.Activated += new System.EventHandler(this.frmAddUpdateLocalDrivingLicenseApp_Activated);
             this.Load += new System.EventHandler(this.frmAddUpdateLocalDrivingLicenseApp_Load);
-            this.tabControl1.ResumeLayout(false);
+            this.tcApplicationInfo.ResumeLayout(false);
             this.tbPersonInfo.ResumeLayout(false);
             this.tbAppInfo.ResumeLayout(false);
             this.tbAppInfo.PerformLayout();
@@ -339,6 +349,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -346,7 +357,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tcApplicationInfo;
         private System.Windows.Forms.TabPage tbPersonInfo;
         private System.Windows.Forms.TabPage tbAppInfo;
         private System.Windows.Forms.Button btnNext;
@@ -369,5 +380,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox cbLicenseClass;
         private System.Windows.Forms.Label lbFormName;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

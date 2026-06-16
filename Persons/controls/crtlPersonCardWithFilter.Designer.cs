@@ -94,7 +94,6 @@
             this.tbFilterValue.Name = "tbFilterValue";
             this.tbFilterValue.Size = new System.Drawing.Size(173, 24);
             this.tbFilterValue.TabIndex = 1;
-        
             this.tbFilterValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFilterValue_KeyPress);
             this.tbFilterValue.Validating += new System.ComponentModel.CancelEventHandler(this.tbFilterValue_Validating);
             // 
@@ -113,6 +112,7 @@
             this.crtlPersonCard1.Name = "crtlPersonCard1";
             this.crtlPersonCard1.Size = new System.Drawing.Size(955, 315);
             this.crtlPersonCard1.TabIndex = 0;
+            this.crtlPersonCard1.Load += new System.EventHandler(this.crtlPersonCard1_Load);
             // 
             // errorProvider1
             // 

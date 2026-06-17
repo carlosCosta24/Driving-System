@@ -76,6 +76,12 @@
     <Compile Include="Applications\Local Driving License\frmAddUpdateLocalDrivingLicenseApp.Designer.cs">
       <DependentUpon>frmAddUpdateLocalDrivingLicenseApp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Applications\Local Driving License\frmListLocalDrivingLicenseApps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\Local Driving License\frmListLocalDrivingLicenseApps.Designer.cs">
+      <DependentUpon>frmListLocalDrivingLicenseApps.cs</DependentUpon>
+    </Compile>
     <Compile Include="Applications\Local Driving License\frmLocalDrivingLicenseAppInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\Local Driving License\frmAddUpdateLocalDrivingLicenseApp.resx">
       <DependentUpon>frmAddUpdateLocalDrivingLicenseApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\Local Driving License\frmListLocalDrivingLicenseApps.resx">
+      <DependentUpon>frmListLocalDrivingLicenseApps.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\Local Driving License\frmLocalDrivingLicenseAppInfo.resx">
       <DependentUpon>frmLocalDrivingLicenseAppInfo.cs</DependentUpon>
@@ -497,6 +506,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Test 321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New Application 641.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddPerson 321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Applications1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

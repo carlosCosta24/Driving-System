@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvLocalDrivingAppList = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cbFilterCategory = new System.Windows.Forms.ComboBox();
+            this.tbFilterText = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lbvRecords = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
@@ -48,7 +48,7 @@
             this.issueDrivingLicenseFirstTimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showPersonLicenseHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLocalDrivingAppList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -64,19 +64,19 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Local Driving License";
             // 
-            // dataGridView1
+            // dgvLocalDrivingAppList
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 267);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 210);
-            this.dataGridView1.TabIndex = 2;
+            this.dgvLocalDrivingAppList.AllowUserToAddRows = false;
+            this.dgvLocalDrivingAppList.AllowUserToDeleteRows = false;
+            this.dgvLocalDrivingAppList.BackgroundColor = System.Drawing.Color.White;
+            this.dgvLocalDrivingAppList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLocalDrivingAppList.Location = new System.Drawing.Point(12, 267);
+            this.dgvLocalDrivingAppList.Name = "dgvLocalDrivingAppList";
+            this.dgvLocalDrivingAppList.ReadOnly = true;
+            this.dgvLocalDrivingAppList.RowHeadersWidth = 51;
+            this.dgvLocalDrivingAppList.RowTemplate.Height = 24;
+            this.dgvLocalDrivingAppList.Size = new System.Drawing.Size(776, 210);
+            this.dgvLocalDrivingAppList.TabIndex = 2;
             // 
             // label2
             // 
@@ -88,21 +88,29 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Filter By";
             // 
-            // comboBox1
+            // cbFilterCategory
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(100, 232);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(141, 24);
-            this.comboBox1.TabIndex = 4;
+            this.cbFilterCategory.FormattingEnabled = true;
+            this.cbFilterCategory.Items.AddRange(new object[] {
+            "None",
+            "L.D.L.AppID",
+            "National No.",
+            "Full Name",
+            "Status "});
+            this.cbFilterCategory.Location = new System.Drawing.Point(100, 232);
+            this.cbFilterCategory.Name = "cbFilterCategory";
+            this.cbFilterCategory.Size = new System.Drawing.Size(141, 24);
+            this.cbFilterCategory.TabIndex = 4;
+            this.cbFilterCategory.SelectedIndexChanged += new System.EventHandler(this.cbFilterCategory_SelectedIndexChanged);
             // 
-            // textBox1
+            // tbFilterText
             // 
-            this.textBox1.Location = new System.Drawing.Point(247, 232);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(153, 24);
-            this.textBox1.TabIndex = 5;
+            this.tbFilterText.Location = new System.Drawing.Point(247, 232);
+            this.tbFilterText.Multiline = true;
+            this.tbFilterText.Name = "tbFilterText";
+            this.tbFilterText.Size = new System.Drawing.Size(153, 24);
+            this.tbFilterText.TabIndex = 5;
+            this.tbFilterText.TextChanged += new System.EventHandler(this.tbFilterText_TextChanged);
             // 
             // label3
             // 
@@ -169,30 +177,33 @@
             this.showLicenseToolStripMenuItem,
             this.showPersonLicenseHistoryToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(293, 196);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(293, 224);
             // 
             // showApplicationDetailsToolStripMenuItem
             // 
             this.showApplicationDetailsToolStripMenuItem.Name = "showApplicationDetailsToolStripMenuItem";
-            this.showApplicationDetailsToolStripMenuItem.Size = new System.Drawing.Size(245, 24);
+            this.showApplicationDetailsToolStripMenuItem.Size = new System.Drawing.Size(292, 24);
             this.showApplicationDetailsToolStripMenuItem.Text = "Show Application Details";
+            this.showApplicationDetailsToolStripMenuItem.Click += new System.EventHandler(this.showApplicationDetailsToolStripMenuItem_Click);
             // 
             // editApplicationToolStripMenuItem
             // 
             this.editApplicationToolStripMenuItem.Name = "editApplicationToolStripMenuItem";
-            this.editApplicationToolStripMenuItem.Size = new System.Drawing.Size(245, 24);
+            this.editApplicationToolStripMenuItem.Size = new System.Drawing.Size(292, 24);
             this.editApplicationToolStripMenuItem.Text = "Edit Application";
+            this.editApplicationToolStripMenuItem.Click += new System.EventHandler(this.editApplicationToolStripMenuItem_Click);
             // 
             // deleteApplicationToolStripMenuItem
             // 
             this.deleteApplicationToolStripMenuItem.Name = "deleteApplicationToolStripMenuItem";
-            this.deleteApplicationToolStripMenuItem.Size = new System.Drawing.Size(245, 24);
+            this.deleteApplicationToolStripMenuItem.Size = new System.Drawing.Size(292, 24);
             this.deleteApplicationToolStripMenuItem.Text = "Delete Application";
+            this.deleteApplicationToolStripMenuItem.Click += new System.EventHandler(this.deleteApplicationToolStripMenuItem_Click);
             // 
             // cancelApplicationToolStripMenuItem
             // 
             this.cancelApplicationToolStripMenuItem.Name = "cancelApplicationToolStripMenuItem";
-            this.cancelApplicationToolStripMenuItem.Size = new System.Drawing.Size(245, 24);
+            this.cancelApplicationToolStripMenuItem.Size = new System.Drawing.Size(292, 24);
             this.cancelApplicationToolStripMenuItem.Text = "Cancel Application";
             // 
             // sechduleTestsToolStripMenuItem
@@ -230,16 +241,17 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAddApp);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.tbFilterText);
+            this.Controls.Add(this.cbFilterCategory);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvLocalDrivingAppList);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmListLocalDrivingLicenseApps";
             this.Text = "frmListLocalDrivingLicenseApps";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmListLocalDrivingLicenseApps_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLocalDrivingAppList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -251,10 +263,10 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvLocalDrivingAppList;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cbFilterCategory;
+        private System.Windows.Forms.TextBox tbFilterText;
         private System.Windows.Forms.Button btnAddApp;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label3;

@@ -29,21 +29,6 @@
         private void InitializeComponent()
         {
             this.gbAppBasicInfo = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbvID = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbvStatus = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lbvFees = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lbvType = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.lbvApplicant = new System.Windows.Forms.Label();
-            this.lbvDate = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.lbvStatusDate = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.lbvUser = new System.Windows.Forms.Label();
             this.llPersonInfo = new System.Windows.Forms.LinkLabel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -53,7 +38,22 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbvUser = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lbvStatusDate = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lbvDate = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.lbvApplicant = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lbvType = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lbvFees = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lbvStatus = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbvID = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.gbAppBasicInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -100,161 +100,11 @@
             this.gbAppBasicInfo.Text = "Application Basic Info";
             this.gbAppBasicInfo.Enter += new System.EventHandler(this.gbAppBasicInfo_Enter);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(41, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ID";
-            // 
-            // lbvID
-            // 
-            this.lbvID.AutoSize = true;
-            this.lbvID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbvID.Location = new System.Drawing.Point(188, 52);
-            this.lbvID.Name = "lbvID";
-            this.lbvID.Size = new System.Drawing.Size(19, 25);
-            this.lbvID.TabIndex = 1;
-            this.lbvID.Text = "-";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(41, 88);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 25);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Status";
-            // 
-            // lbvStatus
-            // 
-            this.lbvStatus.AutoSize = true;
-            this.lbvStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbvStatus.Location = new System.Drawing.Point(188, 90);
-            this.lbvStatus.Name = "lbvStatus";
-            this.lbvStatus.Size = new System.Drawing.Size(19, 25);
-            this.lbvStatus.TabIndex = 3;
-            this.lbvStatus.Text = "-";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(41, 132);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 25);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Fees";
-            // 
-            // lbvFees
-            // 
-            this.lbvFees.AutoSize = true;
-            this.lbvFees.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbvFees.Location = new System.Drawing.Point(188, 134);
-            this.lbvFees.Name = "lbvFees";
-            this.lbvFees.Size = new System.Drawing.Size(19, 25);
-            this.lbvFees.TabIndex = 5;
-            this.lbvFees.Text = "-";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(41, 174);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 25);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Type";
-            // 
-            // lbvType
-            // 
-            this.lbvType.AutoSize = true;
-            this.lbvType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbvType.Location = new System.Drawing.Point(188, 176);
-            this.lbvType.Name = "lbvType";
-            this.lbvType.Size = new System.Drawing.Size(19, 25);
-            this.lbvType.TabIndex = 7;
-            this.lbvType.Text = "-";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(41, 216);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(93, 25);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Applicant";
-            // 
-            // lbvApplicant
-            // 
-            this.lbvApplicant.AutoSize = true;
-            this.lbvApplicant.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbvApplicant.Location = new System.Drawing.Point(188, 218);
-            this.lbvApplicant.Name = "lbvApplicant";
-            this.lbvApplicant.Size = new System.Drawing.Size(19, 25);
-            this.lbvApplicant.TabIndex = 9;
-            this.lbvApplicant.Text = "-";
-            // 
-            // lbvDate
-            // 
-            this.lbvDate.AutoSize = true;
-            this.lbvDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbvDate.Location = new System.Drawing.Point(624, 50);
-            this.lbvDate.Name = "lbvDate";
-            this.lbvDate.Size = new System.Drawing.Size(19, 25);
-            this.lbvDate.TabIndex = 11;
-            this.lbvDate.Text = "-";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(462, 88);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(114, 25);
-            this.label13.TabIndex = 12;
-            this.label13.Text = "Status Date";
-            // 
-            // lbvStatusDate
-            // 
-            this.lbvStatusDate.AutoSize = true;
-            this.lbvStatusDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbvStatusDate.Location = new System.Drawing.Point(624, 90);
-            this.lbvStatusDate.Name = "lbvStatusDate";
-            this.lbvStatusDate.Size = new System.Drawing.Size(19, 25);
-            this.lbvStatusDate.TabIndex = 13;
-            this.lbvStatusDate.Text = "-";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(462, 132);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(115, 25);
-            this.label15.TabIndex = 14;
-            this.label15.Text = "Created By ";
-            // 
-            // lbvUser
-            // 
-            this.lbvUser.AutoSize = true;
-            this.lbvUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbvUser.Location = new System.Drawing.Point(624, 132);
-            this.lbvUser.Name = "lbvUser";
-            this.lbvUser.Size = new System.Drawing.Size(19, 25);
-            this.lbvUser.TabIndex = 15;
-            this.lbvUser.Text = "-";
-            // 
             // llPersonInfo
             // 
             this.llPersonInfo.AutoSize = true;
             this.llPersonInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llPersonInfo.Location = new System.Drawing.Point(575, 218);
+            this.llPersonInfo.Location = new System.Drawing.Point(462, 216);
             this.llPersonInfo.Name = "llPersonInfo";
             this.llPersonInfo.Size = new System.Drawing.Size(166, 25);
             this.llPersonInfo.TabIndex = 24;
@@ -315,7 +165,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Driving_System.Properties.Resources.Calendar_32;
-            this.pictureBox3.Location = new System.Drawing.Point(538, 52);
+            this.pictureBox3.Location = new System.Drawing.Point(580, 52);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(24, 23);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -342,6 +192,56 @@
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
+            // lbvUser
+            // 
+            this.lbvUser.AutoSize = true;
+            this.lbvUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbvUser.Location = new System.Drawing.Point(624, 132);
+            this.lbvUser.Name = "lbvUser";
+            this.lbvUser.Size = new System.Drawing.Size(19, 25);
+            this.lbvUser.TabIndex = 15;
+            this.lbvUser.Text = "-";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(462, 132);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(115, 25);
+            this.label15.TabIndex = 14;
+            this.label15.Text = "Created By ";
+            // 
+            // lbvStatusDate
+            // 
+            this.lbvStatusDate.AutoSize = true;
+            this.lbvStatusDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbvStatusDate.Location = new System.Drawing.Point(624, 90);
+            this.lbvStatusDate.Name = "lbvStatusDate";
+            this.lbvStatusDate.Size = new System.Drawing.Size(19, 25);
+            this.lbvStatusDate.TabIndex = 13;
+            this.lbvStatusDate.Text = "-";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(462, 88);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(114, 25);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "Status Date";
+            // 
+            // lbvDate
+            // 
+            this.lbvDate.AutoSize = true;
+            this.lbvDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbvDate.Location = new System.Drawing.Point(624, 50);
+            this.lbvDate.Name = "lbvDate";
+            this.lbvDate.Size = new System.Drawing.Size(19, 25);
+            this.lbvDate.TabIndex = 11;
+            this.lbvDate.Text = "-";
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -351,6 +251,106 @@
             this.label11.Size = new System.Drawing.Size(53, 25);
             this.label11.TabIndex = 10;
             this.label11.Text = "Date";
+            // 
+            // lbvApplicant
+            // 
+            this.lbvApplicant.AutoSize = true;
+            this.lbvApplicant.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbvApplicant.Location = new System.Drawing.Point(188, 218);
+            this.lbvApplicant.Name = "lbvApplicant";
+            this.lbvApplicant.Size = new System.Drawing.Size(19, 25);
+            this.lbvApplicant.TabIndex = 9;
+            this.lbvApplicant.Text = "-";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(41, 216);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(93, 25);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Applicant";
+            // 
+            // lbvType
+            // 
+            this.lbvType.AutoSize = true;
+            this.lbvType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbvType.Location = new System.Drawing.Point(188, 176);
+            this.lbvType.Name = "lbvType";
+            this.lbvType.Size = new System.Drawing.Size(19, 25);
+            this.lbvType.TabIndex = 7;
+            this.lbvType.Text = "-";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(41, 174);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 25);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Type";
+            // 
+            // lbvFees
+            // 
+            this.lbvFees.AutoSize = true;
+            this.lbvFees.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbvFees.Location = new System.Drawing.Point(188, 134);
+            this.lbvFees.Name = "lbvFees";
+            this.lbvFees.Size = new System.Drawing.Size(19, 25);
+            this.lbvFees.TabIndex = 5;
+            this.lbvFees.Text = "-";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(41, 132);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 25);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Fees";
+            // 
+            // lbvStatus
+            // 
+            this.lbvStatus.AutoSize = true;
+            this.lbvStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbvStatus.Location = new System.Drawing.Point(188, 90);
+            this.lbvStatus.Name = "lbvStatus";
+            this.lbvStatus.Size = new System.Drawing.Size(19, 25);
+            this.lbvStatus.TabIndex = 3;
+            this.lbvStatus.Text = "-";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(41, 88);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 25);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Status";
+            // 
+            // lbvID
+            // 
+            this.lbvID.AutoSize = true;
+            this.lbvID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbvID.Location = new System.Drawing.Point(188, 52);
+            this.lbvID.Name = "lbvID";
+            this.lbvID.Size = new System.Drawing.Size(19, 25);
+            this.lbvID.TabIndex = 1;
+            this.lbvID.Text = "-";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(41, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(31, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ID";
             // 
             // crtlAppBasicInfo
             // 

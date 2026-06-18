@@ -1,12 +1,6 @@
 ﻿using BusinessLayer;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Driving_System.Applications.Local_Driving_License
@@ -30,7 +24,7 @@ namespace Driving_System.Applications.Local_Driving_License
             //_DrivingLicenseAppList = clsLocalDrivingLicenseAppBusiness.GetAllLocalDrivingLicenseApps();
             dgvLocalDrivingAppList.DataSource = _DrivingLicenseAppList;
 
-            if(dgvLocalDrivingAppList.Rows.Count > 0)
+            if (dgvLocalDrivingAppList.Rows.Count > 0)
             {
                 dgvLocalDrivingAppList.Columns[0].HeaderText = "L.D.L.AppID";
                 dgvLocalDrivingAppList.Columns[0].Width = 100;
@@ -101,13 +95,13 @@ namespace Driving_System.Applications.Local_Driving_License
 
             }
 
-            if(FilterBy == "None" || tbFilterText.Text.Trim() == "")
+            if (FilterBy == "None" || tbFilterText.Text.Trim() == "")
             {
                 _DrivingLicenseAppList.DefaultView.RowFilter = "";
                 lbvRecords.Text = _DrivingLicenseAppList.Rows.Count.ToString();
                 return;
             }
-            if(FilterBy == "LocalDrivingLicenseApplicationID")
+            if (FilterBy == "LocalDrivingLicenseApplicationID")
             {
                 _DrivingLicenseAppList.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterBy, tbFilterText.Text.Trim());
             }
@@ -121,31 +115,31 @@ namespace Driving_System.Applications.Local_Driving_License
 
         private void editApplicationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int LocalDrivingLicenseAppID = (int) dgvLocalDrivingAppList.CurrentRow.Cells[0].Value;
+            int LocalDrivingLicenseAppID = (int)dgvLocalDrivingAppList.CurrentRow.Cells[0].Value;
             frmAddUpdateLocalDrivingLicenseApp frm = new frmAddUpdateLocalDrivingLicenseApp(LocalDrivingLicenseAppID);
             frm.ShowDialog();
-            frmListLocalDrivingLicenseApps_Load(null,null);
+            frmListLocalDrivingLicenseApps_Load(null, null);
         }
 
         private void deleteApplicationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int AppID = (int)dgvLocalDrivingAppList.CurrentRow.Cells[0].Value;
-            if(MessageBox.Show("Are you sure you want to delete this app with ID " + AppID, 
+            if (MessageBox.Show("Are you sure you want to delete this app with ID " + AppID,
                 "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                clsLocalDrivingLicenseAppBusiness LocalDrivingLicenseApp = 
+                clsLocalDrivingLicenseAppBusiness LocalDrivingLicenseApp =
                     clsLocalDrivingLicenseAppBusiness.FindbyLocalDrivingLicenseAppID(AppID);
-                if(LocalDrivingLicenseApp != null)
+                if (LocalDrivingLicenseApp != null)
                 {
                     if (LocalDrivingLicenseApp.Delete())
                     {
-                        MessageBox.Show("Application has been deleted successfully", "Information", 
+                        MessageBox.Show("Application has been deleted successfully", "Information",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
                         frmListLocalDrivingLicenseApps_Load(null, null);
                     }
                     else
                     {
-                        MessageBox.Show("Application has not been deleted, This application has linked date", 
+                        MessageBox.Show("Application has not been deleted, This application has linked date",
                             "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                     }
@@ -154,6 +148,69 @@ namespace Driving_System.Applications.Local_Driving_License
                 {
                     return;
                 }
+            }
+        }
+
+        private void cancelApplicationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int LocalAppID = (int)dgvLocalDrivingAppList.CurrentRow.Cells[0].Value;
+            if (MessageBox.Show("Are you sure you want to cancel application with ID: " + LocalAppID, "Confirmation",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
+
+            clsLocalDrivingLicenseAppBusiness LocalApp = clsLocalDrivingLicenseAppBusiness.FindbyLocalDrivingLicenseAppID(LocalAppID);
+
+            if (LocalApp != null)
+            {
+
+                if (LocalApp.Cancel())
+                {
+                    MessageBox.Show("App has been cancelled successfully !", "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    frmListLocalDrivingLicenseApps_Load(null, null);
+                }
+                else
+                {
+                    MessageBox.Show("Somthing went wrong !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }
+
+        }
+
+        private void sechduleTestsToolStripMenuItem_DropDownOpening(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddApp_Click(object sender, EventArgs e)
+        {
+            frmAddUpdateLocalDrivingLicenseApp frm = new frmAddUpdateLocalDrivingLicenseApp();
+            frm.ShowDialog();
+            frmListLocalDrivingLicenseApps_Load(null, null);
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void showLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int LocalDrivingLicenseAppID = (int)dgvLocalDrivingAppList.CurrentRow.Cells[0].Value;
+
+            clsLocalDrivingLicenseAppBusiness LocalApp = 
+                clsLocalDrivingLicenseAppBusiness.FindbyLocalDrivingLicenseAppID(LocalDrivingLicenseAppID);
+            if (LocalApp != null)
+            {
+
+            }
+
+        }
+
+        private void tbFilterText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(cbFilterCategory.Text == "L.D.L.AppID")
+            {
+                e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
             }
         }
     }

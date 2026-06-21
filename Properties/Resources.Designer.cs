@@ -263,6 +263,16 @@ namespace Driving_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Count_32 {
+            get {
+                object obj = ResourceManager.GetObject("Count 32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap diskette {
             get {
                 object obj = ResourceManager.GetObject("diskette", resourceCulture);
@@ -397,6 +407,16 @@ namespace Driving_System.Properties {
             get {
                 object obj = ResourceManager.GetObject("driving-school-abstract-concept-vector-illustration-set-driving-lessons-and-instr" +
                         "uction", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap driving_test_512 {
+            get {
+                object obj = ResourceManager.GetObject("driving-test 512", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -747,6 +767,26 @@ namespace Driving_System.Properties {
         internal static System.Drawing.Bitmap users_64 {
             get {
                 object obj = ResourceManager.GetObject("users 64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Vision_512 {
+            get {
+                object obj = ResourceManager.GetObject("Vision 512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Written_Test_512 {
+            get {
+                object obj = ResourceManager.GetObject("Written Test 512", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

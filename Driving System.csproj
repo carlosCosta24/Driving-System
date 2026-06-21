@@ -122,6 +122,12 @@
     <Compile Include="Persons\frmShowPersonInfo.Designer.cs">
       <DependentUpon>frmShowPersonInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tests\Controls\crtlScheduleTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tests\Controls\crtlScheduleTest.Designer.cs">
+      <DependentUpon>crtlScheduleTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tests\Test Types\frmEditTestType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +278,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Tests\Controls\crtlScheduleTest.resx">
+      <DependentUpon>crtlScheduleTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tests\Test Types\frmEditTestType.resx">
       <DependentUpon>frmEditTestType.cs</DependentUpon>
     </EmbeddedResource>
@@ -515,6 +524,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Applications1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Count 321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\driving-test 5121.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vision 5121.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Written Test 5121.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

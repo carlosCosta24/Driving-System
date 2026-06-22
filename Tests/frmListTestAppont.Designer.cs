@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.ctrlDrivingLicenseAppInfo1 = new Driving_System.Applications.Local_Driving_License.ctrlDrivingLicenseAppInfo();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvTestAppontList = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.lbvRecord = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,33 +39,36 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editAppointmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.takeTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.pbTestImage = new System.Windows.Forms.PictureBox();
+            this.lbvTitle = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTestAppontList)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTestImage)).BeginInit();
             this.SuspendLayout();
             // 
             // ctrlDrivingLicenseAppInfo1
             // 
-            this.ctrlDrivingLicenseAppInfo1.Location = new System.Drawing.Point(12, 12);
+            this.ctrlDrivingLicenseAppInfo1.Location = new System.Drawing.Point(12, 116);
             this.ctrlDrivingLicenseAppInfo1.Name = "ctrlDrivingLicenseAppInfo1";
             this.ctrlDrivingLicenseAppInfo1.Size = new System.Drawing.Size(781, 436);
             this.ctrlDrivingLicenseAppInfo1.TabIndex = 0;
             // 
-            // dataGridView1
+            // dgvTestAppontList
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 495);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(781, 156);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvTestAppontList.BackgroundColor = System.Drawing.Color.White;
+            this.dgvTestAppontList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTestAppontList.Location = new System.Drawing.Point(12, 595);
+            this.dgvTestAppontList.Name = "dgvTestAppontList";
+            this.dgvTestAppontList.RowHeadersWidth = 51;
+            this.dgvTestAppontList.RowTemplate.Height = 24;
+            this.dgvTestAppontList.Size = new System.Drawing.Size(781, 156);
+            this.dgvTestAppontList.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 668);
+            this.label1.Location = new System.Drawing.Point(12, 763);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 25);
             this.label1.TabIndex = 2;
@@ -75,7 +78,7 @@
             // 
             this.lbvRecord.AutoSize = true;
             this.lbvRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbvRecord.Location = new System.Drawing.Point(103, 669);
+            this.lbvRecord.Location = new System.Drawing.Point(103, 764);
             this.lbvRecord.Name = "lbvRecord";
             this.lbvRecord.Size = new System.Drawing.Size(19, 25);
             this.lbvRecord.TabIndex = 3;
@@ -85,7 +88,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 451);
+            this.label2.Location = new System.Drawing.Point(12, 558);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(138, 25);
             this.label2.TabIndex = 5;
@@ -96,7 +99,7 @@
             this.btnAddAppont.BackColor = System.Drawing.Color.White;
             this.btnAddAppont.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddAppont.Image = global::Driving_System.Properties.Resources.AddAppointment_32;
-            this.btnAddAppont.Location = new System.Drawing.Point(758, 451);
+            this.btnAddAppont.Location = new System.Drawing.Point(758, 558);
             this.btnAddAppont.Name = "btnAddAppont";
             this.btnAddAppont.Size = new System.Drawing.Size(35, 31);
             this.btnAddAppont.TabIndex = 6;
@@ -109,7 +112,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = global::Driving_System.Properties.Resources.close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(679, 661);
+            this.btnClose.Location = new System.Drawing.Point(679, 757);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(114, 31);
             this.btnClose.TabIndex = 4;
@@ -123,7 +126,7 @@
             this.editAppointmentToolStripMenuItem,
             this.takeTestToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(138, 52);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 80);
             // 
             // editAppointmentToolStripMenuItem
             // 
@@ -135,27 +138,53 @@
             // takeTestToolStripMenuItem
             // 
             this.takeTestToolStripMenuItem.Name = "takeTestToolStripMenuItem";
-            this.takeTestToolStripMenuItem.Size = new System.Drawing.Size(137, 24);
+            this.takeTestToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.takeTestToolStripMenuItem.Text = "Take Test";
+            this.takeTestToolStripMenuItem.Click += new System.EventHandler(this.takeTestToolStripMenuItem_Click);
+            // 
+            // pbTestImage
+            // 
+            this.pbTestImage.Image = global::Driving_System.Properties.Resources.Vision_512;
+            this.pbTestImage.Location = new System.Drawing.Point(318, 44);
+            this.pbTestImage.Name = "pbTestImage";
+            this.pbTestImage.Size = new System.Drawing.Size(114, 69);
+            this.pbTestImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbTestImage.TabIndex = 8;
+            this.pbTestImage.TabStop = false;
+            // 
+            // lbvTitle
+            // 
+            this.lbvTitle.AutoSize = true;
+            this.lbvTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbvTitle.ForeColor = System.Drawing.Color.Red;
+            this.lbvTitle.Location = new System.Drawing.Point(297, 9);
+            this.lbvTitle.Name = "lbvTitle";
+            this.lbvTitle.Size = new System.Drawing.Size(155, 32);
+            this.lbvTitle.TabIndex = 9;
+            this.lbvTitle.Text = "Vision Test";
             // 
             // frmListTestAppont
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(805, 703);
+            this.ClientSize = new System.Drawing.Size(805, 800);
+            this.Controls.Add(this.lbvTitle);
+            this.Controls.Add(this.pbTestImage);
             this.Controls.Add(this.btnAddAppont);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lbvRecord);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvTestAppontList);
             this.Controls.Add(this.ctrlDrivingLicenseAppInfo1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmListTestAppont";
             this.Text = "frmListTestAppont";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmListTestAppont_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTestAppontList)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbTestImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,7 +193,7 @@
         #endregion
 
         private Applications.Local_Driving_License.ctrlDrivingLicenseAppInfo ctrlDrivingLicenseAppInfo1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvTestAppontList;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbvRecord;
         private System.Windows.Forms.Button btnClose;
@@ -173,5 +202,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem editAppointmentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem takeTestToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pbTestImage;
+        private System.Windows.Forms.Label lbvTitle;
     }
 }

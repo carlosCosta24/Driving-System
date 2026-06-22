@@ -151,22 +151,22 @@ namespace Driving_System.Tests.Controls
             {
                 return;
             }
-            if (_HandlePrviousTestConstrains())
+            /*if (_HandlePrviousTestConstrains())
             {
                 return;
-            }
+            }*/
 
         }
         private bool _HandelActiveTestAppontConstraints()
         {
-            if (_Mode == enMode.Add && clsLocalDrivingLicenseAppBusinessl.IsThereAnActiveScheuledTest(_LocalDrivingLicenseAppID, TestTypeID))
+            /*if (_Mode == enMode.Add && clsLocalDrivingLicenseAppBusinessl.IsThereAnActiveScheuledTest(_LocalDrivingLicenseAppID, TestTypeID))
             {
                 lbvUserMessage.Visible = true;
                 lbvUserMessage.Text = "Person already have an active appointment for this test";
                 btnSave.Enabled = false;
                 dtpTestDate.Enabled = false;
                 return false;
-            }
+            }*/
             return true;
         }
         private bool _HandleAppontLockedConstrains()
@@ -187,7 +187,7 @@ namespace Driving_System.Tests.Controls
             return true;
 
         }
-        private bool _HandlePrviousTestConstrains()
+       /* private bool _HandlePrviousTestConstrains()
         {
             switch (TestTypeID)
             {
@@ -229,7 +229,7 @@ namespace Driving_System.Tests.Controls
                     return true;
             }
             return true;
-        }
+        }*/
         private bool _HandleRetakeApp()
         {
             if (_Mode == enMode.Add && _CreationMode == enCreation.Reapplay)

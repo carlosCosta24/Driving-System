@@ -90,7 +90,7 @@ namespace Driving_System.Tests.Controls
 
             lbvDate.Text = clsFormat.DateToShort(_TestAppont.AppontDate);
             lbvFees.Text = _TestAppont.PaidFees.ToString();
-            lbvTestID.Text = (_TestAppont.TestID == -1) ? "Not Taken Yet" : _TestAppont.TestID.ToString();
+            //lbvTestID.Text = (_TestAppont.TestID == -1) ? "Not Taken Yet" : _TestAppont.TestID.ToString();
 
         }
         private void gbTestTypeTitle_Enter(object sender, EventArgs e)

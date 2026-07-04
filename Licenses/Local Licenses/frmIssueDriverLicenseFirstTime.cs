@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using Driving_System.Global;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -64,7 +65,17 @@ namespace Driving_System.Licenses.Local_Licenses
 
         private void btnIssue_Click(object sender, EventArgs e)
         {
-           // int LicenseID = _LocalDrivingLicenseApp.IssueLicenseForTheFirstTime(tbNotes.Text)
+            int LicenseID = _LocalDrivingLicenseApp.IssueLicenseForTheFirstTime(tbNotes.Text.Trim(),clsGlobal._User.UserID);
+            if(LicenseID != -1)
+            {
+                MessageBox.Show("License Issued Successfully With ID: " + LicenseID.ToString(), "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Error while License Issued Proccess!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
     }
 }

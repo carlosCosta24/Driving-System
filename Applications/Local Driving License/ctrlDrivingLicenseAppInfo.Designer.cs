@@ -51,9 +51,9 @@
             // 
             // crtlAppBasicInfo1
             // 
-            this.crtlAppBasicInfo1.Location = new System.Drawing.Point(3, 3);
+            this.crtlAppBasicInfo1.Location = new System.Drawing.Point(6, 3);
             this.crtlAppBasicInfo1.Name = "crtlAppBasicInfo1";
-            this.crtlAppBasicInfo1.Size = new System.Drawing.Size(771, 264);
+            this.crtlAppBasicInfo1.Size = new System.Drawing.Size(813, 264);
             this.crtlAppBasicInfo1.TabIndex = 0;
             // 
             // gbDrivingLicenseAppInfo
@@ -70,9 +70,9 @@
             this.gbDrivingLicenseAppInfo.Controls.Add(this.pictureBox3);
             this.gbDrivingLicenseAppInfo.Controls.Add(this.pictureBox2);
             this.gbDrivingLicenseAppInfo.Controls.Add(this.pictureBox1);
-            this.gbDrivingLicenseAppInfo.Location = new System.Drawing.Point(6, 291);
+            this.gbDrivingLicenseAppInfo.Location = new System.Drawing.Point(9, 273);
             this.gbDrivingLicenseAppInfo.Name = "gbDrivingLicenseAppInfo";
-            this.gbDrivingLicenseAppInfo.Size = new System.Drawing.Size(768, 125);
+            this.gbDrivingLicenseAppInfo.Size = new System.Drawing.Size(793, 125);
             this.gbDrivingLicenseAppInfo.TabIndex = 1;
             this.gbDrivingLicenseAppInfo.TabStop = false;
             this.gbDrivingLicenseAppInfo.Text = "Driving License Application Info";
@@ -206,7 +206,7 @@
             this.Controls.Add(this.gbDrivingLicenseAppInfo);
             this.Controls.Add(this.crtlAppBasicInfo1);
             this.Name = "ctrlDrivingLicenseAppInfo";
-            this.Size = new System.Drawing.Size(798, 435);
+            this.Size = new System.Drawing.Size(835, 419);
             this.Load += new System.EventHandler(this.ctrlDrivingLicenseAppInfo_Load);
             this.gbDrivingLicenseAppInfo.ResumeLayout(false);
             this.gbDrivingLicenseAppInfo.PerformLayout();

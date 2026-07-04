@@ -15,10 +15,10 @@ namespace Driving_System.Licenses.Local_Licenses
     {
         private int _LocalDrivingLicenseAppID;
         private clsLocalDrivingLicenseAppBusiness _LocalDrivingLicenseApp;
-        public frmIssueDriverLicenseFirstTime(int LocalDrivingLicenseApp)
+        public frmIssueDriverLicenseFirstTime(int LocalDrivingLicenseAppID)
         {
             InitializeComponent();
-            _LocalDrivingLicenseAppID = LocalDrivingLicenseApp;
+            _LocalDrivingLicenseAppID = LocalDrivingLicenseAppID;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -43,14 +43,28 @@ namespace Driving_System.Licenses.Local_Licenses
                 this.Close();
                 return;
             }
-            //if (!_LocalDrivingLicenseApp.PassAllTests()) { }
-            //int LicenseID = _LocalDrivingLicenseApp.;
+            if (!_LocalDrivingLicenseApp.PassedAllTests()) 
+            {
+                MessageBox.Show("Person Should Pass ALl Test First: ",
+                "Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                this.Close();
+                return;
+            }
+            int LicenseID = _LocalDrivingLicenseApp.GetActiveLicenseID();
+            if(LicenseID != -1)
+            {
+                MessageBox.Show("Person Allready Hase License, License ID: " + LicenseID.ToString(),
+                "Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                this.Close();
+                return;
+            }
+            ctrlDrivingLicenseAppInfo1.LoadAppInfoByLocalDrivingAppID(_LocalDrivingLicenseAppID);
 
         }
 
         private void btnIssue_Click(object sender, EventArgs e)
         {
-            //int LicenseID = _LocalDrivingLicenseApp
+           // int LicenseID = _LocalDrivingLicenseApp.IssueLicenseForTheFirstTime(tbNotes.Text)
         }
     }
 }

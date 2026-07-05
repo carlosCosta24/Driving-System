@@ -55,7 +55,7 @@ namespace Driving_System.Licenses.Local_Licenses.Controls
                 }
             }
         }
-        private void LoadInfo(int LicenseID)
+        public void LoadInfo(int LicenseID)
         {
             _LicenseID = LicenseID;
             _License = clsLicenseBusiness.Find(_LicenseID);

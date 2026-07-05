@@ -110,6 +110,12 @@
     <Compile Include="Licenses\Local Licenses\frmIssueDriverLicenseFirstTime.Designer.cs">
       <DependentUpon>frmIssueDriverLicenseFirstTime.cs</DependentUpon>
     </Compile>
+    <Compile Include="Licenses\Local Licenses\frmShowLicenseInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licenses\Local Licenses\frmShowLicenseInfo.Designer.cs">
+      <DependentUpon>frmShowLicenseInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Persons\controls\crtlPersonCardWithFilter.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -285,6 +291,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Licenses\Local Licenses\frmIssueDriverLicenseFirstTime.resx">
       <DependentUpon>frmIssueDriverLicenseFirstTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenses\Local Licenses\frmShowLicenseInfo.resx">
+      <DependentUpon>frmShowLicenseInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Persons\controls\crtlPersonCardWithFilter.resx">
       <DependentUpon>crtlPersonCardWithFilter.cs</DependentUpon>
@@ -614,6 +623,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Question 321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LicenseView 4001.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

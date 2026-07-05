@@ -92,6 +92,12 @@
     <Compile Include="Global\clsGlobal.cs" />
     <Compile Include="Global\clsUtil.cs" />
     <Compile Include="Global\clsValidating.cs" />
+    <Compile Include="Licenses\Local Licenses\Controls\ctrlDriverLicenseInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Licenses\Local Licenses\Controls\ctrlDriverLicenseInfo.Designer.cs">
+      <DependentUpon>ctrlDriverLicenseInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Licenses\Local Licenses\frmIssueDriverLicenseFirstTime.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\Local Driving License\frmLocalDrivingLicenseAppInfo.resx">
       <DependentUpon>frmLocalDrivingLicenseAppInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenses\Local Licenses\Controls\ctrlDriverLicenseInfo.resx">
+      <DependentUpon>ctrlDriverLicenseInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Licenses\Local Licenses\frmIssueDriverLicenseFirstTime.resx">
       <DependentUpon>frmIssueDriverLicenseFirstTime.cs</DependentUpon>
@@ -590,6 +599,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\New Driving License 321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\License Type 321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Question 321.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

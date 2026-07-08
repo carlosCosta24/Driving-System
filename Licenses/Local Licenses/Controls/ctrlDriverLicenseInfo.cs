@@ -26,6 +26,13 @@ namespace Driving_System.Licenses.Local_Licenses.Controls
         {
             get { return _License; }
         }
+        public clsLicenseBusiness SelectedLicenseInfo
+        {
+            get
+            {
+                return _License;
+            }
+        }
         public ctrlDriverLicenseInfo()
         {
             InitializeComponent();

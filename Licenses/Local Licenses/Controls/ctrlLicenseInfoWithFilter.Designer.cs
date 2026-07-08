@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.ctrlDriverLicenseInfo1 = new Driving_System.Licenses.Local_Licenses.Controls.ctrlDriverLicenseInfo();
             this.gbFilter = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbLicenseID = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.tbLicenseID = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbFilter.SuspendLayout();
@@ -50,6 +50,7 @@
             this.ctrlDriverLicenseInfo1.Name = "ctrlDriverLicenseInfo1";
             this.ctrlDriverLicenseInfo1.Size = new System.Drawing.Size(822, 313);
             this.ctrlDriverLicenseInfo1.TabIndex = 0;
+            this.ctrlDriverLicenseInfo1.Load += new System.EventHandler(this.ctrlDriverLicenseInfo1_Load);
             // 
             // gbFilter
             // 
@@ -64,24 +65,15 @@
             this.gbFilter.TabStop = false;
             this.gbFilter.Text = "Filter";
             // 
-            // label1
+            // pictureBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(33, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "License ID: ";
-            // 
-            // tbLicenseID
-            // 
-            this.tbLicenseID.Location = new System.Drawing.Point(205, 30);
-            this.tbLicenseID.Name = "tbLicenseID";
-            this.tbLicenseID.Size = new System.Drawing.Size(308, 22);
-            this.tbLicenseID.TabIndex = 1;
-            this.tbLicenseID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbLicenseID_KeyPress);
-            this.tbLicenseID.Validating += new System.ComponentModel.CancelEventHandler(this.tbLicenseID_Validating);
+            this.pictureBox1.Image = global::Driving_System.Properties.Resources.Number_32;
+            this.pictureBox1.Location = new System.Drawing.Point(154, 28);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // btnSearch
             // 
@@ -97,15 +89,24 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // pictureBox1
+            // tbLicenseID
             // 
-            this.pictureBox1.Image = global::Driving_System.Properties.Resources.Number_32;
-            this.pictureBox1.Location = new System.Drawing.Point(154, 28);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.tbLicenseID.Location = new System.Drawing.Point(205, 30);
+            this.tbLicenseID.Name = "tbLicenseID";
+            this.tbLicenseID.Size = new System.Drawing.Size(308, 22);
+            this.tbLicenseID.TabIndex = 1;
+            this.tbLicenseID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbLicenseID_KeyPress);
+            this.tbLicenseID.Validating += new System.ComponentModel.CancelEventHandler(this.tbLicenseID_Validating);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(33, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(115, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "License ID: ";
             // 
             // errorProvider1
             // 

@@ -49,9 +49,10 @@ namespace Driving_System.Licenses.Local_Licenses.Controls
         {
             get
             {
-                return ctrlDriverLicenseInfo1.License;
+                return ctrlDriverLicenseInfo1.SelectedLicenseInfo;
             }
         }
+         
         public ctrlLicenseInfoWithFilter()
         {
             InitializeComponent();
@@ -111,6 +112,11 @@ namespace Driving_System.Licenses.Local_Licenses.Controls
                 e.Cancel = false;
                 errorProvider1.SetError(tbLicenseID, null);
             }
+        }
+
+        private void ctrlDriverLicenseInfo1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

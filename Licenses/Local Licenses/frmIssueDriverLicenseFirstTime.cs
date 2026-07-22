@@ -1,13 +1,5 @@
-﻿using BusinessLayer;
-using Driving_System.Global;
+﻿using Driving_System.Global;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Driving_System.Licenses.Local_Licenses
@@ -37,14 +29,14 @@ namespace Driving_System.Licenses.Local_Licenses
             tbNotes.Focus();
             _LocalDrivingLicenseApp = clsLocalDrivingLicenseAppBusiness.FindbyLocalDrivingLicenseAppID(_LocalDrivingLicenseAppID);
 
-            if(_LocalDrivingLicenseApp == null)
+            if (_LocalDrivingLicenseApp == null)
             {
-                MessageBox.Show("No Application With ID: " + _LocalDrivingLicenseAppID.ToString(), 
+                MessageBox.Show("No Application With ID: " + _LocalDrivingLicenseAppID.ToString(),
                     "Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 this.Close();
                 return;
             }
-            if (!_LocalDrivingLicenseApp.PassedAllTests()) 
+            if (!_LocalDrivingLicenseApp.PassedAllTests())
             {
                 MessageBox.Show("Person Should Pass ALl Test First: ",
                 "Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -52,7 +44,7 @@ namespace Driving_System.Licenses.Local_Licenses
                 return;
             }
             int LicenseID = _LocalDrivingLicenseApp.GetActiveLicenseID();
-            if(LicenseID != -1)
+            if (LicenseID != -1)
             {
                 MessageBox.Show("Person Allready Hase License, License ID: " + LicenseID.ToString(),
                 "Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -65,8 +57,8 @@ namespace Driving_System.Licenses.Local_Licenses
 
         private void btnIssue_Click(object sender, EventArgs e)
         {
-            int LicenseID = _LocalDrivingLicenseApp.IssueLicenseForTheFirstTime(tbNotes.Text.Trim(),clsGlobal._User.UserID);
-            if(LicenseID != -1)
+            int LicenseID = _LocalDrivingLicenseApp.IssueLicenseForTheFirstTime(tbNotes.Text.Trim(), clsGlobal._User.UserID);
+            if (LicenseID != -1)
             {
                 MessageBox.Show("License Issued Successfully With ID: " + LicenseID.ToString(), "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();

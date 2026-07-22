@@ -1,13 +1,6 @@
-﻿using BusinessLayer;
-using Driving_System.Properties;
+﻿using Driving_System.Properties;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Driving_System.Tests
@@ -49,7 +42,7 @@ namespace Driving_System.Tests
         {
             clsLocalDrivingLicenseAppBusiness LocalDrivingLicenseApp = clsLocalDrivingLicenseAppBusiness.FindbyLocalDrivingLicenseAppID(_LocalDrivingLicenseAppID);
             // check if the person already have an active test scheduled
-            if(LocalDrivingLicenseApp != null)
+            if (LocalDrivingLicenseApp != null)
             {
                 MessageBox.Show("Person already have an active appointment for this tes, you can't add another", "Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return;
@@ -58,11 +51,11 @@ namespace Driving_System.Tests
             //check if the last test was passed 
             //clsTest LastTest = LocalDrivingLicenseApp.GetLastTestPerType(_TestType);
             bool LastTest = false;
-            if(LastTest == null)
+            if (LastTest == null)
             {
                 frmScheduleTest frm = new frmScheduleTest(_LocalDrivingLicenseAppID, _TestType);
                 frm.ShowDialog();
-                frmListTestAppont_Load(null,null);
+                frmListTestAppont_Load(null, null);
                 return;
             }
             if (LastTest)
@@ -93,7 +86,7 @@ namespace Driving_System.Tests
             dgvTestAppontList.DataSource = _testAppontsList;
             lbvRecord.Text = dgvTestAppontList.Rows.Count.ToString();
 
-            if(dgvTestAppontList.Rows.Count > 0)
+            if (dgvTestAppontList.Rows.Count > 0)
             {
                 dgvTestAppontList.Columns[0].HeaderText = "Appointment ID";
                 dgvTestAppontList.Columns[0].Width = 150;

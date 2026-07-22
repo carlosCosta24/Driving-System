@@ -1,12 +1,5 @@
-﻿using BusinessLayer;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Driving_System.Tests.Test_Types
@@ -26,7 +19,7 @@ namespace Driving_System.Tests.Test_Types
             dgvTestsList.DataSource = _TestsList;
             lbvRecords.Text = dgvTestsList.Rows.Count.ToString();
 
-            if (dgvTestsList.Rows.Count > 0) 
+            if (dgvTestsList.Rows.Count > 0)
             {
                 dgvTestsList.Columns[0].HeaderText = "ID";
                 dgvTestsList.Columns[0].Width = 50;

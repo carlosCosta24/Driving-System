@@ -1,13 +1,6 @@
-﻿using BusinessLayer;
-using Driving_System.Persons;
+﻿using Driving_System.Persons;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Driving_System.Drivers
@@ -26,13 +19,13 @@ namespace Driving_System.Drivers
             _DriversList = clsDriverBusiness.GetAllDrivers();
             dgvDrivers.DataSource = _DriversList;
             lbvRecords.Text = dgvDrivers.Rows.Count.ToString();
-            if(dgvDrivers.Rows.Count > 0)
+            if (dgvDrivers.Rows.Count > 0)
             {
                 dgvDrivers.Columns[0].HeaderText = "Driver ID";
                 dgvDrivers.Columns[0].Width = 120;
 
                 dgvDrivers.Columns[0].HeaderText = "Person ID";
-                dgvDrivers.Columns[0].Width = 120; 
+                dgvDrivers.Columns[0].Width = 120;
 
                 dgvDrivers.Columns[0].HeaderText = "National No.";
                 dgvDrivers.Columns[0].Width = 120;
@@ -59,7 +52,7 @@ namespace Driving_System.Drivers
         {
             tbFilterValue.Visible = (cbFilter.Text != "None");
 
-            if(cbFilter.Text == "None")
+            if (cbFilter.Text == "None")
             {
                 tbFilterValue.Enabled = false;
             }
@@ -94,14 +87,14 @@ namespace Driving_System.Drivers
                     break;
 
             }
-            if(tbFilterValue.Text.Trim() == "" || FilterCategory == "None")
+            if (tbFilterValue.Text.Trim() == "" || FilterCategory == "None")
             {
                 _DriversList.DefaultView.RowFilter = "";
                 lbvRecords.Text = dgvDrivers.Rows.Count.ToString();
                 return;
             }
 
-            if(FilterCategory != "FullName" && FilterCategory != "NationalNo")
+            if (FilterCategory != "FullName" && FilterCategory != "NationalNo")
             {
                 _DriversList.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterCategory, tbFilterValue.Text.Trim());
 
@@ -115,7 +108,7 @@ namespace Driving_System.Drivers
 
         private void tbFilterValue_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(cbFilter.Text == "Driver ID" || cbFilter.Text == "Person ID")
+            if (cbFilter.Text == "Driver ID" || cbFilter.Text == "Person ID")
             {
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
             }
@@ -123,7 +116,7 @@ namespace Driving_System.Drivers
 
         private void showLicenseInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int PersonId = (int) dgvDrivers.CurrentRow.Cells[1].Value;
+            int PersonId = (int)dgvDrivers.CurrentRow.Cells[1].Value;
             frmShowPersonInfo frm = new frmShowPersonInfo(PersonId);
             frm.ShowDialog();
             frmDriversList_Load(null, null);

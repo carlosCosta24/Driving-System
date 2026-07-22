@@ -1,14 +1,6 @@
-﻿using BusinessLayer;
-using Driving_System.Properties;
+﻿using Driving_System.Properties;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Driving_System
@@ -17,23 +9,24 @@ namespace Driving_System
     {
         private clsPersonBusiness _Person;
         private int _PersonID = -1;
-        public int PersonID 
+        public int PersonID
         {
-            get {return _PersonID;}
+            get { return _PersonID; }
         }
-        public clsPersonBusiness SelectedPerson 
+        public clsPersonBusiness SelectedPerson
         {
             get { return _Person; }
-        
+
         }
         public crtlPersonCard()
         {
             InitializeComponent();
-            
+
         }
-        public void LoadPersonInfo(int PersonID) {
+        public void LoadPersonInfo(int PersonID)
+        {
             _Person = clsPersonBusiness.GetPerson(PersonID);
-            if (_Person == null) 
+            if (_Person == null)
             {
                 RestPersonInfo();
                 MessageBox.Show("No Person With ID: " + PersonID.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -42,7 +35,7 @@ namespace Driving_System
             _FillPersonInfo();
 
 
-        
+
         }
         public void LoadPersonInfo(string NationalID)
         {
@@ -58,27 +51,32 @@ namespace Driving_System
 
 
         }
-        private void _LoadPersonImage() {
-            if (_Person.Gender == 'M') {
+        private void _LoadPersonImage()
+        {
+            if (_Person.Gender == 'M')
+            {
                 pbPersonImage.Image = Resources.Male_512;
             }
-            else 
+            else
             {
                 pbPersonImage.Image = Resources.Female_512;
             }
             string ImagePath = _Person.ImagePath;
 
-            if (ImagePath != "") {
-                if (File.Exists(ImagePath)) { 
+            if (ImagePath != "")
+            {
+                if (File.Exists(ImagePath))
+                {
                     pbPersonImage.ImageLocation = ImagePath;
                 }
-                else 
+                else
                 {
                     MessageBox.Show("Could not find this image: " + ImagePath, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
-        private void _FillPersonInfo() {
+        private void _FillPersonInfo()
+        {
 
             llEditPersonInfo.Visible = true;
             _PersonID = _Person.PersonID;
@@ -93,7 +91,8 @@ namespace Driving_System
             lbvCountry.Text = clsCountryBusiness.GetCountry(_Person.CountryID).CountryName;
             _LoadPersonImage();
         }
-        public void RestPersonInfo() {
+        public void RestPersonInfo()
+        {
 
             _PersonID = -1;
             lbvPersonID.Text = "-";

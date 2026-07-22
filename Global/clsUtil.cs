@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Driving_System.Global
@@ -18,16 +14,18 @@ namespace Driving_System.Global
 
         }
 
-        public static bool CreateFolderIfDoesNotExist(string FolderPath) {
+        public static bool CreateFolderIfDoesNotExist(string FolderPath)
+        {
 
-            if (!Directory.Exists(FolderPath)) 
+            if (!Directory.Exists(FolderPath))
             {
                 try
                 {
                     Directory.CreateDirectory(FolderPath);
                     return true;
                 }
-                catch (Exception Error) {
+                catch (Exception Error)
+                {
                     MessageBox.Show("Error whil creating the folder: " + Error.Message);
                     return false;
                 }
@@ -35,7 +33,7 @@ namespace Driving_System.Global
             return true;
         }
 
-        public static string ReplaceFileNameWithGUID(string SourceFile) 
+        public static string ReplaceFileNameWithGUID(string SourceFile)
         {
             string FileName = SourceFile;
             FileInfo FI = new FileInfo(FileName);
@@ -43,10 +41,12 @@ namespace Driving_System.Global
             return GenerateGUID() + Extn;
         }
 
-        public static bool CopyImageToProjectFolder(ref string SourceFile) {
+        public static bool CopyImageToProjectFolder(ref string SourceFile)
+        {
 
             string Destination = @"C:\Driving-System-Images\";
-            if (!CreateFolderIfDoesNotExist(Destination)) { 
+            if (!CreateFolderIfDoesNotExist(Destination))
+            {
                 return false;
             }
             string DestinationFile = Destination + ReplaceFileNameWithGUID(SourceFile);
@@ -54,7 +54,7 @@ namespace Driving_System.Global
             {
                 File.Copy(SourceFile, DestinationFile, true);
             }
-            catch (IOException Error) 
+            catch (IOException Error)
             {
                 MessageBox.Show(Error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;

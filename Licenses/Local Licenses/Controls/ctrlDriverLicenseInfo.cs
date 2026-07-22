@@ -1,15 +1,7 @@
-﻿using BusinessLayer;
-using Driving_System.Global;
+﻿using Driving_System.Global;
 using Driving_System.Properties;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Driving_System.Licenses.Local_Licenses.Controls
@@ -67,7 +59,7 @@ namespace Driving_System.Licenses.Local_Licenses.Controls
             _LicenseID = LicenseID;
             _License = clsLicenseBusiness.Find(_LicenseID);
 
-            if(_LicenseID == null)
+            if (_LicenseID == null)
             {
                 MessageBox.Show("License with ID: " + _LicenseID.ToString() + " doesn't exist!", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);

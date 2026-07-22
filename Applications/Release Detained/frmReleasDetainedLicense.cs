@@ -1,15 +1,7 @@
-﻿using BusinessLayer;
-using Driving_System.Global;
+﻿using Driving_System.Global;
 using Driving_System.Licenses;
 using Driving_System.Licenses.Local_Licenses;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Driving_System.Applications.Release_Detained
@@ -50,7 +42,7 @@ namespace Driving_System.Applications.Release_Detained
             lbvLicenseID.Text = _SelectedLicenseID.ToString();
             llLicenseHistory.Enabled = (_SelectedLicenseID != -1);
 
-            if(_SelectedLicenseID == -1)
+            if (_SelectedLicenseID == -1)
             {
                 return;
             }
@@ -62,7 +54,7 @@ namespace Driving_System.Applications.Release_Detained
             }
             lbvAppFees.Text = clsAppTypesBusiness.
                 FindApp((int)clsApplicationBusiness.enAppType.ReleaseDetainedDrivingLicsense).Fees.ToString();
-            
+
 
             lbvDetainID.Text = ctrlLicenseInfoWithFilter1.SelectedLicenseInfo.DetainInfo.DetainID.ToString();
             lbvLicenseID.Text = ctrlLicenseInfoWithFilter1.SelectedLicenseInfo.LicenseID.ToString();
@@ -83,7 +75,7 @@ namespace Driving_System.Applications.Release_Detained
 
         private void llLicenseHistory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmPersonLicenseHistory frm = new 
+            frmPersonLicenseHistory frm = new
                 frmPersonLicenseHistory(ctrlLicenseInfoWithFilter1.SelectedLicenseInfo.DriverInfo.PersonID);
             frm.ShowDialog();
         }
@@ -96,7 +88,7 @@ namespace Driving_System.Applications.Release_Detained
 
         private void btnRelease_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Are you sure you want to release this License", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (MessageBox.Show("Are you sure you want to release this License", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 return;
             }

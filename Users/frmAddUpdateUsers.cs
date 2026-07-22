@@ -1,19 +1,12 @@
-﻿using BusinessLayer;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Driving_System.Users
 {
     public partial class frmAddUpdateUsers : Form
     {
-        public enum enMode {Add=0, Update=1};
+        public enum enMode { Add = 0, Update = 1 };
         private enMode _Mode;
         private int _UserID = -1;
         private clsUserBusiness _User;
@@ -29,7 +22,8 @@ namespace Driving_System.Users
             _UserID = UserID;
             _Mode = enMode.Update;
         }
-        private void _RestValues() {
+        private void _RestValues()
+        {
             if (_Mode == enMode.Add)
             {
                 lbTitle.Text = "Add New User";
@@ -38,7 +32,7 @@ namespace Driving_System.Users
                 tbLogin.Enabled = false;
                 crtlPersonCardWithFilter1.FilterFocus();
             }
-            else 
+            else
             {
                 lbTitle.Text = "Update User Info";
                 this.Text = "Update";
@@ -46,19 +40,20 @@ namespace Driving_System.Users
                 btnSave.Enabled = true;
             }
             lbvUserID.Text = "-";
-            tbUserName.Text = "-"; 
+            tbUserName.Text = "-";
             tbPassword.Text = "-";
             tbConfirmPassword.Text = "-";
             chbIsActive.Checked = true;
 
         }
-        private void _LoadData() {
+        private void _LoadData()
+        {
             _User = clsUserBusiness.FindByUserID(_UserID);
             crtlPersonCardWithFilter1.FilterEnabled = false;
 
-            if(_User == null) 
+            if (_User == null)
             {
-                MessageBox.Show("User Dose not exist! ","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("User Dose not exist! ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
                 return;
             }
@@ -72,8 +67,8 @@ namespace Driving_System.Users
         }
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (_Mode == enMode.Update) 
-            { 
+            if (_Mode == enMode.Update)
+            {
                 btnNext.Enabled = true;
                 tbLogin.Enabled = true;
                 tcUserInfo.SelectedTab = tcUserInfo.TabPages["tbLogin"];
@@ -94,7 +89,7 @@ namespace Driving_System.Users
                 }
 
             }
-            else 
+            else
             {
                 MessageBox.Show("Please select a person", "Select a person", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 crtlPersonCardWithFilter1.FilterFocus();
@@ -104,7 +99,7 @@ namespace Driving_System.Users
         private void frmAddUpdateUsers_Load(object sender, EventArgs e)
         {
             _RestValues();
-            if (_Mode == enMode.Update) 
+            if (_Mode == enMode.Update)
             {
                 _LoadData();
             }
@@ -112,11 +107,11 @@ namespace Driving_System.Users
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!this.ValidateChildren()) 
+            if (!this.ValidateChildren())
             {
                 MessageBox.Show("Some field is not valid! Refrence the error icon!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            
+
             }
             _User.PersonID = crtlPersonCardWithFilter1.PersonID;
             _User.UserName = tbUserName.Text.Trim();
@@ -133,8 +128,8 @@ namespace Driving_System.Users
                 MessageBox.Show("User info saved", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
-            else 
-            { 
+            else
+            {
                 MessageBox.Show("User info Not saved!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
@@ -152,8 +147,8 @@ namespace Driving_System.Users
                 e.Cancel = true;
                 errorProvider1.SetError(tbConfirmPassword, "Passord should match");
             }
-            else 
-            { 
+            else
+            {
                 e.Cancel = false;
                 errorProvider1.SetError(tbConfirmPassword, null);
             }
@@ -167,9 +162,9 @@ namespace Driving_System.Users
                 e.Cancel = true;
                 errorProvider1.SetError(tbPassword, "Password cant be null / at least 8 charachters");
             }
-            else 
+            else
             {
-                e.Cancel= false;
+                e.Cancel = false;
                 errorProvider1.SetError(tbPassword, null);
             }
         }
@@ -182,7 +177,7 @@ namespace Driving_System.Users
                 errorProvider1.SetError(tbUserName, "Username Cant be empty");
                 return;
             }
-            else 
+            else
             {
                 e.Cancel = false;
                 errorProvider1.SetError(tbUserName, null);
@@ -202,9 +197,9 @@ namespace Driving_System.Users
                 }
 
             }
-            else 
+            else
             {
-                if (_User.UserName != tbUserName.Text.Trim()) 
+                if (_User.UserName != tbUserName.Text.Trim())
                 {
                     if (clsUserBusiness.IsUserExist(tbUserName.Text.Trim()))
                     {
@@ -212,12 +207,12 @@ namespace Driving_System.Users
                         errorProvider1.SetError(tbUserName, "Username already exist, choose another Username");
                         return;
                     }
-                    else 
+                    else
                     {
                         e.Cancel = false;
                         errorProvider1.SetError(tbUserName, null);
                     }
-                
+
                 }
             }
         }

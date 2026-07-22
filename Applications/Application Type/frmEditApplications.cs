@@ -1,5 +1,4 @@
-﻿using BusinessLayer;
-using Driving_System.Global;
+﻿using Driving_System.Global;
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
@@ -83,7 +82,7 @@ namespace Driving_System.Applications.Application_Type
                 errorProvider1.SetError(tbFees, "Fees is not valid number");
 
             }
-            else 
+            else
             {
                 e.Cancel = false;
                 errorProvider1.SetError(tbFees, null);

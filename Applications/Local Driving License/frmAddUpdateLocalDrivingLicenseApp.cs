@@ -1,13 +1,5 @@
-﻿using BusinessLayer;
-using Driving_System.Global;
+﻿using Driving_System.Global;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Driving_System.Applications.Local_Driving_License
@@ -40,7 +32,7 @@ namespace Driving_System.Applications.Local_Driving_License
         {
             _FillLicenseClassComboBox();
 
-            if(_Mode == enMode.Add)
+            if (_Mode == enMode.Add)
             {
                 this.Text = "New Local Driving License Application";
                 lbFormName.Text = "New Local Driving License Application";
@@ -60,7 +52,7 @@ namespace Driving_System.Applications.Local_Driving_License
 
                 tbAppInfo.Enabled = true;
                 btnSave.Enabled = true;
-                
+
             }
         }
         private void _LoadData()
@@ -68,9 +60,9 @@ namespace Driving_System.Applications.Local_Driving_License
             crtlPersonCardWithFilter1.FilterEnabled = false;
             _LocalDrivingLicenseApp = clsLocalDrivingLicenseAppBusiness.FindbyLocalDrivingLicenseAppID(_LocalDrivingLicenseAppID);
 
-            if(_LocalDrivingLicenseApp != null)
+            if (_LocalDrivingLicenseApp != null)
             {
-                MessageBox.Show("No application with ID: " + _LocalDrivingLicenseApp, 
+                MessageBox.Show("No application with ID: " + _LocalDrivingLicenseApp,
                     "Application not found!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.Close();
                 return;
@@ -82,7 +74,7 @@ namespace Driving_System.Applications.Local_Driving_License
             lbvFees.Text = _LocalDrivingLicenseApp.PaidFees.ToString();
             lbvUserID.Text = clsUserBusiness.FindByUserID(_LocalDrivingLicenseApp.CreatedByUserID).UserName;
         }
-        private void DataBackEvent(object sender, int PersonID) 
+        private void DataBackEvent(object sender, int PersonID)
         {
             _SelectedPersonID = PersonID;
             crtlPersonCardWithFilter1.LoadPersonInfo(PersonID);
@@ -95,7 +87,7 @@ namespace Driving_System.Applications.Local_Driving_License
         private void frmAddUpdateLocalDrivingLicenseApp_Load(object sender, EventArgs e)
         {
             _RestDefaultValues();
-            if (_Mode == enMode.Update) 
+            if (_Mode == enMode.Update)
             {
                 _LoadData();
             }
@@ -104,7 +96,7 @@ namespace Driving_System.Applications.Local_Driving_License
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if(_Mode == enMode.Update)
+            if (_Mode == enMode.Update)
             {
                 btnSave.Enabled = true;
                 tbAppInfo.Enabled = true;
@@ -112,7 +104,7 @@ namespace Driving_System.Applications.Local_Driving_License
                 return;
             }
 
-            if (_Mode == enMode.Add) 
+            if (_Mode == enMode.Add)
             {
                 btnSave.Enabled = true;
                 tbAppInfo.Enabled = true;
@@ -140,8 +132,8 @@ namespace Driving_System.Applications.Local_Driving_License
         }
         private void crtlPersonCardWithFilter1_OnPersonSelected(int obj)
         {
-            
-           _SelectedPersonID = obj;
+
+            _SelectedPersonID = obj;
         }
 
         private void frmAddUpdateLocalDrivingLicenseApp_Activated(object sender, EventArgs e)

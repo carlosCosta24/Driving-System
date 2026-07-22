@@ -1,29 +1,20 @@
-﻿using BusinessLayer;
-using Driving_System.Global;
+﻿using Driving_System.Global;
 using Driving_System.Licenses.Local_Licenses;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static BusinessLayer.clsLicenseBusiness;
 
 namespace Driving_System.Applications.Replace_Lost_Or_Damaged_License
 {
     public partial class frmReplaceLostOrDamagedLicense : Form
     {
-        private int _NewLicenseID =-1;
+        private int _NewLicenseID = -1;
         public frmReplaceLostOrDamagedLicense()
         {
             InitializeComponent();
         }
         private int _GetAppTypeID()
         {
-            if(rbDamaged.Checked) 
+            if (rbDamaged.Checked)
             {
                 return (int)clsApplicationBusiness.enAppType.ReplaceDamagedDrivingLicense;
             }
@@ -82,7 +73,7 @@ namespace Driving_System.Applications.Replace_Lost_Or_Damaged_License
             lbvOldLicenseID.Text = SelectedLicenseID.ToString();
             llLicenseHistory.Enabled = (SelectedLicenseID != -1);
 
-            if(SelectedLicenseID == -1)
+            if (SelectedLicenseID == -1)
             {
                 return;
             }
@@ -97,7 +88,7 @@ namespace Driving_System.Applications.Replace_Lost_Or_Damaged_License
 
         private void btnIssue_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Are You Sure You Want To Issue New License", 
+            if (MessageBox.Show("Are You Sure You Want To Issue New License",
                 "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 return;
@@ -105,7 +96,7 @@ namespace Driving_System.Applications.Replace_Lost_Or_Damaged_License
 
             clsLicenseBusiness NewLicense =
                 ctrlLicenseInfoWithFilter1.SelectedLicenseInfo.Replace(_GetIssueReason(), clsGlobal._User.UserID);
-            if(NewLicense == null)
+            if (NewLicense == null)
             {
                 MessageBox.Show("Error while Renewing the license ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -114,7 +105,7 @@ namespace Driving_System.Applications.Replace_Lost_Or_Damaged_License
             lbvReplacementAppID.Text = NewLicense.AppID.ToString();
             _NewLicenseID = NewLicense.LicenseID;
 
-            
+
             lbvReplacementLicenseID.Text = _NewLicenseID.ToString();
             MessageBox.Show("New License Issued Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

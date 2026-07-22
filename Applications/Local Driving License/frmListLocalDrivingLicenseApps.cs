@@ -1,5 +1,4 @@
-﻿using BusinessLayer;
-using System;
+﻿using System;
 using System.Data;
 using System.Windows.Forms;
 
@@ -197,7 +196,7 @@ namespace Driving_System.Applications.Local_Driving_License
         {
             int LocalDrivingLicenseAppID = (int)dgvLocalDrivingAppList.CurrentRow.Cells[0].Value;
 
-            clsLocalDrivingLicenseAppBusiness LocalApp = 
+            clsLocalDrivingLicenseAppBusiness LocalApp =
                 clsLocalDrivingLicenseAppBusiness.FindbyLocalDrivingLicenseAppID(LocalDrivingLicenseAppID);
             if (LocalApp != null)
             {
@@ -208,7 +207,7 @@ namespace Driving_System.Applications.Local_Driving_License
 
         private void tbFilterText_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(cbFilterCategory.Text == "L.D.L.AppID")
+            if (cbFilterCategory.Text == "L.D.L.AppID")
             {
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
             }

@@ -1,5 +1,4 @@
-﻿using BusinessLayer;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace Driving_System.Persons.controls
@@ -81,9 +80,10 @@ namespace Driving_System.Persons.controls
 
 
             }
-            if (PersonSelected != null && FilterEnabled) {
+            if (PersonSelected != null && FilterEnabled)
+            {
 
-                PersonSelected (crtlPersonCard1.PersonID);
+                PersonSelected(crtlPersonCard1.PersonID);
             }
 
         }
@@ -96,7 +96,8 @@ namespace Driving_System.Persons.controls
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            if (this.ValidateChildren()) {
+            if (this.ValidateChildren())
+            {
 
                 MessageBox.Show("Some fields are not valid!, Hover over the red icons to see the error", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -118,7 +119,7 @@ namespace Driving_System.Persons.controls
                 e.Cancel = true;
                 errorProvider1.SetError(tbFilterValue, "Invalid value");
             }
-            else 
+            else
             {
                 e.Cancel = false;
                 errorProvider1.SetError(tbFilterValue, null);
@@ -131,25 +132,25 @@ namespace Driving_System.Persons.controls
             frm.DataBack += DataBack;
             frm.ShowDialog();
         }
-        private void DataBack(object sender, int PersonID) 
+        private void DataBack(object sender, int PersonID)
         {
             cbFindBy.SelectedIndex = 1;
             tbFilterValue.Text = PersonID.ToString();
             crtlPersonCard1.LoadPersonInfo(PersonID);
-        
+
         }
-        public void FilterFocus() 
+        public void FilterFocus()
         {
             tbFilterValue.Focus();
         }
 
         private void tbFilterValue_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)13) 
+            if (e.KeyChar == (char)13)
             {
                 btnFind.PerformClick();
             }
-            if (cbFindBy.Text == "Person ID") 
+            if (cbFindBy.Text == "Person ID")
             {
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
             }

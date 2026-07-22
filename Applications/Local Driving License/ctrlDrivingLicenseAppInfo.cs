@@ -1,12 +1,4 @@
-﻿using BusinessLayer;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace Driving_System.Applications.Local_Driving_License
@@ -18,8 +10,8 @@ namespace Driving_System.Applications.Local_Driving_License
         private int _LicenseID;
         public int LocalDrivingLicenseAppID
         {
-            get 
-            {  
+            get
+            {
                 return _LocalDrivingLicenseAppID;
             }
         }
@@ -30,7 +22,7 @@ namespace Driving_System.Applications.Local_Driving_License
         public void LoadAppInfoByLocalDrivingAppID(int LocalDrivingLicenseAppID)
         {
             _LocalDrivingLicenseApp = clsLocalDrivingLicenseAppBusiness.FindbyLocalDrivingLicenseAppID(LocalDrivingLicenseAppID);
-            if(_LocalDrivingLicenseApp == null)
+            if (_LocalDrivingLicenseApp == null)
             {
                 _RestLocalDrivingLicenseAppInfo();
                 MessageBox.Show("No application found with ID: " + LocalDrivingLicenseAppID.ToString(), "Error", MessageBoxButtons.OK,
@@ -68,7 +60,7 @@ namespace Driving_System.Applications.Local_Driving_License
             crtlAppBasicInfo1.RestAppInfo();
             lbvDLAppID.Text = "-";
             lbvAppliedForLicesns.Text = "-";
-           
+
 
         }
         private void ctrlDrivingLicenseAppInfo_Load(object sender, EventArgs e)

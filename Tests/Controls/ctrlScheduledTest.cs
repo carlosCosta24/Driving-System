@@ -1,14 +1,6 @@
-﻿using BusinessLayer;
-using Driving_System.Global;
+﻿using Driving_System.Global;
 using Driving_System.Properties;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Driving_System.Tests.Controls
@@ -16,7 +8,7 @@ namespace Driving_System.Tests.Controls
     public partial class ctrlScheduledTest : UserControl
     {
         private clsTestTypesBusiness.enTestTypes _TestTypeID;
-        private int _TestID =-1;
+        private int _TestID = -1;
         private clsLocalDrivingLicenseAppBusiness _LocalDrivingLicenseApp;
         private int _TestAppontID = -1;
         private int _LocalDrivingLicenseAppID = -1;
@@ -45,26 +37,31 @@ namespace Driving_System.Tests.Controls
                 }
             }
         }
-        public int TestAppontID { get
+        public int TestAppontID
+        {
+            get
             {
                 return _TestAppontID;
-            } }
-         public int TestID { get
+            }
+        }
+        public int TestID
+        {
+            get
             {
                 return _TestID;
-            } 
+            }
         }
 
         public ctrlScheduledTest()
         {
             InitializeComponent();
         }
-        public void LoadInfo(int TestAppontID) 
+        public void LoadInfo(int TestAppontID)
         {
             _TestAppontID = TestAppontID;
             _TestAppont = clsTestAppointmentBusiness.Find(_TestAppontID);
 
-            if(_TestAppont == null)
+            if (_TestAppont == null)
             {
                 MessageBox.Show("Error: No Appontment whit ID: " + _TestAppontID.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 _TestAppontID = -1;
@@ -75,7 +72,7 @@ namespace Driving_System.Tests.Controls
             _LocalDrivingLicenseAppID = _TestAppont.LocalDrivingLicenseAppID;
             _LocalDrivingLicenseApp = clsLocalDrivingLicenseAppBusiness.FindbyLocalDrivingLicenseAppID(_LocalDrivingLicenseAppID);
 
-            if(_LocalDrivingLicenseApp == null)
+            if (_LocalDrivingLicenseApp == null)
             {
                 MessageBox.Show("Error: No Local Driving License Application Linked To This ID: " + _LocalDrivingLicenseAppID.ToString(),
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

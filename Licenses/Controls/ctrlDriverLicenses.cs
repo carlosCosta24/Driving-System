@@ -1,13 +1,6 @@
-﻿using BusinessLayer;
-using Driving_System.Licenses.Local_Licenses;
+﻿using Driving_System.Licenses.Local_Licenses;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Driving_System.Licenses.Controls
@@ -28,10 +21,10 @@ namespace Driving_System.Licenses.Controls
             dgvLocalLicenses.DataSource = _LocalLicenseHistoryList;
             lbvLocalRecord.Text = dgvLocalLicenses.Rows.Count.ToString();
 
-            if(dgvLocalLicenses.Rows.Count > 0)
+            if (dgvLocalLicenses.Rows.Count > 0)
             {
                 dgvLocalLicenses.Columns[0].HeaderText = "License ID";
-                dgvLocalLicenses.Columns[0].Width= 100;
+                dgvLocalLicenses.Columns[0].Width = 100;
 
                 dgvLocalLicenses.Columns[0].HeaderText = "App ID";
                 dgvLocalLicenses.Columns[0].Width = 100;
@@ -91,9 +84,9 @@ namespace Driving_System.Licenses.Controls
         public void LoadInfoByPersonID(int PersonID)
         {
             _Driver = clsDriverBusiness.FindByPersonID(PersonID);
-            if(_Driver == null)
+            if (_Driver == null)
             {
-                MessageBox.Show("There is no Driver Connected with this person ID: " + 
+                MessageBox.Show("There is no Driver Connected with this person ID: " +
                     PersonID.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }

@@ -1,5 +1,4 @@
-﻿using BusinessLayer;
-using System;
+﻿using System;
 using System.Data;
 using System.Windows.Forms;
 
@@ -128,14 +127,14 @@ namespace Driving_System.Users
                 cbIsActive.Focus();
                 cbIsActive.SelectedIndex = 0;
             }
-            else 
+            else
             {
                 tbFilterValue.Visible = (cbFilter.Text != "None");
                 cbIsActive.Visible = false;
 
                 tbFilterValue.Text = "";
                 tbFilterValue.Focus();
-                
+
             }
         }
 
@@ -191,7 +190,7 @@ namespace Driving_System.Users
             string FilterCategory = cbIsActive.Text;
             string FilterColumn = "IsActive";
 
-            switch (FilterCategory) 
+            switch (FilterCategory)
             {
                 case "All":
                     break;
@@ -208,9 +207,9 @@ namespace Driving_System.Users
                 _UsersList.DefaultView.RowFilter = "";
 
             }
-            else 
+            else
             {
-                _UsersList.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumn, FilterCategory) ;
+                _UsersList.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumn, FilterCategory);
             }
         }
     }

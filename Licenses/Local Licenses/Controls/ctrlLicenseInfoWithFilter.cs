@@ -1,12 +1,5 @@
-﻿using BusinessLayer;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Driving_System.Licenses.Local_Licenses.Controls
@@ -18,7 +11,7 @@ namespace Driving_System.Licenses.Local_Licenses.Controls
         protected virtual void LicenseSelected(int licenseID)
         {
             Action<int> Handler = OnLicenseSelect;
-            if(Handler != null)
+            if (Handler != null)
             {
                 Handler(licenseID);
             }
@@ -52,7 +45,7 @@ namespace Driving_System.Licenses.Local_Licenses.Controls
                 return ctrlDriverLicenseInfo1.SelectedLicenseInfo;
             }
         }
-         
+
         public ctrlLicenseInfoWithFilter()
         {
             InitializeComponent();
@@ -62,7 +55,7 @@ namespace Driving_System.Licenses.Local_Licenses.Controls
             tbLicenseID.Text = LicenseID.ToString();
             ctrlDriverLicenseInfo1.LoadInfo(LicenseID);
             _LicenseID = ctrlDriverLicenseInfo1.LicenseID;
-            if(OnLicenseSelect != null && FilterEnabled)
+            if (OnLicenseSelect != null && FilterEnabled)
             {
                 OnLicenseSelect(_LicenseID);
             }
@@ -78,7 +71,7 @@ namespace Driving_System.Licenses.Local_Licenses.Controls
         {
             e.Handled = !Char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
 
-            if(e.KeyChar == (char)13)
+            if (e.KeyChar == (char)13)
             {
                 btnSearch.PerformClick();
             }

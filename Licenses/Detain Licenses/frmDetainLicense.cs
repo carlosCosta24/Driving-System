@@ -1,13 +1,7 @@
 ﻿using Driving_System.Global;
 using Driving_System.Licenses.Local_Licenses;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Driving_System.Licenses.Detain_Licenses
@@ -25,7 +19,7 @@ namespace Driving_System.Licenses.Detain_Licenses
         {
             lbvDetainDate.Text = clsFormat.DateToShort(DateTime.Now);
             lbvCreatedBy.Text = clsGlobal._User.UserName;
-           
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -46,7 +40,7 @@ namespace Driving_System.Licenses.Detain_Licenses
 
             llLicenseHistory.Enabled = (_SelectedLicenseID != -1);
 
-            if(_SelectedLicenseID == -1)
+            if (_SelectedLicenseID == -1)
             {
                 return;
             }

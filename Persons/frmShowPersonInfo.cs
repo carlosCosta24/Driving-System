@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Driving_System.Persons
@@ -15,7 +8,7 @@ namespace Driving_System.Persons
         public frmShowPersonInfo(int PersonID)
         {
             InitializeComponent();
-            crtlPersonCard1.LoadPersonInfo(PersonID) ;
+            crtlPersonCard1.LoadPersonInfo(PersonID);
         }
         public frmShowPersonInfo(string NationalNo)
         {

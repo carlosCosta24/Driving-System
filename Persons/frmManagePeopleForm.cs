@@ -1,7 +1,5 @@
-﻿using BusinessLayer;
-using Driving_System.Persons;
+﻿using Driving_System.Persons;
 using System;
-using System.ComponentModel;
 using System.Data;
 using System.Windows.Forms;
 
@@ -219,12 +217,12 @@ namespace Driving_System
 
         private void tbFilterText_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (cbFilterCategory.Text == "Person ID") 
-            { 
+            if (cbFilterCategory.Text == "Person ID")
+            {
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-               
+
             }
-            
+
         }
     }
 }

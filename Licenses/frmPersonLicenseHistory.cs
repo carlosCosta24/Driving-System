@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Driving_System.Licenses
@@ -25,7 +18,7 @@ namespace Driving_System.Licenses
 
         private void frmPersonLicenseHistory_Load(object sender, EventArgs e)
         {
-            if(_PersonID != -1)
+            if (_PersonID != -1)
             {
                 crtlPersonCardWithFilter1.LoadPersonInfo(_PersonID);
                 crtlPersonCardWithFilter1.FilterEnabled = false;

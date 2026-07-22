@@ -1,5 +1,4 @@
-﻿using BusinessLayer;
-using Driving_System.Global;
+﻿using Driving_System.Global;
 using Driving_System.Properties;
 using System;
 using System.ComponentModel;
@@ -347,7 +346,8 @@ namespace Driving_System
                 e.Cancel = true;
                 epGeneral.SetError(Temp, "This Fiels Is Requird!");
             }
-            else {
+            else
+            {
                 epGeneral.SetError(Temp, null);
             }
 

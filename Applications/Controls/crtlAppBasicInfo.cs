@@ -1,14 +1,6 @@
-﻿using BusinessLayer;
-using Driving_System.Global;
+﻿using Driving_System.Global;
 using Driving_System.Persons;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Driving_System.Applications.Controls
@@ -32,7 +24,7 @@ namespace Driving_System.Applications.Controls
         public void LoadAppInfo(int AppID)
         {
             _App = clsApplicationBusiness.FindBaseApp(AppID);
-                if(_App == null)
+            if (_App == null)
             {
                 RestAppInfo();
                 MessageBox.Show("No application with this ID: " + _AppID, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

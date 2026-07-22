@@ -1,12 +1,4 @@
-﻿using BusinessLayer;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace Driving_System.Users
@@ -14,7 +6,7 @@ namespace Driving_System.Users
     public partial class crtlUserCard : UserControl
     {
         private clsUserBusiness _User;
-        private int _UserID = -1 ;
+        private int _UserID = -1;
 
         public int UserID { get { return _UserID; } }
 
@@ -23,21 +15,22 @@ namespace Driving_System.Users
             InitializeComponent();
         }
 
-        public void LoadUserInfo(int UserID) 
+        public void LoadUserInfo(int UserID)
         {
             _UserID = UserID;
             _User = clsUserBusiness.FindByUserID(UserID);
-            if (_User == null) 
+            if (_User == null)
             {
                 _RestPersonInfo();
                 MessageBox.Show("No User With ID = [ " + UserID.ToString() + " ]", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            
+
             }
             _FillUserInfo();
         }
 
-        private void _FillUserInfo() {
+        private void _FillUserInfo()
+        {
 
             crtlPersonCard1.LoadPersonInfo(_User.PersonID);
             lbvUserID.Text = _User.UserID.ToString();
@@ -46,13 +39,14 @@ namespace Driving_System.Users
             {
                 lbvIsActive.Text = "Yes";
             }
-            else 
+            else
             {
                 lbvIsActive.Text = "No";
             }
         }
 
-        private void _RestPersonInfo() {
+        private void _RestPersonInfo()
+        {
 
             crtlPersonCard1.RestPersonInfo();
             lbvUserID.Text = "-";

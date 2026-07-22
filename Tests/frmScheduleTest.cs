@@ -1,12 +1,4 @@
-﻿using BusinessLayer;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace Driving_System.Tests
@@ -33,7 +25,7 @@ namespace Driving_System.Tests
         private void frmScheduleTest_Load(object sender, EventArgs e)
         {
             crtlScheduleTest1.TestTypeID = _TestType;
-            crtlScheduleTest1.LoadInfo(_LocalDrivingLicenseAppID,_AppontID);
+            crtlScheduleTest1.LoadInfo(_LocalDrivingLicenseAppID, _AppontID);
         }
     }
 }

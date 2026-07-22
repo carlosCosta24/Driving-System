@@ -1,10 +1,5 @@
-﻿using BusinessLayer;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Driving_System.Global
@@ -13,7 +8,7 @@ namespace Driving_System.Global
     {
         public static clsUserBusiness _User;
 
-        public static bool SaveCredentials(string UserName, string Password) 
+        public static bool SaveCredentials(string UserName, string Password)
         {
             try
             {
@@ -35,14 +30,14 @@ namespace Driving_System.Global
                     return true;
                 }
             }
-            catch (Exception Error) 
+            catch (Exception Error)
             {
-                MessageBox.Show($"An Error occured: { Error.Message}");
+                MessageBox.Show($"An Error occured: {Error.Message}");
                 return false;
             }
         }
 
-        public static bool GetCredentials(ref string UserName, ref string Password) 
+        public static bool GetCredentials(ref string UserName, ref string Password)
         {
             try
             {
@@ -70,7 +65,7 @@ namespace Driving_System.Global
                     return false;
                 }
             }
-            catch (Exception Error) 
+            catch (Exception Error)
             {
                 MessageBox.Show($"An Error occured: {Error.Message}");
                 return false;

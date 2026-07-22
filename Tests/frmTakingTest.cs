@@ -1,13 +1,5 @@
-﻿using BusinessLayer;
-using Driving_System.Global;
+﻿using Driving_System.Global;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Driving_System.Tests
@@ -22,7 +14,7 @@ namespace Driving_System.Tests
         {
             InitializeComponent();
             _AppontID = TestAppontID;
-            _TestType = TestType; 
+            _TestType = TestType;
         }
 
         private void frmTakingTest_Load(object sender, EventArgs e)
@@ -59,7 +51,7 @@ namespace Driving_System.Tests
             {
                 _Test = new clsTestBusiness();
             }
-    }
+        }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -68,8 +60,8 @@ namespace Driving_System.Tests
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Are You Sure", "Confirmation", 
-                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) 
+            if (MessageBox.Show("Are You Sure", "Confirmation",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
                 == DialogResult.No)
             {
                 return;
@@ -87,7 +79,7 @@ namespace Driving_System.Tests
             else
             {
                 MessageBox.Show("Error: Data Not Saved .", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
+
 
             }
         }

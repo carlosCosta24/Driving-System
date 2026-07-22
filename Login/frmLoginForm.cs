@@ -1,20 +1,12 @@
-﻿using BusinessLayer;
-using Driving_System.Global;
+﻿using Driving_System.Global;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Driving_System
 {
     public partial class frmLoginForm : Form
     {
-        
+
         public frmLoginForm()
         {
             InitializeComponent();
@@ -30,7 +22,7 @@ namespace Driving_System
                 tbPassword.Text = Password;
                 chbRemeberMe.Checked = true;
             }
-            else 
+            else
             {
                 chbRemeberMe.Checked = false;
             }
@@ -67,13 +59,13 @@ namespace Driving_System
                 frmMain frm = new frmMain(this);
                 frm.ShowDialog();
             }
-            else 
+            else
             {
                 tbUserName.Focus();
                 MessageBox.Show("Not valid Username / Password ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 
-    
+
     }
 }

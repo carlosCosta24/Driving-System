@@ -1,14 +1,6 @@
-﻿using BusinessLayer;
-using Driving_System.Global;
+﻿using Driving_System.Global;
 using Driving_System.Licenses.Local_Licenses;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Driving_System.Licenses.Renew_Local_License
@@ -69,14 +61,14 @@ namespace Driving_System.Licenses.Renew_Local_License
 
         private void btnRenew_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Are you sure you want to renew this license!", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            if (MessageBox.Show("Are you sure you want to renew this license!", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 == DialogResult.No)
             {
                 return;
             }
             clsLicenseBusiness NewLicense = ctrlLicenseInfoWithFilter1.SelectedLicenseInfo.Renew(tbNotes.Text, clsGlobal._User.UserID);
 
-            if(NewLicense == null) 
+            if (NewLicense == null)
             {
                 MessageBox.Show("Failed to renew the license, contact you admin", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -98,7 +90,7 @@ namespace Driving_System.Licenses.Renew_Local_License
 
         private void llLicenseHistory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            
+
         }
 
         private void llNewLicensInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

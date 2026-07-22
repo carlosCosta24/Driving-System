@@ -1,5 +1,4 @@
-﻿using BusinessLayer;
-using Driving_System.Global;
+﻿using Driving_System.Global;
 using Driving_System.Properties;
 using System;
 using System.Windows.Forms;
@@ -60,7 +59,7 @@ namespace Driving_System.Tests.Controls
             }
             lbvFees.Text = _TestAppont.PaidFees.ToString();
 
-            if(DateTime.Compare(DateTime.Now, _TestAppont.AppontDate) < 0)
+            if (DateTime.Compare(DateTime.Now, _TestAppont.AppontDate) < 0)
             {
                 dtpTestDate.MinDate = DateTime.Now;
             }
@@ -69,7 +68,7 @@ namespace Driving_System.Tests.Controls
                 dtpTestDate.MinDate = _TestAppont.AppontDate;
             }
 
-            if(_TestAppont.RetakeTestAppID == -1)
+            if (_TestAppont.RetakeTestAppID == -1)
             {
                 lbvRetakeTestFees.Text = "0";
                 lbvRetakeTestID.Text = "N/A";
@@ -187,49 +186,49 @@ namespace Driving_System.Tests.Controls
             return true;
 
         }
-       /* private bool _HandlePrviousTestConstrains()
-        {
-            switch (TestTypeID)
-            {
-                case clsTestTypesBusiness.enTestTypes.Vision:
-                    lbvUserMessage.Visible = false;
-                    return true;
-                case clsTestTypesBusiness.enTestTypes.Written:
-                    if (!_LocalDrivingLicenseApp.PassTestType(clsTestTypesBusiness.enTestTypes.Written))
-                    {
-                        lbvUserMessage.Visible = true;
-                        lbvUserMessage.Text = "Cannot Schdeul The Written Test Before Passing Viosion Test";
-                        btnSave.Enabled = false;
-                        dtpTestDate.Enabled = false;
-                        return false;
-                    }
-                    else
-                    {
-                        lbvUserMessage.Visible = false;
-                        btnSave.Enabled = true;
-                        dtpTestDate.Enabled = true;
-                    }
-                    return true;
-                case clsTestTypesBusiness.enTestTypes.Practical:
-                    if (!_LocalDrivingLicenseApp.PassTestType(clsTestTypesBusiness.enTestTypes.Practical))
-                    {
-                        lbvUserMessage.Visible = true;
-                        lbvUserMessage.Text = "Cannot Schdeul The Practical Test Before Passing Written Test";
-                        btnSave.Enabled = false;
-                        dtpTestDate.Enabled = false;
-                        return false;
+        /* private bool _HandlePrviousTestConstrains()
+         {
+             switch (TestTypeID)
+             {
+                 case clsTestTypesBusiness.enTestTypes.Vision:
+                     lbvUserMessage.Visible = false;
+                     return true;
+                 case clsTestTypesBusiness.enTestTypes.Written:
+                     if (!_LocalDrivingLicenseApp.PassTestType(clsTestTypesBusiness.enTestTypes.Written))
+                     {
+                         lbvUserMessage.Visible = true;
+                         lbvUserMessage.Text = "Cannot Schdeul The Written Test Before Passing Viosion Test";
+                         btnSave.Enabled = false;
+                         dtpTestDate.Enabled = false;
+                         return false;
+                     }
+                     else
+                     {
+                         lbvUserMessage.Visible = false;
+                         btnSave.Enabled = true;
+                         dtpTestDate.Enabled = true;
+                     }
+                     return true;
+                 case clsTestTypesBusiness.enTestTypes.Practical:
+                     if (!_LocalDrivingLicenseApp.PassTestType(clsTestTypesBusiness.enTestTypes.Practical))
+                     {
+                         lbvUserMessage.Visible = true;
+                         lbvUserMessage.Text = "Cannot Schdeul The Practical Test Before Passing Written Test";
+                         btnSave.Enabled = false;
+                         dtpTestDate.Enabled = false;
+                         return false;
 
-                    }
-                    else
-                    {
-                        lbvUserMessage.Visible = false;
-                        btnSave.Enabled = true;
-                        dtpTestDate.Enabled = true;
-                    }
-                    return true;
-            }
-            return true;
-        }*/
+                     }
+                     else
+                     {
+                         lbvUserMessage.Visible = false;
+                         btnSave.Enabled = true;
+                         dtpTestDate.Enabled = true;
+                     }
+                     return true;
+             }
+             return true;
+         }*/
         private bool _HandleRetakeApp()
         {
             if (_Mode == enMode.Add && _CreationMode == enCreation.Reapplay)

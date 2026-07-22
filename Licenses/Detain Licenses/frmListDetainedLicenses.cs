@@ -1,5 +1,4 @@
-﻿using BusinessLayer;
-using Driving_System.Licenses.Local_Licenses;
+﻿using Driving_System.Licenses.Local_Licenses;
 using Driving_System.Persons;
 using System;
 using System.Data;
@@ -189,7 +188,7 @@ namespace Driving_System.Licenses.Detain_Licenses
 
         private void showPersonToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int LicenseID = (int)dgvLicenses.CurrentRow.Cells [1].Value;
+            int LicenseID = (int)dgvLicenses.CurrentRow.Cells[1].Value;
             int PersonID = clsLicenseBusiness.Find(LicenseID).DriverInfo.PersonID;
 
             frmPersonLicenseHistory frm = new frmPersonLicenseHistory(PersonID);

@@ -1,3 +1,5 @@
 <Solution>
-  <Project Path="../../../../../../Desktop/Programming_S2/19-DVLD/Driving System/Driving System.csproj" Id="014e66ee-90f0-4e98-9755-4a3c18fe438f" />
+  <Project Path="../BusinessLayer/BusinessLayer.csproj" Id="7681285b-8016-40bc-91bb-49d3298982ce" />
+  <Project Path="../DataLayer/DataLayer.csproj" Id="ab4ab527-8238-44bb-9a2c-2bd5b40edf49" />
+  <Project Path="Driving System.csproj" Id="014e66ee-90f0-4e98-9755-4a3c18fe438f" />
 </Solution>

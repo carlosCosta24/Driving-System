@@ -1,7 +1,9 @@
-﻿using Driving_System.Global;
+﻿using BusinessLayer;
+using Driving_System.Global;
 using Driving_System.Licenses.Local_Licenses;
 using System;
 using System.Windows.Forms;
+using static BusinessLayer.clsLicenseBusiness;
 
 namespace Driving_System.Applications.Replace_Lost_Or_Damaged_License
 {

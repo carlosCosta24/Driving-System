@@ -705,5 +705,11 @@
   <ItemGroup>
     <None Include="Resources\Release Detained License 321.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
+      <Project>{7681285b-8016-40bc-91bb-49d3298982ce}</Project>
+      <Name>BusinessLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

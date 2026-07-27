@@ -1,4 +1,5 @@
-﻿using Driving_System.Global;
+﻿using Driving_System.Drivers;
+using Driving_System.Global;
 using Driving_System.Users;
 using System.Windows.Forms;
 
@@ -34,13 +35,13 @@ namespace Driving_System
 
         private void toolStripMenuItem3_Click(object sender, System.EventArgs e)
         {
-            Form Drivers = new DriversForm();
+            Form Drivers = new frmDriversList();
             Drivers.ShowDialog();
         }
 
         private void usersToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
-            Form Users = new ManageUsersForm();
+            Form Users = new frmManagePeopleForm();
             Users.ShowDialog();
         }
 

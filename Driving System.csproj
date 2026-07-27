@@ -64,6 +64,12 @@
     <Compile Include="Applications\Controls\crtlAppBasicInfo.Designer.cs">
       <DependentUpon>crtlAppBasicInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Applications\International Licenses\frmNewInternationalLicenseApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\International Licenses\frmNewInternationalLicenseApp.Designer.cs">
+      <DependentUpon>frmNewInternationalLicenseApp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Applications\Local Driving License\ctrlDrivingLicenseAppInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -236,12 +242,6 @@
     <Compile Include="Tests\Test Types\frmListTestTypes.Designer.cs">
       <DependentUpon>frmListTestTypes.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserInfoForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserInfoForm.Designer.cs">
-      <DependentUpon>UserInfoForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Persons\frmManagePeopleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,24 +253,6 @@
     </Compile>
     <Compile Include="Login\frmLoginForm.Designer.cs">
       <DependentUpon>frmLoginForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DriversForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DriversForm.Designer.cs">
-      <DependentUpon>DriversForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ManageUsersForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManageUsersForm.Designer.cs">
-      <DependentUpon>ManageUsersForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AddNewUsersForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddNewUsersForm.Designer.cs">
-      <DependentUpon>AddNewUsersForm.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -318,6 +300,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\Controls\crtlAppBasicInfo.resx">
       <DependentUpon>crtlAppBasicInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\International Licenses\frmNewInternationalLicenseApp.resx">
+      <DependentUpon>frmNewInternationalLicenseApp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\Local Driving License\ctrlDrivingLicenseAppInfo.resx">
       <DependentUpon>ctrlDrivingLicenseAppInfo.cs</DependentUpon>
@@ -382,15 +367,6 @@
     <EmbeddedResource Include="Login\frmLoginForm.resx">
       <DependentUpon>frmLoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DriversForm.resx">
-      <DependentUpon>DriversForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManageUsersForm.resx">
-      <DependentUpon>ManageUsersForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddNewUsersForm.resx">
-      <DependentUpon>AddNewUsersForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -430,9 +406,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tests\Test Types\frmListTestTypes.resx">
       <DependentUpon>frmListTestTypes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserInfoForm.resx">
-      <DependentUpon>UserInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\crtlUserCard.resx">
       <DependentUpon>crtlUserCard.cs</DependentUpon>
@@ -710,6 +683,12 @@
       <Project>{7681285b-8016-40bc-91bb-49d3298982ce}</Project>
       <Name>BusinessLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Licenses\International Licenses\Controls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\International 321.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

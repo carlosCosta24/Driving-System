@@ -1,15 +1,8 @@
 ﻿using BusinessLayer;
 using Driving_System.Global;
 using Driving_System.Licenses;
-using Driving_System.Licenses.Local_Licenses;
+using Driving_System.Licenses.International_Licenses;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Driving_System.Applications.International_Licenses
@@ -44,17 +37,17 @@ namespace Driving_System.Applications.International_Licenses
 
             if (ctrlLicenseInfoWithFilter1.SelectedLicenseInfo.LicenseClass != 3)
             {
-                MessageBox.Show("Only License Of Class 3 Can Be Selected", "Error", 
+                MessageBox.Show("Only License Of Class 3 Can Be Selected", "Error",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             int ActiveInternationalLicenseID = clsInternationalLicenseBusiness.
             GetActiveIntLicenseIDByDriverID(ctrlLicenseInfoWithFilter1.SelectedLicenseInfo.DriverID);
-            if (ActiveInternationalLicenseID != -1) 
+            if (ActiveInternationalLicenseID != -1)
             {
-                MessageBox.Show("Person Is Already Has An Active International License With ID: " 
-                + ActiveInternationalLicenseID.ToString() 
-                , "Not Allowed",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Person Is Already Has An Active International License With ID: "
+                + ActiveInternationalLicenseID.ToString()
+                , "Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 llLicenseInfo.Enabled = true;
                 _InternationalLicenseID = ActiveInternationalLicenseID;
                 btnIssue.Enabled = false;
@@ -71,7 +64,7 @@ namespace Driving_System.Applications.International_Licenses
 
         private void btnIssue_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are You Sure!", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) 
+            if (MessageBox.Show("Are You Sure!", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 return;
             }
@@ -90,7 +83,7 @@ namespace Driving_System.Applications.International_Licenses
             NewInternationalLicense.ExpirationDate = DateTime.Now.AddYears(10);
             NewInternationalLicense.CreatedByUserID = clsGlobal._User.UserID;
 
-            if(!NewInternationalLicense.Save())
+            if (!NewInternationalLicense.Save())
             {
                 MessageBox.Show("Error While Issue the License", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -98,7 +91,7 @@ namespace Driving_System.Applications.International_Licenses
             lbvInternationalLicenseApp.Text = NewInternationalLicense.ApplicationID.ToString();
             _InternationalLicenseID = NewInternationalLicense.LicenseID;
             lbvInternationalLicenseID.Text = NewInternationalLicense.LicenseID.ToString();
-            MessageBox.Show("International License Issue Successfully, ID: " + NewInternationalLicense.LicenseID.ToString(), 
+            MessageBox.Show("International License Issue Successfully, ID: " + NewInternationalLicense.LicenseID.ToString(),
             "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             btnIssue.Enabled = false;
@@ -110,7 +103,7 @@ namespace Driving_System.Applications.International_Licenses
 
         private void llLicenseHistory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmPersonLicenseHistory frm = 
+            frmPersonLicenseHistory frm =
             new frmPersonLicenseHistory(ctrlLicenseInfoWithFilter1.SelectedLicenseInfo.DriverInfo.PersonID);
             frm.ShowDialog();
 
@@ -118,8 +111,8 @@ namespace Driving_System.Applications.International_Licenses
 
         private void llLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-             //frm = new frmShowLicenseInfo(_InternationalLicenseID);
-             //frm.ShowDialog();
+            frmInternationalLicensInfo frm = new frmInternationalLicensInfo(_InternationalLicenseID);
+            frm.ShowDialog();
 
         }
 

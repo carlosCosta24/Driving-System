@@ -45,7 +45,7 @@ namespace Driving_System.Licenses.International_Licenses.Controls
         {
             _InternationalLicenseID = InternationalLicensID;
             _License = clsInternationalLicenseBusiness.Find(_InternationalLicenseID);
-            if(_License == null)
+            if (_License == null)
             {
                 MessageBox.Show("No License found with ID: " + _InternationalLicenseID.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 _InternationalLicenseID = -1;

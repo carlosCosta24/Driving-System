@@ -64,6 +64,12 @@
     <Compile Include="Applications\Controls\crtlAppBasicInfo.Designer.cs">
       <DependentUpon>crtlAppBasicInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Applications\International Licenses\frmListInternationalLicenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\International Licenses\frmListInternationalLicenses.Designer.cs">
+      <DependentUpon>frmListInternationalLicenses.cs</DependentUpon>
+    </Compile>
     <Compile Include="Applications\International Licenses\frmNewInternationalLicenseApp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -312,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\Controls\crtlAppBasicInfo.resx">
       <DependentUpon>crtlAppBasicInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\International Licenses\frmListInternationalLicenses.resx">
+      <DependentUpon>frmListInternationalLicenses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\International Licenses\frmNewInternationalLicenseApp.resx">
       <DependentUpon>frmNewInternationalLicenseApp.cs</DependentUpon>

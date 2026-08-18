@@ -4,10 +4,10 @@ using System.Windows.Forms;
 
 namespace Driving_System.Applications.Application_Type
 {
-    public partial class frmListaApplications : Form
+    public partial class frmListaApplicationTypes : Form
     {
         private DataTable _dtApplications;
-        public frmListaApplications()
+        public frmListaApplicationTypes()
         {
             InitializeComponent();
         }

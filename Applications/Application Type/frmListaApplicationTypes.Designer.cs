@@ -1,6 +1,6 @@
 ﻿namespace Driving_System.Applications.Application_Type
 {
-    partial class frmListaApplications
+    partial class frmListaApplicationTypes
     {
         /// <summary>
         /// Required designer variable.

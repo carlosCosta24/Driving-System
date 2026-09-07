@@ -48,6 +48,7 @@
             this.crtlUserCard1.Name = "crtlUserCard1";
             this.crtlUserCard1.Size = new System.Drawing.Size(964, 426);
             this.crtlUserCard1.TabIndex = 0;
+            this.crtlUserCard1.Load += new System.EventHandler(this.crtlUserCard1_Load);
             // 
             // tbNewPassword
             // 

@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using Driving_System.Global;
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
@@ -54,7 +55,7 @@ namespace Driving_System.Users
                 e.Cancel = false;
                 errorProvider1.SetError(tbCurrentPassword, null);
             }
-            if (_User.Password != tbCurrentPassword.Text.Trim())
+            if (_User.Password != clsUtil.HashPassword(tbCurrentPassword.Text.Trim()))
             {
                 e.Cancel = true;
                 errorProvider1.SetError(tbCurrentPassword, "Curretn password is't correct");
@@ -109,7 +110,7 @@ namespace Driving_System.Users
                 MessageBox.Show("Some field aren't valid, check refrence error icon", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            _User.Password = tbNewPassword.Text.Trim();
+            _User.Password = clsUtil.HashPassword(tbNewPassword.Text.Trim());
 
             if (_User.Save())
             {
@@ -126,6 +127,11 @@ namespace Driving_System.Users
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void crtlUserCard1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

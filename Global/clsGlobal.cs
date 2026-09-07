@@ -14,7 +14,7 @@ namespace Driving_System.Global
         {
             string KeyPath = @"HKEY_CURRENT_USER\SOFTWARE\DrivingSys";
             string Value = UserName;
-            string ValueData = Password;
+            string ValueData = clsUtil.HashPassword(Password);
             try
             {
                 Registry.SetValue(KeyPath, Value, ValueData);

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Security.Cryptography;
+using System.Text;
 using System.Windows.Forms;
 
 namespace Driving_System.Global
@@ -61,6 +63,16 @@ namespace Driving_System.Global
             }
             SourceFile = DestinationFile;
             return true;
+        }
+        public static string HashPassword(string Input)
+        {
+            string Result;
+            using (SHA256 Hash = SHA256.Create())
+            {
+                byte[] HashedBytes = Hash.ComputeHash(Encoding.UTF8.GetBytes(Input));
+                Result = BitConverter.ToString(HashedBytes).Replace("-", "");
+            }
+            return Result;
         }
     }
 }

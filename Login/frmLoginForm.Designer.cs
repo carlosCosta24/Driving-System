@@ -81,6 +81,7 @@
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.Size = new System.Drawing.Size(286, 38);
             this.tbUserName.TabIndex = 5;
+            this.tbUserName.TextChanged += new System.EventHandler(this.tbUserName_TextChanged);
             // 
             // tbPassword
             // 
@@ -100,6 +101,7 @@
             this.chbRemeberMe.Size = new System.Drawing.Size(18, 17);
             this.chbRemeberMe.TabIndex = 7;
             this.chbRemeberMe.UseVisualStyleBackColor = true;
+            this.chbRemeberMe.CheckedChanged += new System.EventHandler(this.chbRemeberMe_CheckedChanged);
             // 
             // label5
             // 
@@ -109,6 +111,7 @@
             this.label5.Size = new System.Drawing.Size(203, 32);
             this.label5.TabIndex = 8;
             this.label5.Text = "Remember me";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // btnLogin
             // 
@@ -125,6 +128,7 @@
             // button2
             // 
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.Transparent;
             this.button2.Image = global::Driving_System.Properties.Resources.close;
             this.button2.Location = new System.Drawing.Point(1005, 12);
             this.button2.Name = "button2";

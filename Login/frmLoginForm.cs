@@ -36,13 +36,13 @@ namespace Driving_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            clsUserBusiness User = clsUserBusiness.FindByUserNameAndPassword(tbUserName.Text.Trim(), tbPassword.Text.Trim());
+            clsUserBusiness User = clsUserBusiness.FindByUserNameAndPassword(tbUserName.Text.Trim(), clsUtil.HashPassword( tbPassword.Text.Trim()));
 
             if (User != null)
             {
                 if (chbRemeberMe.Checked)
                 {
-                    clsGlobal.SaveCredentials(tbUserName.Text.Trim(), tbPassword.Text.Trim());
+                    clsGlobal.SaveCredentials(tbUserName.Text.Trim(),clsUtil.HashPassword (tbPassword.Text.Trim()));
                 }
                 else
                 {
@@ -67,6 +67,19 @@ namespace Driving_System
             }
         }
 
+        private void tbUserName_TextChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chbRemeberMe_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

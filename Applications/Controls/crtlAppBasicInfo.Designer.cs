@@ -67,6 +67,7 @@
             // 
             // gbAppBasicInfo
             // 
+            this.gbAppBasicInfo.BackColor = System.Drawing.Color.White;
             this.gbAppBasicInfo.Controls.Add(this.llPersonInfo);
             this.gbAppBasicInfo.Controls.Add(this.pictureBox8);
             this.gbAppBasicInfo.Controls.Add(this.pictureBox7);

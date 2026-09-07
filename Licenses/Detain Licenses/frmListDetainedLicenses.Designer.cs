@@ -33,22 +33,22 @@
             this.dgvLicenses = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.lbvRecords = new System.Windows.Forms.Label();
-            this.btnDetain = new System.Windows.Forms.Button();
             this.cbFilterCategory = new System.Windows.Forms.ComboBox();
             this.cbYesNo = new System.Windows.Forms.ComboBox();
             this.tbFilterValue = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnRelease = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showPersonInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showLicenseInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showPersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.releaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnRelease = new System.Windows.Forms.Button();
+            this.btnDetain = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLicenses)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -93,17 +93,6 @@
             this.lbvRecords.Size = new System.Drawing.Size(19, 25);
             this.lbvRecords.TabIndex = 4;
             this.lbvRecords.Text = "-";
-            // 
-            // btnDetain
-            // 
-            this.btnDetain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetain.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnDetain.Image = global::Driving_System.Properties.Resources.cancel;
-            this.btnDetain.Location = new System.Drawing.Point(1090, 123);
-            this.btnDetain.Name = "btnDetain";
-            this.btnDetain.Size = new System.Drawing.Size(40, 40);
-            this.btnDetain.TabIndex = 5;
-            this.btnDetain.UseVisualStyleBackColor = true;
             // 
             // cbFilterCategory
             // 
@@ -156,40 +145,6 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "Filter By: ";
             // 
-            // btnClose
-            // 
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnClose.Image = global::Driving_System.Properties.Resources.close;
-            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(1030, 413);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(100, 27);
-            this.btnClose.TabIndex = 7;
-            this.btnClose.Text = "Close";
-            this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnRelease
-            // 
-            this.btnRelease.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRelease.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnRelease.Image = global::Driving_System.Properties.Resources.Release_Detained_License_32;
-            this.btnRelease.Location = new System.Drawing.Point(1044, 123);
-            this.btnRelease.Name = "btnRelease";
-            this.btnRelease.Size = new System.Drawing.Size(40, 40);
-            this.btnRelease.TabIndex = 6;
-            this.btnRelease.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(472, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(120, 70);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.BackColor = System.Drawing.Color.Transparent;
@@ -200,7 +155,7 @@
             this.showPersonToolStripMenuItem,
             this.releaseToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(269, 128);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(269, 100);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // showPersonInfoToolStripMenuItem
@@ -231,6 +186,53 @@
             this.releaseToolStripMenuItem.Text = "Release ";
             this.releaseToolStripMenuItem.Click += new System.EventHandler(this.releaseToolStripMenuItem_Click);
             // 
+            // btnClose
+            // 
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnClose.Image = global::Driving_System.Properties.Resources.close;
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(1030, 413);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(100, 27);
+            this.btnClose.TabIndex = 7;
+            this.btnClose.Text = "Close";
+            this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnRelease
+            // 
+            this.btnRelease.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelease.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnRelease.Image = global::Driving_System.Properties.Resources.Release_Detained_License_32;
+            this.btnRelease.Location = new System.Drawing.Point(1044, 123);
+            this.btnRelease.Name = "btnRelease";
+            this.btnRelease.Size = new System.Drawing.Size(40, 40);
+            this.btnRelease.TabIndex = 6;
+            this.btnRelease.UseVisualStyleBackColor = true;
+            // 
+            // btnDetain
+            // 
+            this.btnDetain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetain.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnDetain.Image = global::Driving_System.Properties.Resources.cancel;
+            this.btnDetain.Location = new System.Drawing.Point(1090, 123);
+            this.btnDetain.Name = "btnDetain";
+            this.btnDetain.Size = new System.Drawing.Size(40, 40);
+            this.btnDetain.TabIndex = 5;
+            this.btnDetain.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Driving_System.Properties.Resources.Detain_512;
+            this.pictureBox1.Location = new System.Drawing.Point(472, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(120, 70);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmListDetainedLicenses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -255,8 +257,8 @@
             this.Text = "frmListDetainedLicenses";
             this.Load += new System.EventHandler(this.frmListDetainedLicenses_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLicenses)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
